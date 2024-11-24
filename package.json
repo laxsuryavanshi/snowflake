@@ -1,0 +1,13 @@
+{
+  "name": "snowflake",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "author": "Laxmikant Suryavanshi <laxmikantsuryavanshi@hotmail.com>",
+  "packageManager": "yarn@4.5.2",
+  "engines": {
+    "node": "^22.11.0",
+    "yarn": "^4.5.2",
+    "npm": "Please use yarn to install dependencies"
+  }
+}
