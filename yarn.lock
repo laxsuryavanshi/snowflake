@@ -584,6 +584,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@snowflake/typescript-config@workspace:^, @snowflake/typescript-config@workspace:packages/typescript-config":
+  version: 0.0.0-use.local
+  resolution: "@snowflake/typescript-config@workspace:packages/typescript-config"
+  languageName: unknown
+  linkType: soft
+
 "@types/babel__core@npm:^7.20.5":
   version: 7.20.5
   resolution: "@types/babel__core@npm:7.20.5"
@@ -740,6 +746,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "bitvolt@workspace:apps/bitvolt"
   dependencies:
+    "@snowflake/typescript-config": "workspace:^"
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18.3.1"
     "@vitejs/plugin-react": "npm:^4.3.3"
