@@ -8,3 +8,10 @@
 .pnp.*
 dist/
 node_modules/
+
+__pycache__/
+.venv/
+.env
+.env.*
+!.env.example
+db.sqlite3
