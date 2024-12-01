@@ -6,6 +6,7 @@
   "author": "Laxmikant Suryavanshi <laxmikantsuryavanshi@hotmail.com>",
   "packageManager": "yarn@4.5.2",
   "scripts": {
+    "act": "yarn workspace act",
     "bitvolt": "yarn workspace bitvolt"
   },
   "workspaces": {
