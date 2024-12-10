@@ -13,6 +13,7 @@ import (
 
 	"github.com/go-git/go-git/v5"
 	"github.com/go-git/go-git/v5/plumbing"
+	"github.com/r3labs/sse/v2"
 	log "github.com/sirupsen/logrus"
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
@@ -42,6 +43,7 @@ type job struct {
 
 var (
 	server         *http.Server
+	sseServer      *sse.Server
 	client         *mongo.Client
 	jobsCollection *mongo.Collection
 )
@@ -105,6 +107,9 @@ func startServer() {
 	}
 	server = &http.Server{Addr: fmt.Sprintf(":%s", port), Handler: http.DefaultServeMux}
 
+	sseServer = sse.New()
+	http.HandleFunc("/events", sseServer.ServeHTTP)
+
 	log.Infof("Listening on port: %s", port)
 	if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 		log.Fatalf("Failed to start server: %v", err)
@@ -167,11 +172,14 @@ func execute(j job) error {
 		return err
 	}
 
+	stream := sseServer.CreateStream(j.Id.Hex())
+	defer sseServer.RemoveStream(stream.ID)
+
 	if err := cloneRepo(j.Repo, j.Branch, temp); err != nil {
 		return err
 	}
 
-	if err := runActions(temp); err != nil {
+	if err := runActions(temp, stream); err != nil {
 		return err
 	}
 
@@ -200,8 +208,8 @@ func cloneRepo(repo string, branch string, dir string) error {
 	return nil
 }
 
-func runActions(dir string) error {
-	cmd := exec.Command("act")
+func runActions(dir string, stream *sse.Stream) error {
+	cmd := exec.Command("act", "--json")
 	cmd.Dir = dir
 	cmd.Stderr = cmd.Stdout
 
@@ -218,7 +226,7 @@ func runActions(dir string) error {
 
 	scanner := bufio.NewScanner(stdout)
 	for scanner.Scan() {
-		log.Infoln(scanner.Text())
+		sseServer.Publish(stream.ID, &sse.Event{Data: scanner.Bytes()})
 	}
 	if err := scanner.Err(); err != nil {
 		log.Errorf("Error reading output: %v", err)
