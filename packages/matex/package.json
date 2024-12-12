@@ -1,0 +1,19 @@
+{
+  "name": "@snowflake/matex",
+  "version": "0.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "module": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "build": "run -T rollup --config",
+    "clean": "run -T rimraf dist"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.1",
+    "@snowflake/typescript-config": "workspace:^",
+    "@types/rollup-plugin-peer-deps-external": "^2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "tslib": "^2.8.1"
+  }
+}

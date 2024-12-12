@@ -7,7 +7,8 @@
   "packageManager": "yarn@4.5.2",
   "scripts": {
     "act": "yarn workspace act",
-    "bitvolt": "yarn workspace bitvolt"
+    "bitvolt": "yarn workspace bitvolt",
+    "matex": "yarn workspace @snowflake/matex"
   },
   "workspaces": {
     "packages": [
@@ -24,6 +25,8 @@
     "@yarnpkg/types": "^4.0.0",
     "eslint": "^9.15.0",
     "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.28.1",
     "typescript": "~5.6.2"
   }
 }
