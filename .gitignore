@@ -4,8 +4,7 @@
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-# !.yarn/cache
-.pnp.*
+!.yarn/cache
 dist/
 node_modules/
 
