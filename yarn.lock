@@ -1214,8 +1214,10 @@ __metadata:
     "@rollup/plugin-typescript": "npm:^12.1.1"
     "@snowflake/typescript-config": "workspace:^"
     "@types/rollup-plugin-peer-deps-external": "npm:^2"
+    rollup: "npm:^4.28.1"
     rollup-plugin-peer-deps-external: "npm:^2.2.4"
     tslib: "npm:^2.8.1"
+    typescript: "npm:~5.6.2"
   languageName: unknown
   linkType: soft
 
@@ -2437,6 +2439,7 @@ __metadata:
   resolution: "eslint-config-snowflake@workspace:packages/eslint-config-snowflake"
   dependencies:
     "@eslint/js": "npm:^9.15.0"
+    eslint: "npm:^9.15.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-index: "npm:^1.1.7"
     eslint-plugin-jest: "npm:^28.9.0"
@@ -2444,9 +2447,9 @@ __metadata:
     eslint-plugin-react: "npm:^7.37.2"
     eslint-plugin-react-hooks: "npm:^5.0.0"
     eslint-plugin-react-refresh: "npm:^0.4.14"
+    prettier: "npm:^3.3.3"
+    typescript: "npm:~5.6.2"
     typescript-eslint: "npm:^8.16.0"
-  peerDependencies:
-    eslint: ">=9"
   languageName: unknown
   linkType: soft
 
