@@ -2,7 +2,9 @@
   "extends": "@snowflake/typescript-config/tsconfig.base.json",
   "compilerOptions": {
     "declaration": true,
+    "jsx": "react-jsx",
     "module": "ESNext",
+    "moduleResolution": "bundler",
     "target": "ES2020"
   },
   "include": ["src"]
