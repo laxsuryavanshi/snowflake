@@ -31,9 +31,32 @@ function enforceConsistentDependenciesAcrossTheProject({ Yarn }) {
   }
 }
 
+const IGNORE_PACKAGE_NAME_FOR = ['.', 'apps/', 'packages/eslint-config-snowflake'];
+
+/**
+ * Enforce that all packages in the project use the `@snowflake/*` naming convention.
+ *
+ * @param {Context} context
+ */
+function enforcePackageNameConvention({ Yarn }) {
+  for (const workspace of Yarn.workspaces()) {
+    if (IGNORE_PACKAGE_NAME_FOR.some(pattern => workspace.cwd.startsWith(pattern))) {
+      continue;
+    }
+
+    if (!workspace.manifest.name.startsWith('@snowflake/')) {
+      workspace.error(
+        `Package "${workspace.manifest.name}" must use the "@snowflake/" naming convention.` +
+          ` Consider renaming it to "@snowflake/${workspace.cwd.split('/').pop()}"`
+      );
+    }
+  }
+}
+
 module.exports = defineConfig({
   async constraints(context) {
     enforceConsistentDependenciesAcrossTheProject(context);
+    enforcePackageNameConvention(context);
   },
 });
 
