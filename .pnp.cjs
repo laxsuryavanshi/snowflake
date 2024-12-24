@@ -2624,7 +2624,8 @@ const RAW_RUNTIME_STATE =
           ["rollup-plugin-peer-deps-external", "virtual:c56d3538c034115105e8be4d1dfa0b15ada89128253138b1c598a2cb85a0364d17f3ef26200475220372c0b19ee175a6e098222199110f3a333928a831ee74fc#npm:2.2.4"],\
           ["ts-jest", "virtual:c56d3538c034115105e8be4d1dfa0b15ada89128253138b1c598a2cb85a0364d17f3ef26200475220372c0b19ee175a6e098222199110f3a333928a831ee74fc#npm:29.2.5"],\
           ["tslib", "npm:2.8.1"],\
-          ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"]\
+          ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"],\
+          ["usehooks-ts", "virtual:c56d3538c034115105e8be4d1dfa0b15ada89128253138b1c598a2cb85a0364d17f3ef26200475220372c0b19ee175a6e098222199110f3a333928a831ee74fc#npm:3.1.0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -7238,6 +7239,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["lodash.debounce", [\
+      ["npm:4.0.8", {\
+        "packageLocation": "./.yarn/cache/lodash.debounce-npm-4.0.8-f1d6e09799-762998a63e.zip/node_modules/lodash.debounce/",\
+        "packageDependencies": [\
+          ["lodash.debounce", "npm:4.0.8"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["lodash.memoize", [\
       ["npm:4.1.2", {\
         "packageLocation": "./.yarn/cache/lodash.memoize-npm-4.1.2-0e6250041f-c8713e51ec.zip/node_modules/lodash.memoize/",\
@@ -9674,6 +9684,29 @@ const RAW_RUNTIME_STATE =
           ["url-parse", "npm:1.5.10"],\
           ["querystringify", "npm:2.2.0"],\
           ["requires-port", "npm:1.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["usehooks-ts", [\
+      ["npm:3.1.0", {\
+        "packageLocation": "./.yarn/cache/usehooks-ts-npm-3.1.0-5f674100de-2204d8c951.zip/node_modules/usehooks-ts/",\
+        "packageDependencies": [\
+          ["usehooks-ts", "npm:3.1.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:c56d3538c034115105e8be4d1dfa0b15ada89128253138b1c598a2cb85a0364d17f3ef26200475220372c0b19ee175a6e098222199110f3a333928a831ee74fc#npm:3.1.0", {\
+        "packageLocation": "./.yarn/__virtual__/usehooks-ts-virtual-2eeb473b3a/0/cache/usehooks-ts-npm-3.1.0-5f674100de-2204d8c951.zip/node_modules/usehooks-ts/",\
+        "packageDependencies": [\
+          ["usehooks-ts", "virtual:c56d3538c034115105e8be4d1dfa0b15ada89128253138b1c598a2cb85a0364d17f3ef26200475220372c0b19ee175a6e098222199110f3a333928a831ee74fc#npm:3.1.0"],\
+          ["@types/react", "npm:18.3.12"],\
+          ["lodash.debounce", "npm:4.0.8"],\
+          ["react", "npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\
