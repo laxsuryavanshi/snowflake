@@ -24,7 +24,7 @@ export interface IThemeContext {
  * @param {PaletteMode} mode The mode of the theme (light or dark).
  * @returns {Theme} The Material-UI theme object.
  */
-export const createTheme = (mode: PaletteMode): Theme => {
+const createTheme = (mode: PaletteMode): Theme => {
   let theme = createMuiTheme({
     typography: {
       fontFamily: 'var(--snowflake-font-family)',
@@ -60,7 +60,7 @@ const ThemeContext = createContext<IThemeContext | null>(null);
  * Returns the current system display mode (light or dark) based on the user's preferences.
  * @returns {PeletteMode} The current system display mode.
  */
-export const useSystemDisplayMode = (): PaletteMode =>
+const useSystemDisplayMode = (): PaletteMode =>
   useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
 
 export const ThemeProvider = ({ children }: React.PropsWithChildren) => {
