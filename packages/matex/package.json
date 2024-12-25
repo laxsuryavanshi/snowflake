@@ -6,7 +6,7 @@
   "module": "dist/esm/index.mjs",
   "types": "dist/types/index.d.ts",
   "scripts": {
-    "build": "rollup -c",
+    "build": "yarn clean && rollup -c",
     "clean": "rimraf dist",
     "test": "jest"
   },
