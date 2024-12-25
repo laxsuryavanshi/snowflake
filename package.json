@@ -8,7 +8,8 @@
   "scripts": {
     "act": "yarn workspace act",
     "bitvolt": "yarn workspace bitvolt",
-    "matex": "yarn workspace @snowflake/matex"
+    "matex": "yarn workspace @snowflake/matex",
+    "react-utils": "yarn workspace @snowflake/react-utils"
   },
   "workspaces": {
     "packages": [

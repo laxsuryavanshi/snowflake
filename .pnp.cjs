@@ -31,6 +31,10 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:packages/matex"\
     },\
     {\
+      "name": "@snowflake/react-utils",\
+      "reference": "workspace:packages/react-utils"\
+    },\
+    {\
       "name": "@snowflake/typescript-config",\
       "reference": "workspace:packages/typescript-config"\
     }\
@@ -39,6 +43,7 @@ const RAW_RUNTIME_STATE =
   "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
   "fallbackExclusionList": [\
     ["@snowflake/matex", ["workspace:packages/matex"]],\
+    ["@snowflake/react-utils", ["workspace:packages/react-utils"]],\
     ["@snowflake/typescript-config", ["workspace:packages/typescript-config"]],\
     ["act", ["workspace:apps/act"]],\
     ["bitvolt", ["workspace:apps/bitvolt"]],\
@@ -2626,6 +2631,34 @@ const RAW_RUNTIME_STATE =
           ["tslib", "npm:2.8.1"],\
           ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"],\
           ["usehooks-ts", "virtual:c56d3538c034115105e8be4d1dfa0b15ada89128253138b1c598a2cb85a0364d17f3ef26200475220372c0b19ee175a6e098222199110f3a333928a831ee74fc#npm:3.1.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@snowflake/react-utils", [\
+      ["workspace:packages/react-utils", {\
+        "packageLocation": "./packages/react-utils/",\
+        "packageDependencies": [\
+          ["@snowflake/react-utils", "workspace:packages/react-utils"],\
+          ["@rollup/plugin-typescript", "virtual:c56d3538c034115105e8be4d1dfa0b15ada89128253138b1c598a2cb85a0364d17f3ef26200475220372c0b19ee175a6e098222199110f3a333928a831ee74fc#npm:12.1.1"],\
+          ["@snowflake/typescript-config", "workspace:packages/typescript-config"],\
+          ["@testing-library/dom", "npm:10.4.0"],\
+          ["@testing-library/jest-dom", "npm:6.6.3"],\
+          ["@testing-library/react", "virtual:c56d3538c034115105e8be4d1dfa0b15ada89128253138b1c598a2cb85a0364d17f3ef26200475220372c0b19ee175a6e098222199110f3a333928a831ee74fc#npm:16.1.0"],\
+          ["@types/jest", "npm:29.5.14"],\
+          ["@types/react", "npm:18.3.12"],\
+          ["@types/react-dom", "npm:18.3.1"],\
+          ["@types/rollup-plugin-peer-deps-external", "npm:2.2.5"],\
+          ["jest", "virtual:c56d3538c034115105e8be4d1dfa0b15ada89128253138b1c598a2cb85a0364d17f3ef26200475220372c0b19ee175a6e098222199110f3a333928a831ee74fc#npm:29.7.0"],\
+          ["jest-environment-jsdom", "virtual:c56d3538c034115105e8be4d1dfa0b15ada89128253138b1c598a2cb85a0364d17f3ef26200475220372c0b19ee175a6e098222199110f3a333928a831ee74fc#npm:29.7.0"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:1449ce4d893379f379bc654a68cfd63e9dadd990fe23a159b83ad053ad87ea37f22c1c77c22b1184880f16916e2ddbabe9e7a75b8663473822511af52c4ed419#npm:18.3.1"],\
+          ["rimraf", "npm:6.0.1"],\
+          ["rollup", "npm:4.28.1"],\
+          ["rollup-plugin-peer-deps-external", "virtual:c56d3538c034115105e8be4d1dfa0b15ada89128253138b1c598a2cb85a0364d17f3ef26200475220372c0b19ee175a6e098222199110f3a333928a831ee74fc#npm:2.2.4"],\
+          ["ts-jest", "virtual:c56d3538c034115105e8be4d1dfa0b15ada89128253138b1c598a2cb85a0364d17f3ef26200475220372c0b19ee175a6e098222199110f3a333928a831ee74fc#npm:29.2.5"],\
+          ["tslib", "npm:2.8.1"],\
+          ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"]\
         ],\
         "linkType": "SOFT"\
       }]\
