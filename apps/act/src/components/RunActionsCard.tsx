@@ -9,6 +9,16 @@ import Typography from '@mui/material/Typography';
 
 import github, { Branch, Repo } from '@/services/github';
 
+const submitWorkflowRun = async (repo: Repo, branch: Branch) => {
+  return await fetch('http://localhost:8080/submit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ repo: repo.clone_url, branch: branch.name }),
+  });
+};
+
 const RunActionsCard = () => {
   const [repos, setRepos] = useState<Repo[]>([]);
   const [selectedRepo, setSelectedRepo] = useState<Repo | null>(null);
@@ -50,8 +60,21 @@ const RunActionsCard = () => {
       return;
     }
 
-    // eslint-disable-next-line no-console
-    console.log(selectedRepo, selectedBranch);
+    try {
+      void submitWorkflowRun(selectedRepo, selectedBranch)
+        .then(res => res.json())
+        .then(({ id }) => {
+          // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+          const source = new EventSource(`http://localhost:8080/events?stream=${id}`);
+          source.onmessage = event => {
+            // eslint-disable-next-line no-console
+            console.log(event.data);
+          };
+        });
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+    }
   };
 
   return (

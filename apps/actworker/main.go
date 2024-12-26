@@ -53,6 +53,7 @@ var (
 	sseServer      *sse.Server
 	client         *mongo.Client
 	jobsCollection *mongo.Collection
+	streams        = make(map[bson.ObjectID]*sse.Stream)
 )
 
 func main() {
@@ -206,6 +207,8 @@ func submitJobHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	streams[id] = sseServer.CreateStream(id.Hex())
+
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusAccepted)
 	w.Write([]byte(fmt.Sprintf(`{"id": "%s"}`, id.Hex())))
@@ -235,8 +238,9 @@ func execute(j job) error {
 		return err
 	}
 
-	stream := sseServer.CreateStream(j.Id.Hex())
+	stream := streams[j.Id]
 	defer sseServer.RemoveStream(stream.ID)
+	defer delete(streams, j.Id)
 
 	if err := cloneRepo(j.Repo, j.Branch, temp); err != nil {
 		return err
