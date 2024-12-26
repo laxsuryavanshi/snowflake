@@ -1,6 +1,11 @@
 import { Octokit } from '@octokit/core';
+import { Endpoints } from '@octokit/types';
 
-export type GitHubUser = Awaited<ReturnType<typeof GitHubService.prototype.getUser>>;
+export type User = Endpoints['GET /user']['response']['data'];
+
+export type Repo = Endpoints['GET /user/repos']['response']['data'][number];
+
+export type Branch = Endpoints['GET /repos/{owner}/{repo}/branches']['response']['data'][number];
 
 class GitHubService {
   readonly X_GITHUB_API_VERSION = '2022-11-28';
@@ -11,9 +16,27 @@ class GitHubService {
     this.octokit = new Octokit({ auth: this._pat });
   }
 
-  async getUser() {
+  async getUser(): Promise<User> {
     return await this.octokit
       .request('GET /user', {
+        'X-GitHub-Api-Version': this.X_GITHUB_API_VERSION,
+      })
+      .then(response => response.data);
+  }
+
+  async getRepos(): Promise<Repo[]> {
+    return await this.octokit
+      .request('GET /user/repos', {
+        'X-GitHub-Api-Version': this.X_GITHUB_API_VERSION,
+      })
+      .then(response => response.data);
+  }
+
+  async getBranches(owner: string, repo: string): Promise<Branch[]> {
+    return await this.octokit
+      .request('GET /repos/{owner}/{repo}/branches', {
+        owner,
+        repo,
         'X-GitHub-Api-Version': this.X_GITHUB_API_VERSION,
       })
       .then(response => response.data);

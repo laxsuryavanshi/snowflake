@@ -3494,6 +3494,7 @@ const RAW_RUNTIME_STATE =
           ["@mui/icons-material", "virtual:1449ce4d893379f379bc654a68cfd63e9dadd990fe23a159b83ad053ad87ea37f22c1c77c22b1184880f16916e2ddbabe9e7a75b8663473822511af52c4ed419#npm:5.16.12"],\
           ["@mui/material", "virtual:1449ce4d893379f379bc654a68cfd63e9dadd990fe23a159b83ad053ad87ea37f22c1c77c22b1184880f16916e2ddbabe9e7a75b8663473822511af52c4ed419#npm:5.16.11"],\
           ["@octokit/core", "npm:6.1.2"],\
+          ["@octokit/types", "npm:13.6.2"],\
           ["@snowflake/matex", "virtual:1449ce4d893379f379bc654a68cfd63e9dadd990fe23a159b83ad053ad87ea37f22c1c77c22b1184880f16916e2ddbabe9e7a75b8663473822511af52c4ed419#workspace:packages/matex"],\
           ["@snowflake/typescript-config", "workspace:packages/typescript-config"],\
           ["@types/react", "npm:18.3.12"],\

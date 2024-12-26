@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -21,17 +21,9 @@ import Toolbar from '@mui/material/Toolbar';
 
 import { DisplayMode, useTheme } from '@snowflake/matex';
 
-import github, { GitHubUser } from '@/services/github';
+import { User } from '@/services/github';
 
-const Header = () => {
-  const [user, setUser] = useState<GitHubUser>();
-
-  useEffect(() => {
-    void github.getUser().then(user => {
-      setUser(user);
-    });
-  }, []);
-
+const Header: React.FC<{ user?: User }> = ({ user }) => {
   const { mode, setMode } = useTheme();
 
   const handleModeChange = (_: React.MouseEvent<HTMLElement>, newMode: DisplayMode) => {

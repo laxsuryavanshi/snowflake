@@ -1464,7 +1464,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@octokit/types@npm:^13.0.0, @octokit/types@npm:^13.1.0":
+"@octokit/types@npm:^13.0.0, @octokit/types@npm:^13.1.0, @octokit/types@npm:^13.6.2":
   version: 13.6.2
   resolution: "@octokit/types@npm:13.6.2"
   dependencies:
@@ -2381,6 +2381,7 @@ __metadata:
     "@mui/icons-material": "npm:^5.16.12"
     "@mui/material": "npm:^5.16.11"
     "@octokit/core": "npm:^6.1.2"
+    "@octokit/types": "npm:^13.6.2"
     "@snowflake/matex": "workspace:^"
     "@snowflake/typescript-config": "workspace:^"
     "@types/react": "npm:^18.3.12"
