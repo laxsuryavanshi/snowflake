@@ -1,4 +1,10 @@
 {
   "extends": "@snowflake/typescript-config/tsconfig.vite.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
   "include": ["src"]
 }
