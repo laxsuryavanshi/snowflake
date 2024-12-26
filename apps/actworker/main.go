@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"context"
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"os"
@@ -14,6 +15,7 @@ import (
 	"github.com/go-git/go-git/v5"
 	"github.com/go-git/go-git/v5/plumbing"
 	"github.com/r3labs/sse/v2"
+	"github.com/rs/cors"
 	log "github.com/sirupsen/logrus"
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
@@ -39,6 +41,11 @@ type job struct {
 	Branch    string        `bson:"branch"`
 	Status    jobStatus     `bson:"status"`
 	CreatedAt bson.DateTime `bson:"created_at"`
+}
+
+type submitJobRequestBody struct {
+	Repo   string `json:"repo"`
+	Branch string `json:"branch"`
 }
 
 var (
@@ -105,10 +112,22 @@ func startServer() {
 	if port = os.Getenv("PORT"); port == "" {
 		port = "8080"
 	}
-	server = &http.Server{Addr: fmt.Sprintf(":%s", port), Handler: http.DefaultServeMux}
+
+	mux := http.NewServeMux()
+	handler := cors.AllowAll().Handler(mux)
+	server = &http.Server{Addr: fmt.Sprintf(":%s", port), Handler: handler}
 
 	sseServer = sse.New()
-	http.HandleFunc("/events", sseServer.ServeHTTP)
+	mux.HandleFunc("/events", sseServer.ServeHTTP)
+
+	mux.HandleFunc("/submit", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method == http.MethodPost {
+			submitJobHandler(w, r)
+			return
+		}
+
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+	})
 
 	log.Infof("Listening on port: %s", port)
 	if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
@@ -137,9 +156,9 @@ func startExecutor() {
 		}
 
 		if err := execute(j); err != nil {
-			/// TODO: save job status to failed
+			jobsCollection.UpdateOne(context.TODO(), bson.M{"_id": j.Id}, bson.M{"$set": bson.M{"status": failed}})
 		} else {
-			/// TODO: save job status to success
+			jobsCollection.UpdateOne(context.TODO(), bson.M{"_id": j.Id}, bson.M{"$set": bson.M{"status": completed}})
 		}
 	}
 }
@@ -163,6 +182,50 @@ func getJob() (job, error) {
 		Decode(&j)
 
 	return j, err
+}
+
+func submitJobHandler(w http.ResponseWriter, r *http.Request) {
+	var body submitJobRequestBody
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+		http.Error(w, "Failed to decode request body", http.StatusBadRequest)
+		return
+	}
+
+	repo, branch := body.Repo, body.Branch
+
+	if repo == "" || branch == "" {
+		http.Error(w, "Missing repo or branch", http.StatusBadRequest)
+		return
+	}
+
+	var id bson.ObjectID
+	var err error
+
+	if id, err = submitJob(repo, branch); err != nil {
+		http.Error(w, "Failed to submit job", http.StatusInternalServerError)
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusAccepted)
+	w.Write([]byte(fmt.Sprintf(`{"id": "%s"}`, id.Hex())))
+}
+
+func submitJob(repo string, branch string) (bson.ObjectID, error) {
+	j := job{
+		Id:        bson.NewObjectID(),
+		Repo:      repo,
+		Branch:    branch,
+		Status:    queued,
+		CreatedAt: bson.DateTime(time.Now().UnixNano() / int64(time.Millisecond)),
+	}
+
+	if _, err := jobsCollection.InsertOne(context.TODO(), j); err != nil {
+		log.Errorf("Failed to insert job: %v", err)
+		return j.Id, err
+	}
+
+	return j.Id, nil
 }
 
 func execute(j job) error {

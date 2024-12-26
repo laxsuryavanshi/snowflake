@@ -5,6 +5,7 @@ go 1.23.3
 require (
 	github.com/go-git/go-git/v5 v5.12.0
 	github.com/r3labs/sse/v2 v2.10.0
+	github.com/rs/cors v1.11.1
 	github.com/sirupsen/logrus v1.9.3
 	go.mongodb.org/mongo-driver/v2 v2.0.0-beta2
 )
