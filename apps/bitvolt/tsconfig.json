@@ -1,4 +1,0 @@
-{
-  "extends": "@snowflake/typescript-config/tsconfig.vite.json",
-  "include": ["src"]
-}

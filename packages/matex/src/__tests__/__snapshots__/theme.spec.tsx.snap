@@ -1,8 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`useTheme should return mode and setter function 1`] = `
-{
-  "mode": "system",
-  "setMode": [Function],
-}
-`;

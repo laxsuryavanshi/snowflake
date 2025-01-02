@@ -1,8 +1,0 @@
-{
-  "extends": "@snowflake/typescript-config/tsconfig.react.json",
-  "compilerOptions": {
-    "declaration": true,
-    "types": ["@testing-library/jest-dom"]
-  },
-  "include": ["src"]
-}
