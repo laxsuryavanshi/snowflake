@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "snowflake"
+version = "0.0.0"
+description = ""
+authors = ["Laxmikant Suryavanshi <laxmikantsuryavanshi@hotmail.com>"]
+license = "UNLICENSED"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
