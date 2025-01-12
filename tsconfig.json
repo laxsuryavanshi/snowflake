@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": true
+  }
+}

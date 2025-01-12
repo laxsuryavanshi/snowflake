@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 const { defineConfig } = require('@yarnpkg/types');
 
 /**
