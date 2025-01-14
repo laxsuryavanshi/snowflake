@@ -195,6 +195,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^22.10.6":
+  version: 22.10.6
+  resolution: "@types/node@npm:22.10.6"
+  dependencies:
+    undici-types: "npm:~6.20.0"
+  checksum: 10c0/8b67affc211e5f9c74f7949cda04ca669721e50b83d71b8772a7bed7a4a3c41d663b3a794413f618e763ca6c5da8c234c25ffebcb0737983fc3e7415818ab9a7
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/eslint-plugin@npm:8.19.1":
   version: 8.19.1
   resolution: "@typescript-eslint/eslint-plugin@npm:8.19.1"
@@ -1086,6 +1095,7 @@ __metadata:
   resolution: "snowflake-monorepo@workspace:."
   dependencies:
     "@snowflake/eslint-config": "workspace:^"
+    "@types/node": "npm:^22.10.6"
     "@yarnpkg/types": "npm:^4.0.0"
     eslint: "npm:^9.17.0"
     prettier: "npm:^3.4.2"
@@ -1184,6 +1194,13 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10c0/f3b8082c9d1d1629a215245c9087df56cb784f9fb6f27b5d55577a20e68afe2a889c040aacff6d27e35be165ecf9dca66e694c42eb9a50b3b2c451b36b5675cb
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.20.0":
+  version: 6.20.0
+  resolution: "undici-types@npm:6.20.0"
+  checksum: 10c0/68e659a98898d6a836a9a59e6adf14a5d799707f5ea629433e025ac90d239f75e408e2e5ff086afc3cace26f8b26ee52155293564593fbb4a2f666af57fc59bf
   languageName: node
   linkType: hard
 
