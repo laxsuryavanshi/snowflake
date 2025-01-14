@@ -181,6 +181,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@snowflake/typescript-config@workspace:pkg/typescript-config":
+  version: 0.0.0-use.local
+  resolution: "@snowflake/typescript-config@workspace:pkg/typescript-config"
+  languageName: unknown
+  linkType: soft
+
 "@types/estree@npm:^1.0.6":
   version: 1.0.6
   resolution: "@types/estree@npm:1.0.6"

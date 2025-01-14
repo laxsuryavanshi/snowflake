@@ -17,12 +17,17 @@ const RAW_RUNTIME_STATE =
     {\
       "name": "@snowflake/eslint-config",\
       "reference": "workspace:pkg/eslint-config"\
+    },\
+    {\
+      "name": "@snowflake/typescript-config",\
+      "reference": "workspace:pkg/typescript-config"\
     }\
   ],\
   "enableTopLevelFallback": true,\
   "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
   "fallbackExclusionList": [\
     ["@snowflake/eslint-config", ["virtual:03f06ddbb326b1bf0811bf58c3dfdf834b27712417bdc47a47f7204bed1c572201eb269179832fa02728aa69f8d79baf5e3197a6db2763dd8e2a29993808340b#workspace:pkg/eslint-config", "workspace:pkg/eslint-config"]],\
+    ["@snowflake/typescript-config", ["workspace:pkg/typescript-config"]],\
     ["snowflake-monorepo", ["workspace:."]]\
   ],\
   "fallbackPool": [\
@@ -273,6 +278,15 @@ const RAW_RUNTIME_STATE =
           ["prettier", "npm:3.4.2"],\
           ["typescript", "patch:typescript@npm%3A5.7.2#optional!builtin<compat/typescript>::version=5.7.2&hash=5786d5"],\
           ["typescript-eslint", "virtual:e02ac84f3027f7392088c81992a7f63449d53e0012b123251cd4347a4e9a8eefe0ca93716571667c35c711cd1e191815e6768e5103f1d9f0b3432a75af1e8ca5#npm:8.19.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@snowflake/typescript-config", [\
+      ["workspace:pkg/typescript-config", {\
+        "packageLocation": "./pkg/typescript-config/",\
+        "packageDependencies": [\
+          ["@snowflake/typescript-config", "workspace:pkg/typescript-config"]\
         ],\
         "linkType": "SOFT"\
       }]\
