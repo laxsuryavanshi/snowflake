@@ -1,21 +1,22 @@
-import { BrowserRouter } from 'react-router';
+import { lazy } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router';
 
-import { Header } from './components';
+import { Layout } from './components';
 import { ThemeProvider } from './matex';
 
-const Wrapper: React.FC<React.PropsWithChildren> = ({ children }) => {
-  return (
-    <ThemeProvider>
-      <BrowserRouter>{children}</BrowserRouter>
-    </ThemeProvider>
-  );
-};
+const IndexPage = lazy(() => import('./pages/IndexPage'));
 
 const App = () => {
   return (
-    <Wrapper>
-      <Header />
-    </Wrapper>
+    <ThemeProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<IndexPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 };
 

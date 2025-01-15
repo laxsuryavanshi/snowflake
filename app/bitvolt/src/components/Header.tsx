@@ -9,7 +9,6 @@ import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Link from '@mui/material/Link';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -20,6 +19,7 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Toolbar from '@mui/material/Toolbar';
 
 import { DisplayMode, useTheme } from '../matex';
+import { drawerWidth } from './Layout';
 
 const Header = () => {
   const user = {
@@ -45,25 +45,15 @@ const Header = () => {
   };
 
   return (
-    <AppBar elevation={0}>
+    <AppBar
+      elevation={0}
+      color="inherit"
+      sx={{
+        width: `calc(100% - ${drawerWidth.toString()}px)`,
+        ml: `${drawerWidth.toString()}px`,
+      }}
+    >
       <Toolbar>
-        <Link
-          href="/"
-          color="inherit"
-          variant="h5"
-          fontWeight={700}
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 1,
-            textDecoration: 'none',
-            userSelect: 'none',
-          }}
-        >
-          <img src="/music-robot-96.png" alt="bitvolt" width={48} height={48} />
-          <span>bitvolt</span>
-        </Link>
-
         <Box flex="1" />
 
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -132,6 +122,7 @@ const Header = () => {
           </Menu>
         </Box>
       </Toolbar>
+      <Divider />
     </AppBar>
   );
 };
