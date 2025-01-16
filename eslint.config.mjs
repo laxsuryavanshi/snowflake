@@ -1,10 +1,12 @@
 import config from '@snowflake/eslint-config';
+import reactConfig from '@snowflake/eslint-config/react';
 
 /** @type {ESLintConfig[]} */
 export default [
   ...config,
+  ...reactConfig,
   {
-    ignores: ['.yarn/*', '.pnp.*'],
+    ignores: ['.yarn/*', '.pnp.*', 'deps/*'],
   },
 ];
 
