@@ -1,6 +1,5 @@
-import { createContext, useContext, useMemo } from 'react';
+import { useMemo } from 'react';
 import type { PaletteMode, Theme } from '@mui/material';
-import { useMediaQuery } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import type { LinkProps } from '@mui/material/Link';
 import {
@@ -10,17 +9,9 @@ import {
 } from '@mui/material/styles';
 import { useLocalStorage } from 'usehooks-ts';
 
+import { useSystemDisplayMode } from './hooks';
 import Link from './Link';
-
-export type DisplayMode = PaletteMode | 'system';
-
-export interface ThemeProviderValue {
-  get mode(): DisplayMode;
-
-  setMode: (mode: DisplayMode) => void;
-}
-
-const ThemeContext = createContext<ThemeProviderValue | undefined>(undefined);
+import ThemeContext, { DisplayMode } from './ThemeContext';
 
 const createTheme = (mode: PaletteMode): Theme => {
   let theme = createMuiTheme({
@@ -52,11 +43,7 @@ const createTheme = (mode: PaletteMode): Theme => {
   return theme;
 };
 
-export const useSystemDisplayMode = (): PaletteMode => {
-  return useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
-};
-
-export const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
+const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const systemDisplayMode = useSystemDisplayMode();
   const [displayMode, setDisplayMode] = useLocalStorage<DisplayMode>('displayMode', 'system');
   const [displayModeInternal, setDisplayModeInternal] = useLocalStorage<PaletteMode>(
@@ -75,6 +62,7 @@ export const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) =
   };
 
   const theme = useMemo(() => createTheme(displayModeInternal), [displayModeInternal]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const value = useMemo(() => ({ mode: displayMode, setMode }), [displayMode]);
 
   return (
@@ -87,12 +75,4 @@ export const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) =
   );
 };
 
-export const useTheme = (): ThemeProviderValue => {
-  const context = useContext(ThemeContext);
-
-  if (!context) {
-    throw new Error('`useTheme` must be used inside a `ThemeProvider`');
-  }
-
-  return context;
-};
+export default ThemeProvider;
