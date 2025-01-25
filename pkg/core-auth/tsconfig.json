@@ -1,0 +1,7 @@
+{
+  "extends": "@snowflake/typescript-config/tsconfig.react.json",
+  "compilerOptions": {
+    "declaration": true
+  },
+  "include": ["src"]
+}
