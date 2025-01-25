@@ -8,9 +8,9 @@ import {
   responsiveFontSizes,
 } from '@mui/material/styles';
 import { useLocalStorage } from 'usehooks-ts';
+import { Link } from '@snowflake/matex';
 
 import { useSystemDisplayMode } from './hooks';
-import Link from './Link';
 import ThemeContext, { DisplayMode } from './ThemeContext';
 
 const createTheme = (mode: PaletteMode): Theme => {

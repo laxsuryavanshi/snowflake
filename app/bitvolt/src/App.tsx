@@ -2,7 +2,7 @@ import { lazy } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router';
 
 import { Layout } from './components';
-import { ThemeProvider } from './matex';
+import { ThemeProvider } from './theme';
 
 const IndexPage = lazy(() => import('./pages/IndexPage'));
 

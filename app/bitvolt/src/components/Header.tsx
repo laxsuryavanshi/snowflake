@@ -18,7 +18,7 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Toolbar from '@mui/material/Toolbar';
 
-import { DisplayMode, useTheme } from '../matex';
+import { DisplayMode, useTheme } from '../theme';
 import { drawerWidth } from './Layout';
 
 const Header = () => {

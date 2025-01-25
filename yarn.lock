@@ -1632,7 +1632,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@snowflake/matex@workspace:pkg/matex":
+"@snowflake/matex@workspace:^, @snowflake/matex@workspace:pkg/matex":
   version: 0.0.0-use.local
   resolution: "@snowflake/matex@workspace:pkg/matex"
   dependencies:
@@ -2467,6 +2467,7 @@ __metadata:
     "@fontsource/source-sans-pro": "npm:^5.1.0"
     "@mui/icons-material": "npm:^6.4.0"
     "@mui/material": "npm:^6.4.0"
+    "@snowflake/matex": "workspace:^"
     "@snowflake/typescript-config": "workspace:^"
     "@types/react": "npm:^19.0.7"
     "@types/react-dom": "npm:^19.0.3"
