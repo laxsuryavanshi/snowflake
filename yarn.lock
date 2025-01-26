@@ -3168,8 +3168,6 @@ __metadata:
     aws-amplify: "npm:^6.12.2"
     react: "npm:^19.0.0"
     typescript: "npm:^5.7.2"
-    vite: "npm:^6.0.7"
-    vite-plugin-dts: "npm:^4.5.0"
   peerDependencies:
     react: "*"
   languageName: unknown
@@ -3219,8 +3217,6 @@ __metadata:
     react-router: "npm:^7.1.1"
     ts-jest: "npm:^29.2.5"
     typescript: "npm:^5.7.2"
-    vite: "npm:^6.0.7"
-    vite-plugin-dts: "npm:^4.5.0"
   peerDependencies:
     "@emotion/react": "*"
     "@emotion/styled": "*"
@@ -8733,6 +8729,8 @@ __metadata:
     eslint: "npm:^9.17.0"
     prettier: "npm:^3.4.2"
     typescript: "npm:^5.7.2"
+    vite: "npm:^6.0.7"
+    vite-plugin-dts: "npm:^4.5.0"
   languageName: unknown
   linkType: soft
 
