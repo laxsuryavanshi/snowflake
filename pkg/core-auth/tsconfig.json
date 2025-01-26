@@ -1,7 +1,10 @@
 {
   "extends": "@snowflake/typescript-config/tsconfig.react.json",
   "compilerOptions": {
-    "declaration": true
+    "allowJs": true,
+    "declaration": true,
+    "noEmit": true,
+    "resolveJsonModule": true
   },
-  "include": ["src"]
+  "include": ["src", "vite.config.js"]
 }
