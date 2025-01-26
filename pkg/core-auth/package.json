@@ -14,8 +14,6 @@
     "typecheck": "tsc -b --noEmit"
   },
   "peerDependencies": {
-    "@aws-amplify/core": "*",
-    "@aws-amplify/ui-react-core": "*",
     "react": "*"
   },
   "dependencies": {
@@ -26,6 +24,7 @@
   "devDependencies": {
     "@snowflake/typescript-config": "workspace:^",
     "@types/react": "^19.0.7",
+    "aws-amplify": "^6.12.2",
     "typescript": "^5.7.2",
     "vite": "^6.0.7",
     "vite-plugin-dts": "^4.5.0"
