@@ -45,6 +45,8 @@ const createTheme = (mode: PaletteMode): Theme => {
 
 const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const systemDisplayMode = useSystemDisplayMode();
+  document.body.setAttribute('data-display-mode', systemDisplayMode);
+
   const [displayMode, setDisplayMode] = useLocalStorage<DisplayMode>('displayMode', 'system');
   const [displayModeInternal, setDisplayModeInternal] = useLocalStorage<PaletteMode>(
     'displayModeInternal',
@@ -55,10 +57,10 @@ const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
     setDisplayMode(mode);
 
     if (mode === 'system') {
-      setDisplayModeInternal(systemDisplayMode);
-    } else {
-      setDisplayModeInternal(mode);
+      mode = systemDisplayMode;
     }
+    document.body.setAttribute('data-display-mode', mode);
+    setDisplayModeInternal(mode);
   };
 
   const theme = useMemo(() => createTheme(displayModeInternal), [displayModeInternal]);

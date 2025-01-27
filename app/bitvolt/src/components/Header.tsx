@@ -18,13 +18,14 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Toolbar from '@mui/material/Toolbar';
 
+import avatarUrl from '@/assets/profile.svg';
 import { DisplayMode, useTheme } from '../theme';
 import { drawerWidth } from './Layout';
 
 const Header = () => {
   const user = {
     name: 'Laxmikant Suryavanshi',
-    avatarUrl: 'https://avatars.githubusercontent.com/laxsuryavanshi',
+    avatarUrl,
   };
 
   const { mode, setMode } = useTheme();
