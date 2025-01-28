@@ -88,7 +88,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-amplify/core@npm:*, @aws-amplify/core@npm:6.9.2, @aws-amplify/core@npm:^6.9.2":
+"@aws-amplify/core@npm:*, @aws-amplify/core@npm:6.9.2":
   version: 6.9.2
   resolution: "@aws-amplify/core@npm:6.9.2"
   dependencies:
@@ -3157,15 +3157,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@snowflake/core-auth@workspace:pkg/core-auth":
+"@snowflake/core-auth@workspace:^, @snowflake/core-auth@workspace:pkg/core-auth":
   version: 0.0.0-use.local
   resolution: "@snowflake/core-auth@workspace:pkg/core-auth"
   dependencies:
-    "@aws-amplify/core": "npm:^6.9.2"
     "@aws-amplify/ui-react-core": "npm:^3.3.1"
     "@snowflake/typescript-config": "workspace:^"
     "@types/react": "npm:^19.0.7"
-    aws-amplify: "npm:^6.12.2"
     react: "npm:^19.0.0"
     typescript: "npm:^5.7.2"
   peerDependencies:
@@ -4118,7 +4116,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aws-amplify@npm:^6.12.2":
+"aws-amplify@npm:*, aws-amplify@npm:^6.12.2":
   version: 6.12.2
   resolution: "aws-amplify@npm:6.12.2"
   dependencies:
@@ -4242,19 +4240,32 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "bitvolt@workspace:app/bitvolt"
   dependencies:
+    "@aws-amplify/ui-react-core": "npm:^3.3.1"
     "@emotion/react": "npm:^11.14.0"
     "@emotion/styled": "npm:^11.14.0"
     "@fontsource/source-sans-pro": "npm:^5.1.0"
     "@mui/icons-material": "npm:^6.4.0"
     "@mui/material": "npm:^6.4.0"
+    "@snowflake/core-auth": "workspace:^"
     "@snowflake/matex": "workspace:^"
     "@snowflake/typescript-config": "workspace:^"
+    "@testing-library/dom": "npm:^10.4.0"
+    "@testing-library/jest-dom": "npm:^6.6.3"
+    "@testing-library/react": "npm:^16.2.0"
+    "@types/jest": "npm:^29.5.14"
     "@types/react": "npm:^19.0.7"
     "@types/react-dom": "npm:^19.0.3"
     "@vitejs/plugin-react": "npm:^4.3.4"
+    aws-amplify: "npm:^6.12.2"
+    identity-obj-proxy: "npm:^3.0.0"
+    jest: "npm:^29.7.0"
+    jest-environment-jsdom: "npm:^29.7.0"
+    jest-transform-stub: "npm:^2.0.0"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
+    react-hook-form: "npm:^7.54.2"
     react-router: "npm:^7.1.1"
+    ts-jest: "npm:^29.2.5"
     typescript: "npm:^5.7.2"
     usehooks-ts: "npm:^3.1.0"
     vite: "npm:^6.0.7"
@@ -5898,6 +5909,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"harmony-reflect@npm:^1.4.6":
+  version: 1.6.2
+  resolution: "harmony-reflect@npm:1.6.2"
+  checksum: 10c0/fa5b251fbeff0e2d925f0bfb5ffe39e0627639e998c453562d6a39e41789c15499649dc022178c807cf99bfb97e7b974bbbc031ba82078a26be7b098b9bc2b1a
+  languageName: node
+  linkType: hard
+
 "has-bigints@npm:^1.0.2":
   version: 1.1.0
   resolution: "has-bigints@npm:1.1.0"
@@ -6057,6 +6075,15 @@ __metadata:
   version: 5.0.6
   resolution: "idb@npm:5.0.6"
   checksum: 10c0/73ee5189476de3dd18257cfb9d7f6e860d4d413eab5af26ab28cb262a563e626b28cb4617aef6339d21bef70507dbe56c26c081efc56e2796bc9003572d78c22
+  languageName: node
+  linkType: hard
+
+"identity-obj-proxy@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "identity-obj-proxy@npm:3.0.0"
+  dependencies:
+    harmony-reflect: "npm:^1.4.6"
+  checksum: 10c0/a3fc4de0042d7b45bf8652d5596c80b42139d8625c9cd6a8834e29e1b6dce8fccabd1228e08744b78677a19ceed7201a32fed8ca3dc3e4852e8fee24360a6cfc
   languageName: node
   linkType: hard
 
@@ -6937,6 +6964,13 @@ __metadata:
     pretty-format: "npm:^29.7.0"
     semver: "npm:^7.5.3"
   checksum: 10c0/6e9003c94ec58172b4a62864a91c0146513207bedf4e0a06e1e2ac70a4484088a2683e3a0538d8ea913bcfd53dc54a9b98a98cdfa562e7fe1d1339aeae1da570
+  languageName: node
+  linkType: hard
+
+"jest-transform-stub@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "jest-transform-stub@npm:2.0.0"
+  checksum: 10c0/75c8c193882ab6d81d07fcd34b88decdaeccc39de5fcf1b8ea2af36870223d188f89ea8b150811ceec853329e2b1a22b66e8850d84bd4482f11a5325cabe16c2
   languageName: node
   linkType: hard
 
@@ -8141,7 +8175,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.53.2":
+"react-hook-form@npm:^7.53.2, react-hook-form@npm:^7.54.2":
   version: 7.54.2
   resolution: "react-hook-form@npm:7.54.2"
   peerDependencies:

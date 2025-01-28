@@ -2,7 +2,7 @@
 
 ## Overview
 
-`@snowflake/core-auth` is designed to handle authentication functionality across applications. While it currently relies heavily on AWS Cognito for authentication and utilizes libraries like `@aws-amplify/core` and `@aws-amplify/ui-react-core` for configuration and components, the goal is to remove this dependency and offer a flexible, provider-agnostic authentication helper.
+`@snowflake/core-auth` is designed to handle authentication functionality across applications. While it currently relies heavily on AWS Cognito for authentication and utilizes libraries like `aws-amplify` and `@aws-amplify/ui-react-core` for configuration and components, the goal is to remove this dependency and offer a flexible, provider-agnostic authentication helper.
 
 ## Features
 
@@ -25,9 +25,9 @@ yarn add --dev @snowflake/core-auth
 Configure authentication provider by importing necessary utilities:
 
 ```tsx
-import { configure } from '@snowflake/core-auth';
+import { Amplify } from 'aws-amplify';
 
-configure({
+Amplify.configure({
   Auth: {
     Cognito: {
       userPoolId: '<CognitoUserPoolId>',

@@ -17,14 +17,12 @@
     "react": "*"
   },
   "dependencies": {
-    "@aws-amplify/core": "^6.9.2",
     "@aws-amplify/ui-react-core": "^3.3.1",
     "react": "^19.0.0"
   },
   "devDependencies": {
     "@snowflake/typescript-config": "workspace:^",
     "@types/react": "^19.0.7",
-    "aws-amplify": "^6.12.2",
     "typescript": "^5.7.2"
   }
 }
