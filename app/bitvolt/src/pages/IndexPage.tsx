@@ -1,5 +1,7 @@
+import { Navigate } from 'react-router';
+
 const IndexPage = () => {
-  return <div>Hello, World!</div>;
+  return <Navigate to="app" replace />;
 };
 
 export default IndexPage;

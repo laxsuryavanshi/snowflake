@@ -26,7 +26,7 @@ const Layout = () => {
       >
         <Toolbar>
           <Link
-            href="/"
+            href="/app"
             color="inherit"
             variant="h5"
             fontWeight={700}

@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
 import { Amplify } from 'aws-amplify';
 import { AuthProvider } from '@snowflake/core-auth';
 
+import { Layout, ProtectedRoute } from './components';
 import { ThemeProvider } from './theme';
 
 const IndexPage = lazy(() => import('./pages/IndexPage'));
@@ -26,6 +27,8 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<IndexPage />} />
+
+            <Route path="app" element={<ProtectedRoute element={<Layout />} />} />
 
             <Route path="auth">
               <Route index element={<Navigate to="login" replace />} />
