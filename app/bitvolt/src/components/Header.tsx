@@ -17,6 +17,7 @@ import MenuItem from '@mui/material/MenuItem';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Toolbar from '@mui/material/Toolbar';
+import { useAuthenticator } from '@aws-amplify/ui-react-core';
 
 import avatarUrl from '@/assets/profile.svg';
 import { DisplayMode, useTheme } from '../theme';
@@ -37,12 +38,18 @@ const Header = () => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const open = Boolean(anchorEl);
 
+  const { signOut } = useAuthenticator(({ signOut }) => [signOut]);
+
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const onSignOut = () => {
+    signOut();
   };
 
   return (
@@ -114,7 +121,10 @@ const Header = () => {
               <ListItemText primary="Account" />
             </MenuItem>
 
-            <MenuItem sx={theme => ({ borderRadius: 1, color: theme.palette.error.main })}>
+            <MenuItem
+              sx={theme => ({ borderRadius: 1, color: theme.palette.error.main })}
+              onClick={onSignOut}
+            >
               <ListItemIcon sx={{ color: 'inherit' }}>
                 <LogoutIcon fontSize="small" />
               </ListItemIcon>
