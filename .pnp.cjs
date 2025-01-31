@@ -31,6 +31,10 @@ const RAW_RUNTIME_STATE =
       "reference": "workspace:pkg/matex"\
     },\
     {\
+      "name": "@snowflake/react-utils",\
+      "reference": "workspace:pkg/react-utils"\
+    },\
+    {\
       "name": "@snowflake/typescript-config",\
       "reference": "workspace:pkg/typescript-config"\
     }\
@@ -41,6 +45,7 @@ const RAW_RUNTIME_STATE =
     ["@snowflake/core-auth", ["virtual:cc79ad5a23c2bfff5aafb6ba9019c6aff98022daa66f2b7ed135eff49b61b38154e922e3e1cb33f53f4c9ca205b21254b858aa65af0377421d4125539853ca63#workspace:pkg/core-auth", "workspace:pkg/core-auth"]],\
     ["@snowflake/eslint-config", ["virtual:03f06ddbb326b1bf0811bf58c3dfdf834b27712417bdc47a47f7204bed1c572201eb269179832fa02728aa69f8d79baf5e3197a6db2763dd8e2a29993808340b#workspace:pkg/eslint-config", "workspace:pkg/eslint-config"]],\
     ["@snowflake/matex", ["virtual:cc79ad5a23c2bfff5aafb6ba9019c6aff98022daa66f2b7ed135eff49b61b38154e922e3e1cb33f53f4c9ca205b21254b858aa65af0377421d4125539853ca63#workspace:pkg/matex", "workspace:pkg/matex"]],\
+    ["@snowflake/react-utils", ["workspace:pkg/react-utils"]],\
     ["@snowflake/typescript-config", ["workspace:pkg/typescript-config"]],\
     ["bitvolt", ["workspace:app/bitvolt"]],\
     ["snowflake-monorepo", ["workspace:."]]\
@@ -4408,6 +4413,28 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:19.0.0"],\
           ["react-dom", "virtual:cc79ad5a23c2bfff5aafb6ba9019c6aff98022daa66f2b7ed135eff49b61b38154e922e3e1cb33f53f4c9ca205b21254b858aa65af0377421d4125539853ca63#npm:19.0.0"],\
           ["react-router", "virtual:cc79ad5a23c2bfff5aafb6ba9019c6aff98022daa66f2b7ed135eff49b61b38154e922e3e1cb33f53f4c9ca205b21254b858aa65af0377421d4125539853ca63#npm:7.1.1"],\
+          ["ts-jest", "virtual:cc79ad5a23c2bfff5aafb6ba9019c6aff98022daa66f2b7ed135eff49b61b38154e922e3e1cb33f53f4c9ca205b21254b858aa65af0377421d4125539853ca63#npm:29.2.5"],\
+          ["typescript", "patch:typescript@npm%3A5.7.2#optional!builtin<compat/typescript>::version=5.7.2&hash=5786d5"]\
+        ],\
+        "linkType": "SOFT"\
+      }]\
+    ]],\
+    ["@snowflake/react-utils", [\
+      ["workspace:pkg/react-utils", {\
+        "packageLocation": "./pkg/react-utils/",\
+        "packageDependencies": [\
+          ["@snowflake/react-utils", "workspace:pkg/react-utils"],\
+          ["@snowflake/typescript-config", "workspace:pkg/typescript-config"],\
+          ["@testing-library/dom", "npm:10.4.0"],\
+          ["@testing-library/jest-dom", "npm:6.6.3"],\
+          ["@testing-library/react", "virtual:cc79ad5a23c2bfff5aafb6ba9019c6aff98022daa66f2b7ed135eff49b61b38154e922e3e1cb33f53f4c9ca205b21254b858aa65af0377421d4125539853ca63#npm:16.2.0"],\
+          ["@types/jest", "npm:29.5.14"],\
+          ["@types/react", "npm:19.0.7"],\
+          ["@types/react-dom", "virtual:cc79ad5a23c2bfff5aafb6ba9019c6aff98022daa66f2b7ed135eff49b61b38154e922e3e1cb33f53f4c9ca205b21254b858aa65af0377421d4125539853ca63#npm:19.0.3"],\
+          ["jest", "virtual:cc79ad5a23c2bfff5aafb6ba9019c6aff98022daa66f2b7ed135eff49b61b38154e922e3e1cb33f53f4c9ca205b21254b858aa65af0377421d4125539853ca63#npm:29.7.0"],\
+          ["jest-environment-jsdom", "virtual:cc79ad5a23c2bfff5aafb6ba9019c6aff98022daa66f2b7ed135eff49b61b38154e922e3e1cb33f53f4c9ca205b21254b858aa65af0377421d4125539853ca63#npm:29.7.0"],\
+          ["react", "npm:19.0.0"],\
+          ["react-dom", "virtual:cc79ad5a23c2bfff5aafb6ba9019c6aff98022daa66f2b7ed135eff49b61b38154e922e3e1cb33f53f4c9ca205b21254b858aa65af0377421d4125539853ca63#npm:19.0.0"],\
           ["ts-jest", "virtual:cc79ad5a23c2bfff5aafb6ba9019c6aff98022daa66f2b7ed135eff49b61b38154e922e3e1cb33f53f4c9ca205b21254b858aa65af0377421d4125539853ca63#npm:29.2.5"],\
           ["typescript", "patch:typescript@npm%3A5.7.2#optional!builtin<compat/typescript>::version=5.7.2&hash=5786d5"]\
         ],\

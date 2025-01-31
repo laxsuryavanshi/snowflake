@@ -16,7 +16,7 @@ const { name, peerDependencies } = JSON.parse(fs.readFileSync(path.resolve(root,
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 const peerDeps = Object.keys(peerDependencies);
-const external = [...peerDeps, ...peerDeps.map(dep => new RegExp(`${dep}/*`))];
+const external = [...peerDeps, ...peerDeps.map(dep => new RegExp(`^${dep}/*`))];
 
 /**
  * @param {string} entryName

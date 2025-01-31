@@ -3226,6 +3226,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@snowflake/react-utils@workspace:pkg/react-utils":
+  version: 0.0.0-use.local
+  resolution: "@snowflake/react-utils@workspace:pkg/react-utils"
+  dependencies:
+    "@snowflake/typescript-config": "workspace:^"
+    "@testing-library/dom": "npm:^10.4.0"
+    "@testing-library/jest-dom": "npm:^6.6.3"
+    "@testing-library/react": "npm:^16.2.0"
+    "@types/jest": "npm:^29.5.14"
+    "@types/react": "npm:^19.0.7"
+    "@types/react-dom": "npm:^19.0.3"
+    jest: "npm:^29.7.0"
+    jest-environment-jsdom: "npm:^29.7.0"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    ts-jest: "npm:^29.2.5"
+    typescript: "npm:^5.7.2"
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+  languageName: unknown
+  linkType: soft
+
 "@snowflake/typescript-config@workspace:^, @snowflake/typescript-config@workspace:pkg/typescript-config":
   version: 0.0.0-use.local
   resolution: "@snowflake/typescript-config@workspace:pkg/typescript-config"
