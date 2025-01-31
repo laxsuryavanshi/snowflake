@@ -4274,11 +4274,14 @@ const RAW_RUNTIME_STATE =
           ["@snowflake/core-auth", "virtual:cc79ad5a23c2bfff5aafb6ba9019c6aff98022daa66f2b7ed135eff49b61b38154e922e3e1cb33f53f4c9ca205b21254b858aa65af0377421d4125539853ca63#workspace:pkg/core-auth"],\
           ["@aws-amplify/ui-react-core", "virtual:cc79ad5a23c2bfff5aafb6ba9019c6aff98022daa66f2b7ed135eff49b61b38154e922e3e1cb33f53f4c9ca205b21254b858aa65af0377421d4125539853ca63#npm:3.3.1"],\
           ["@snowflake/typescript-config", "workspace:pkg/typescript-config"],\
+          ["@types/aws-amplify__ui-react-core", null],\
           ["@types/react", "npm:19.0.7"],\
           ["react", "npm:19.0.0"],\
           ["typescript", "patch:typescript@npm%3A5.7.2#optional!builtin<compat/typescript>::version=5.7.2&hash=5786d5"]\
         ],\
         "packagePeers": [\
+          "@aws-amplify/ui-react-core",\
+          "@types/aws-amplify__ui-react-core",\
           "@types/react",\
           "react"\
         ],\

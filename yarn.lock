@@ -3167,6 +3167,7 @@ __metadata:
     react: "npm:^19.0.0"
     typescript: "npm:^5.7.2"
   peerDependencies:
+    "@aws-amplify/ui-react-core": "*"
     react: "*"
   languageName: unknown
   linkType: soft
