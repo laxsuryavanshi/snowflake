@@ -28,4 +28,10 @@ export interface FSState {
 
   /** A map of child to parent directory */
   parentMap: Record<string, FSRecord>;
+
+  upload?: {
+    status: 'idle' | 'loading' | 'success' | 'fail';
+
+    error?: string;
+  };
 }

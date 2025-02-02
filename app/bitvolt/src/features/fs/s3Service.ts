@@ -1,10 +1,10 @@
-import { list, ListAllWithPathOutput } from 'aws-amplify/storage';
+import { list, ListAllWithPathOutput, uploadData } from 'aws-amplify/storage';
 
 import { FSRecord, ListOutputItemWithPath } from './types';
 
 export const isFolder = (fs: FSRecord) => !fs.data?.size;
 
-const addItem = (
+export const addItem = (
   source: string,
   target: FSRecord,
   item: ListOutputItemWithPath,
@@ -44,10 +44,32 @@ const processStorageList = (response: ListAllWithPathOutput) => {
   return { root, parentMap };
 };
 
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+const getPrefix = (identityId: string | undefined): string => `private/${identityId!}/`;
+
 export const fetchS3Files = async () => {
   return await list({
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    path: ({ identityId }) => `private/${identityId!}/`,
+    path: ({ identityId }) => getPrefix(identityId),
     options: { listAll: true },
   }).then(processStorageList);
+};
+
+export const createS3Folder = async (path: string) => {
+  path = path.trim();
+
+  if (!path) {
+    return;
+  }
+
+  if (!path.endsWith('/')) {
+    path += '/';
+  }
+
+  const task = uploadData({
+    path: ({ identityId }) => `${getPrefix(identityId)}${path}`,
+    data: '',
+    options: { preventOverwrite: true },
+  });
+
+  return await task.result;
 };

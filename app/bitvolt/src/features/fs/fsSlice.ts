@@ -1,9 +1,11 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { fetchS3Files, isFolder } from './s3Service';
+import { addItem, createS3Folder, fetchS3Files, isFolder } from './s3Service';
 import { FSRecord, FSState } from './types';
 
 export const fetchFiles = createAsyncThunk('fs/fetchFiles', fetchS3Files);
+
+export const createFolder = createAsyncThunk('fs/createFolder', createS3Folder);
 
 const initialState: FSState = {
   fs: null,
@@ -39,6 +41,22 @@ const fsSlice = createSlice({
     builder.addCase(fetchFiles.rejected, (state, action) => {
       state.status = 'fail';
       state.error = action.error.message ?? null;
+    });
+
+    builder.addCase(createFolder.pending, state => {
+      state.upload = { status: 'loading' };
+    });
+
+    builder.addCase(createFolder.fulfilled, (state, action) => {
+      state.upload = { status: 'success' };
+      if (action.payload && state.fs) {
+        const path = action.payload.path.split('/').slice(2).join('/');
+        addItem(path, state.fs, action.payload, state.parentMap);
+      }
+    });
+
+    builder.addCase(createFolder.rejected, (state, action) => {
+      state.upload = { status: 'fail', error: action.error.message };
     });
   },
 });
