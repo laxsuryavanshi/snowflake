@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-Application<snowflake-idms>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/java/idms",
+      "mainClass": "com.turtleby.idms.Application",
+      "projectName": "snowflake-idms",
+      "args": "",
+      "envFile": "${workspaceFolder}/java/idms/.env"
+    }
+  ]
+}
