@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/idms
+    username: turtleby
+    password: snowflake
+
+  sql:
+    init:
+      mode: always
+
+rsa:
+  private-key: classpath:certs/private.pem
+  public-key: classpath:certs/public.pem
+  kid: 9f1bddcf-8abb-40e1-8b65-a017afd5304f

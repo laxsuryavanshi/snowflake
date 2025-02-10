@@ -15,6 +15,12 @@ import org.springframework.security.oauth2.server.authorization.config.annotatio
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 
+import com.nimbusds.jose.jwk.JWKSet;
+import com.nimbusds.jose.jwk.RSAKey;
+import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
+import com.nimbusds.jose.jwk.source.JWKSource;
+import com.nimbusds.jose.proc.SecurityContext;
+
 @Configuration(proxyBeanMethods = false)
 @EnableWebSecurity
 public class SecurityConfig {
@@ -35,6 +41,18 @@ public class SecurityConfig {
   @Bean
   RegisteredClientRepository registeredClientRepository(JdbcTemplate jdbcTemplate) {
     return new JdbcRegisteredClientRepository(jdbcTemplate);
+  }
+
+  @Bean
+  JWKSource<SecurityContext> jwkSource(RSAKeyProperties keyProperties) {
+    RSAKey key = new RSAKey.Builder(keyProperties.publicKey())
+        .privateKey(keyProperties.privateKey())
+        .keyID(keyProperties.kid())
+        .build();
+
+    JWKSet jwkSet = new JWKSet(key);
+
+    return new ImmutableJWKSet<>(jwkSet);
   }
 
 }
