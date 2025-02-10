@@ -16,10 +16,10 @@ repos:
         require_serial: false
         verbose: true
 
-  - repo: https://github.com/pre-commit/mirrors-clang-format
-    rev: v19.1.6
-    hooks:
-      - id: clang-format
-        name: clang-format
-        description: ''
-        # types_or: [java]
+  # - repo: https://github.com/pre-commit/mirrors-clang-format
+  #   rev: v19.1.6
+  #   hooks:
+  #     - id: clang-format
+  #       name: clang-format
+  #       description: ''
+  #       types_or: [java]
