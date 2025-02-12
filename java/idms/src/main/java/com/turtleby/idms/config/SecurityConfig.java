@@ -2,13 +2,20 @@ package com.turtleby.idms.config;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.DelegatingPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
+import org.springframework.security.crypto.scrypt.SCryptPasswordEncoder;
 import org.springframework.security.oauth2.server.authorization.client.JdbcRegisteredClientRepository;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository;
 import org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer;
@@ -26,15 +33,25 @@ import com.nimbusds.jose.proc.SecurityContext;
 public class SecurityConfig {
 
   @Bean
-  @Order(Ordered.HIGHEST_PRECEDENCE)
-  SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+  @Order(1)
+  SecurityFilterChain authorizationServerSecurityFilterChain(HttpSecurity httpSecurity) throws Exception {
     OAuth2AuthorizationServerConfigurer configurer = OAuth2AuthorizationServerConfigurer.authorizationServer();
 
     return httpSecurity
         .securityMatcher(configurer.getEndpointsMatcher())
         .with(configurer, server -> server.oidc(withDefaults()))
+        .authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
         .exceptionHandling(exceptionHandling -> exceptionHandling
             .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login")))
+        .build();
+  }
+
+  @Bean
+  @Order(2)
+  SecurityFilterChain defaultSecurityFilterChain(HttpSecurity httpSecurity) throws Exception {
+    return httpSecurity
+        .authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
+        .formLogin(withDefaults())
         .build();
   }
 
@@ -53,6 +70,19 @@ public class SecurityConfig {
     JWKSet jwkSet = new JWKSet(key);
 
     return new ImmutableJWKSet<>(jwkSet);
+  }
+
+  @Bean
+  PasswordEncoder passwordEncoder() {
+    String idForEncode = "bcrypt";
+    Map<String, PasswordEncoder> encoders = new HashMap<>();
+    encoders.put(idForEncode, new BCryptPasswordEncoder());
+    encoders.put("pbkdf2", Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_8());
+    encoders.put("scrypt", SCryptPasswordEncoder.defaultsForSpringSecurity_v5_8());
+
+    PasswordEncoder encoder = new DelegatingPasswordEncoder(idForEncode, encoders);
+
+    return encoder;
   }
 
 }
