@@ -1,5 +1,6 @@
 package com.turtleby.idms.config;
 
+import static com.turtleby.idms.common.URIConstants.LOGIN_FORM_URL;
 import static org.springframework.security.config.Customizer.withDefaults;
 
 import java.util.HashMap;
@@ -9,8 +10,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer;
+import org.springframework.security.config.annotation.web.configurers.FormLoginConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.DelegatingPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -42,7 +46,7 @@ public class SecurityConfig {
         .with(configurer, server -> server.oidc(withDefaults()))
         .authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
         .exceptionHandling(exceptionHandling -> exceptionHandling
-            .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login")))
+            .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint(LOGIN_FORM_URL)))
         .build();
   }
 
@@ -50,8 +54,8 @@ public class SecurityConfig {
   @Order(2)
   SecurityFilterChain defaultSecurityFilterChain(HttpSecurity httpSecurity) throws Exception {
     return httpSecurity
-        .authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
-        .formLogin(withDefaults())
+        .authorizeHttpRequests(authorizeHttpRequestsCustomizer())
+        .formLogin(formLoginCustomizer())
         .build();
   }
 
@@ -83,6 +87,16 @@ public class SecurityConfig {
     PasswordEncoder encoder = new DelegatingPasswordEncoder(idForEncode, encoders);
 
     return encoder;
+  }
+
+  private static Customizer<AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry> authorizeHttpRequestsCustomizer() {
+    return authorize -> authorize
+        .requestMatchers("/assets/**").permitAll()
+        .anyRequest().authenticated();
+  }
+
+  private static Customizer<FormLoginConfigurer<HttpSecurity>> formLoginCustomizer() {
+    return form -> form.loginPage(LOGIN_FORM_URL).permitAll();
   }
 
 }

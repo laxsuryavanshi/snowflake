@@ -1,5 +1,6 @@
 package com.turtleby.idms.entity;
 
+import java.io.Serializable;
 import java.time.Instant;
 
 import org.springframework.data.annotation.Id;
@@ -7,7 +8,7 @@ import org.springframework.data.annotation.Id;
 import lombok.Data;
 
 @Data
-public class User {
+public class User implements Serializable {
 
   @Id
   private Integer id;
