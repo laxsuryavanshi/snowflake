@@ -28,7 +28,7 @@ import { DisplayMode, useTheme } from '@/theme';
 export const headerHeight = 76;
 
 const Toolbar = styled(MuiToolbar)({
-  alignItems: 'flex-end',
+  alignItems: 'center',
 
   '@media all': {
     minHeight: headerHeight,

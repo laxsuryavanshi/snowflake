@@ -29,6 +29,8 @@
   --amplify-components-button-focus-color: var(--amplify-components-button-hover-color);
   --amplify-components-button-focus-box-shadow: unset;
 
+  --amplify-components-button-font-weight: normal;
+
   --amplify-components-storagemanager-loader-stroke-filled: #1976d2;
 
   --amplify-components-button-background-color: transparent;
@@ -36,4 +38,32 @@
   --amplify-components-button-color: #1976d2;
   --amplify-colors-font-primary: rgba(0, 0, 0, 0.87);
   --amplify-colors-font-success: #1976d2;
+}
+
+body[data-display-mode='dark'] {
+  .amplify-storagemanager__dropzone,
+  .amplify-storagemanager__previewer,
+  .amplify-storagemanager__file {
+    background-color: inherit;
+    border-color: inherit;
+  }
+
+  .amplify-storagemanager__dropzone__icon,
+  .amplify-storagemanager__dropzone__text,
+  .amplify-storagemanager__previewer__text,
+  .amplify-storagemanager__file__name,
+  .amplify-storagemanager__file__size {
+    color: inherit;
+  }
+
+  .amplify-button--small {
+    border: 1px solid #90caf9;
+    border-color: rgba(144, 202, 249, 0.5);
+    color: #90caf9;
+
+    &:hover {
+      background-color: rgba(144, 202, 249, 0.08);
+      border-color: #90caf9;
+    }
+  }
 }

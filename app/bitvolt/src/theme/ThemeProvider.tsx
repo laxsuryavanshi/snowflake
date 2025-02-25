@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import type { PaletteMode, Theme } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import type { LinkProps } from '@mui/material/Link';
@@ -45,7 +45,6 @@ const createTheme = (mode: PaletteMode): Theme => {
 
 const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const systemDisplayMode = useSystemDisplayMode();
-  document.body.setAttribute('data-display-mode', systemDisplayMode);
 
   const [displayMode, setDisplayMode] = useLocalStorage<DisplayMode>('displayMode', 'system');
   const [displayModeInternal, setDisplayModeInternal] = useLocalStorage<PaletteMode>(
@@ -62,6 +61,10 @@ const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
     document.body.setAttribute('data-display-mode', mode);
     setDisplayModeInternal(mode);
   };
+
+  useEffect(() => {
+    document.body.setAttribute('data-display-mode', systemDisplayMode);
+  }, [systemDisplayMode]);
 
   const theme = useMemo(() => createTheme(displayModeInternal), [displayModeInternal]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
