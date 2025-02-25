@@ -12,6 +12,7 @@ const Recent = lazy(() => import('./pages/app/Recent'));
 const Starred = lazy(() => import('./pages/app/Starred'));
 const Shared = lazy(() => import('./pages/app/Shared'));
 const Trash = lazy(() => import('./pages/app/Trash'));
+const View = lazy(() => import('./pages/app/View'));
 
 const Router = () => {
   return (
@@ -25,6 +26,7 @@ const Router = () => {
           <Route path="starred" element={<Starred />} />
           <Route path="shared" element={<Shared />} />
           <Route path="trash" element={<Trash />} />
+          <Route path="view" element={<View />} />
         </Route>
 
         <Route path="auth">
