@@ -6,6 +6,7 @@
 !.yarn/versions
 !.yarn/cache
 
+.turbo/
 coverage
 dist
 node_modules

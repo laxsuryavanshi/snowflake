@@ -6,6 +6,7 @@
   "packageManager": "yarn@4.6.0",
   "author": "Laxmikant Suryavanshi <laxmikantsuryavanshi@hotmail.com>",
   "scripts": {
+    "build": "turbo run build",
     "format": "prettier --write",
     "vite:build": "rm -rf \"$0/dist\" && node ./scripts/vite-build.mjs \"$@\""
   },
@@ -26,6 +27,7 @@
     "@types/node": "^22.10.6",
     "eslint": "^9.17.0",
     "prettier": "^3.4.2",
+    "turbo": "^2.4.4",
     "typescript": "^5.7.2",
     "vite": "^6.0.7",
     "vite-plugin-dts": "^4.5.0"
