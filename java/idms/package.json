@@ -1,0 +1,9 @@
+{
+  "name": "@snowflake/idms",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "run mvn:cli spring-boot:run",
+    "build": "run mvn:cli clean package"
+  }
+}

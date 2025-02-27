@@ -8,12 +8,14 @@
   "scripts": {
     "build": "turbo run build",
     "format": "prettier --write",
-    "vite:build": "rm -rf \"$0/dist\" && node ./scripts/vite-build.mjs \"$@\""
+    "vite:build": "rm -rf \"$0/dist\" && node ./scripts/vite-build.mjs \"$@\"",
+    "mvn:cli": "./mvnw"
   },
   "workspaces": {
     "packages": [
       "app/*",
-      "pkg/*"
+      "pkg/*",
+      "java/*"
     ]
   },
   "engines": {
