@@ -3831,6 +3831,19 @@ __metadata:
 "@snowflake/idms@workspace:java/idms":
   version: 0.0.0-use.local
   resolution: "@snowflake/idms@workspace:java/idms"
+  dependencies:
+    "@emotion/react": "npm:^11.14.0"
+    "@emotion/styled": "npm:^11.14.0"
+    "@fontsource/source-sans-pro": "npm:^5.1.0"
+    "@mui/icons-material": "npm:^6.4.0"
+    "@mui/material": "npm:^6.4.0"
+    "@snowflake/matex": "workspace:^"
+    "@vitejs/plugin-react": "npm:^4.3.4"
+    react: "npm:^19.0.0"
+    react-dom: "npm:^19.0.0"
+    react-hook-form: "npm:^7.54.2"
+    react-router: "npm:^7.1.1"
+    vite: "npm:^6.0.7"
   languageName: unknown
   linkType: soft
 

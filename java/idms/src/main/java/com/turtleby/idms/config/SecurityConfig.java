@@ -92,6 +92,7 @@ public class SecurityConfig {
   private static Customizer<AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry> authorizeHttpRequestsCustomizer() {
     return authorize -> authorize
         .requestMatchers("/assets/**").permitAll()
+        .requestMatchers("/*.png").permitAll()
         .anyRequest().authenticated();
   }
 
