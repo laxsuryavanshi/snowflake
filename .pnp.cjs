@@ -63,7 +63,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@snowflake/eslint-config", "virtual:03f06ddbb326b1bf0811bf58c3dfdf834b27712417bdc47a47f7204bed1c572201eb269179832fa02728aa69f8d79baf5e3197a6db2763dd8e2a29993808340b#workspace:pkg/eslint-config"],\
-          ["@types/node", "npm:22.10.6"],\
+          ["@types/node", "npm:22.10.10"],\
           ["@yarnpkg/types", "npm:4.0.0"],\
           ["eslint", "virtual:03f06ddbb326b1bf0811bf58c3dfdf834b27712417bdc47a47f7204bed1c572201eb269179832fa02728aa69f8d79baf5e3197a6db2763dd8e2a29993808340b#npm:9.17.0"],\
           ["prettier", "npm:3.4.2"],\
@@ -1233,10 +1233,10 @@ const RAW_RUNTIME_STATE =
           ["@babel/helper-compilation-targets", "npm:7.26.5"],\
           ["@babel/helper-module-transforms", "virtual:6f14d37f26f87c55654e510172561c825f7eb822527d5aaba60d24913853c925a2338249715305c87baadd7e7b73f94aba8cb62d407d8bb26b18bd6b90ca945f#npm:7.26.0"],\
           ["@babel/helpers", "npm:7.26.0"],\
-          ["@babel/parser", "npm:7.26.5"],\
+          ["@babel/parser", "npm:7.26.7"],\
           ["@babel/template", "npm:7.25.9"],\
           ["@babel/traverse", "npm:7.26.5"],\
-          ["@babel/types", "npm:7.26.5"],\
+          ["@babel/types", "npm:7.26.7"],\
           ["convert-source-map", "npm:2.0.0"],\
           ["debug", "virtual:66ed58b60650b7dbe4daf45d39274e51875ff817bb22d5eeee415d90bc207c49a9bec17f1c302b09a42102cf258f63a36b1fb2f6338d660d0af860c05c456cae#npm:4.4.0"],\
           ["gensync", "npm:1.0.0-beta.2"],\
@@ -1251,8 +1251,8 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@babel-generator-npm-7.26.5-8de063382c-3be79e0aa0.zip/node_modules/@babel/generator/",\
         "packageDependencies": [\
           ["@babel/generator", "npm:7.26.5"],\
-          ["@babel/parser", "npm:7.26.5"],\
-          ["@babel/types", "npm:7.26.5"],\
+          ["@babel/parser", "npm:7.26.7"],\
+          ["@babel/types", "npm:7.26.7"],\
           ["@jridgewell/gen-mapping", "npm:0.3.8"],\
           ["@jridgewell/trace-mapping", "npm:0.3.25"],\
           ["jsesc", "npm:3.1.0"]\
@@ -1280,7 +1280,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@babel/helper-module-imports", "npm:7.25.9"],\
           ["@babel/traverse", "npm:7.26.5"],\
-          ["@babel/types", "npm:7.26.5"]\
+          ["@babel/types", "npm:7.26.7"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1352,20 +1352,12 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@babel/helpers", "npm:7.26.0"],\
           ["@babel/template", "npm:7.25.9"],\
-          ["@babel/types", "npm:7.26.5"]\
+          ["@babel/types", "npm:7.26.7"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["@babel/parser", [\
-      ["npm:7.26.5", {\
-        "packageLocation": "./.yarn/cache/@babel-parser-npm-7.26.5-2514b2b265-2e77dd99ee.zip/node_modules/@babel/parser/",\
-        "packageDependencies": [\
-          ["@babel/parser", "npm:7.26.5"],\
-          ["@babel/types", "npm:7.26.5"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:7.26.7", {\
         "packageLocation": "./.yarn/cache/@babel-parser-npm-7.26.7-ef2912fba4-dcb08a4f28.zip/node_modules/@babel/parser/",\
         "packageDependencies": [\
@@ -2038,8 +2030,8 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@babel/template", "npm:7.25.9"],\
           ["@babel/code-frame", "npm:7.26.2"],\
-          ["@babel/parser", "npm:7.26.5"],\
-          ["@babel/types", "npm:7.26.5"]\
+          ["@babel/parser", "npm:7.26.7"],\
+          ["@babel/types", "npm:7.26.7"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2051,9 +2043,9 @@ const RAW_RUNTIME_STATE =
           ["@babel/traverse", "npm:7.26.5"],\
           ["@babel/code-frame", "npm:7.26.2"],\
           ["@babel/generator", "npm:7.26.5"],\
-          ["@babel/parser", "npm:7.26.5"],\
+          ["@babel/parser", "npm:7.26.7"],\
           ["@babel/template", "npm:7.25.9"],\
-          ["@babel/types", "npm:7.26.5"],\
+          ["@babel/types", "npm:7.26.7"],\
           ["debug", "virtual:66ed58b60650b7dbe4daf45d39274e51875ff817bb22d5eeee415d90bc207c49a9bec17f1c302b09a42102cf258f63a36b1fb2f6338d660d0af860c05c456cae#npm:4.4.0"],\
           ["globals", "npm:11.12.0"]\
         ],\
@@ -2061,15 +2053,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@babel/types", [\
-      ["npm:7.26.5", {\
-        "packageLocation": "./.yarn/cache/@babel-types-npm-7.26.5-8e8f93f536-0278053b69.zip/node_modules/@babel/types/",\
-        "packageDependencies": [\
-          ["@babel/types", "npm:7.26.5"],\
-          ["@babel/helper-string-parser", "npm:7.25.9"],\
-          ["@babel/helper-validator-identifier", "npm:7.25.9"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:7.26.7", {\
         "packageLocation": "./.yarn/cache/@babel-types-npm-7.26.7-0a324aa562-7810a2bca9.zip/node_modules/@babel/types/",\
         "packageDependencies": [\
@@ -5798,8 +5781,8 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@types-babel__core-npm-7.20.5-4d95f75eab-bdee3bb699.zip/node_modules/@types/babel__core/",\
         "packageDependencies": [\
           ["@types/babel__core", "npm:7.20.5"],\
-          ["@babel/parser", "npm:7.26.5"],\
-          ["@babel/types", "npm:7.26.5"],\
+          ["@babel/parser", "npm:7.26.7"],\
+          ["@babel/types", "npm:7.26.7"],\
           ["@types/babel__generator", "npm:7.6.8"],\
           ["@types/babel__template", "npm:7.4.4"],\
           ["@types/babel__traverse", "npm:7.20.6"]\
@@ -5812,7 +5795,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@types-babel__generator-npm-7.6.8-61be1197d9-f0ba105e7d.zip/node_modules/@types/babel__generator/",\
         "packageDependencies": [\
           ["@types/babel__generator", "npm:7.6.8"],\
-          ["@babel/types", "npm:7.26.5"]\
+          ["@babel/types", "npm:7.26.7"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -5822,8 +5805,8 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@types-babel__template-npm-7.4.4-f34eba762c-cc84f6c6ab.zip/node_modules/@types/babel__template/",\
         "packageDependencies": [\
           ["@types/babel__template", "npm:7.4.4"],\
-          ["@babel/parser", "npm:7.26.5"],\
-          ["@babel/types", "npm:7.26.5"]\
+          ["@babel/parser", "npm:7.26.7"],\
+          ["@babel/types", "npm:7.26.7"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -5833,7 +5816,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@types-babel__traverse-npm-7.20.6-fac4243243-7ba7db61a5.zip/node_modules/@types/babel__traverse/",\
         "packageDependencies": [\
           ["@types/babel__traverse", "npm:7.20.6"],\
-          ["@babel/types", "npm:7.26.5"]\
+          ["@babel/types", "npm:7.26.7"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -5932,14 +5915,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@types-node-npm-22.10.10-31182c993e-3425772d45.zip/node_modules/@types/node/",\
         "packageDependencies": [\
           ["@types/node", "npm:22.10.10"],\
-          ["undici-types", "npm:6.20.0"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
-      ["npm:22.10.6", {\
-        "packageLocation": "./.yarn/cache/@types-node-npm-22.10.6-28326d30fa-8b67affc21.zip/node_modules/@types/node/",\
-        "packageDependencies": [\
-          ["@types/node", "npm:22.10.6"],\
           ["undici-types", "npm:6.20.0"]\
         ],\
         "linkType": "HARD"\
@@ -6937,7 +6912,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["babel-plugin-jest-hoist", "npm:29.6.3"],\
           ["@babel/template", "npm:7.25.9"],\
-          ["@babel/types", "npm:7.26.5"],\
+          ["@babel/types", "npm:7.26.7"],\
           ["@types/babel__core", "npm:7.20.5"],\
           ["@types/babel__traverse", "npm:7.20.6"]\
         ],\
@@ -9652,7 +9627,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["istanbul-lib-instrument", "npm:5.2.1"],\
           ["@babel/core", "npm:7.26.0"],\
-          ["@babel/parser", "npm:7.26.5"],\
+          ["@babel/parser", "npm:7.26.7"],\
           ["@istanbuljs/schema", "npm:0.1.3"],\
           ["istanbul-lib-coverage", "npm:3.2.2"],\
           ["semver", "npm:6.3.1"]\
@@ -9664,7 +9639,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["istanbul-lib-instrument", "npm:6.0.3"],\
           ["@babel/core", "npm:7.26.0"],\
-          ["@babel/parser", "npm:7.26.5"],\
+          ["@babel/parser", "npm:7.26.7"],\
           ["@istanbuljs/schema", "npm:0.1.3"],\
           ["istanbul-lib-coverage", "npm:3.2.2"],\
           ["semver", "npm:7.6.3"]\
@@ -10225,7 +10200,7 @@ const RAW_RUNTIME_STATE =
           ["@babel/generator", "npm:7.26.5"],\
           ["@babel/plugin-syntax-jsx", "virtual:15ef0a4ad61c166598c4d195dc64a0b7270b186e9a584ea25871b4181189fa5a61a49aa37f6bcda6ffed25499ff900f1a33224b0c22868c8eb1eaf1dd4f0dc11#npm:7.25.9"],\
           ["@babel/plugin-syntax-typescript", "virtual:15ef0a4ad61c166598c4d195dc64a0b7270b186e9a584ea25871b4181189fa5a61a49aa37f6bcda6ffed25499ff900f1a33224b0c22868c8eb1eaf1dd4f0dc11#npm:7.25.9"],\
-          ["@babel/types", "npm:7.26.5"],\
+          ["@babel/types", "npm:7.26.7"],\
           ["@jest/expect-utils", "npm:29.7.0"],\
           ["@jest/transform", "npm:29.7.0"],\
           ["@jest/types", "npm:29.6.3"],\
@@ -12436,7 +12411,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["snowflake-monorepo", "workspace:."],\
           ["@snowflake/eslint-config", "virtual:03f06ddbb326b1bf0811bf58c3dfdf834b27712417bdc47a47f7204bed1c572201eb269179832fa02728aa69f8d79baf5e3197a6db2763dd8e2a29993808340b#workspace:pkg/eslint-config"],\
-          ["@types/node", "npm:22.10.6"],\
+          ["@types/node", "npm:22.10.10"],\
           ["@yarnpkg/types", "npm:4.0.0"],\
           ["eslint", "virtual:03f06ddbb326b1bf0811bf58c3dfdf834b27712417bdc47a47f7204bed1c572201eb269179832fa02728aa69f8d79baf5e3197a6db2763dd8e2a29993808340b#npm:9.17.0"],\
           ["prettier", "npm:3.4.2"],\
@@ -13455,7 +13430,7 @@ const RAW_RUNTIME_STATE =
           ["@types/jiti", null],\
           ["@types/less", null],\
           ["@types/lightningcss", null],\
-          ["@types/node", "npm:22.10.6"],\
+          ["@types/node", "npm:22.10.10"],\
           ["@types/sass", null],\
           ["@types/sass-embedded", null],\
           ["@types/stylus", null],\
