@@ -1,0 +1,3 @@
+[submodule ".yarn/cache"]
+	path = .yarn/cache
+	url = git@github.com:laxsuryavanshi/snowflake-yarn-cache.git
