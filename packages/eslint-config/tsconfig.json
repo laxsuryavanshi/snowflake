@@ -1,0 +1,10 @@
+{
+  "extends": "@turtleby/typescript-config/tsconfig.base.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "emitDeclarationOnly": true
+  }
+}

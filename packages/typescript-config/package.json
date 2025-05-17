@@ -1,0 +1,7 @@
+{
+  "name": "@turtleby/typescript-config",
+  "version": "0.0.0",
+  "description": "Typescript configuration for turtleby packages",
+  "private": true,
+  "packageManager": "yarn@4.9.1"
+}

@@ -5,6 +5,11 @@
   "license": "UNLICENSED",
   "packageManager": "yarn@4.9.1",
   "author": "Laxmikant Suryavanshi<laxmikantsuryavanshi@hotmail.com>",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "engines": {
     "node": "^22"
   },
@@ -12,6 +17,8 @@
     "@yarnpkg/types": "^4.0.1"
   },
   "devDependencies": {
+    "@turtleby/eslint-config": "workspace:^",
+    "eslint": "^9.27.0",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3"
   }
