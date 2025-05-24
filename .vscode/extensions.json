@@ -3,6 +3,7 @@
     "angular.ng-template",
     "arcanis.vscode-zipfs",
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "svelte.svelte-vscode"
   ]
 }

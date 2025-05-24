@@ -6,5 +6,7 @@
   "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "eslint.nodePath": ".yarn/sdks"
+  "eslint.nodePath": ".yarn/sdks",
+  "svelte.language-server.ls-path": ".yarn/sdks/svelte-language-server/bin/server.js",
+  "svelte.language-server.runtime-args": ["--loader", "./.pnp.loader.mjs"]
 }
