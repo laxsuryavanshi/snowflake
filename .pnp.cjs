@@ -165,7 +165,7 @@ const RAW_RUNTIME_STATE =
           ["terser", "npm:5.39.0"],\
           ["tree-kill", "npm:1.2.2"],\
           ["tslib", "npm:2.8.1"],\
-          ["typescript", "patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>::version=5.7.3&hash=5786d5"],\
+          ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"],\
           ["webpack", "virtual:6a1cecfa5a3f578f0678ab3f588bddedb77783c9c5d693a9bfdf98c75dce98e25aab2271f7aa6ab7600496ac59f7ed53dc16e292955aa8a41f616387ddff0f48#npm:5.98.0"],\
           ["webpack-dev-middleware", "virtual:6a1cecfa5a3f578f0678ab3f588bddedb77783c9c5d693a9bfdf98c75dce98e25aab2271f7aa6ab7600496ac59f7ed53dc16e292955aa8a41f616387ddff0f48#npm:7.4.2"],\
           ["webpack-dev-server", "virtual:6a1cecfa5a3f578f0678ab3f588bddedb77783c9c5d693a9bfdf98c75dce98e25aab2271f7aa6ab7600496ac59f7ed53dc16e292955aa8a41f616387ddff0f48#npm:5.2.0"],\
@@ -289,7 +289,7 @@ const RAW_RUNTIME_STATE =
           ["@ampproject/remapping", "npm:2.3.0"],\
           ["@angular-devkit/architect", "npm:0.1902.12"],\
           ["@angular/build", "virtual:6a1cecfa5a3f578f0678ab3f588bddedb77783c9c5d693a9bfdf98c75dce98e25aab2271f7aa6ab7600496ac59f7ed53dc16e292955aa8a41f616387ddff0f48#npm:19.2.12"],\
-          ["@angular/compiler", null],\
+          ["@angular/compiler", "npm:19.2.11"],\
           ["@angular/compiler-cli", "virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:19.2.11"],\
           ["@angular/core", "virtual:fbd9481a29281086167314ae8f281ccba1d0aed063dfa480558385f60b5f63d0e359e3f5201a5d7e4c35004baf559a4b69453292e9f7323f5cf017fef0ad79bb#npm:19.2.11"],\
           ["@angular/localize", null],\
@@ -337,13 +337,12 @@ const RAW_RUNTIME_STATE =
           ["source-map-support", "npm:0.5.21"],\
           ["tailwindcss", null],\
           ["tslib", "npm:2.8.1"],\
-          ["typescript", "patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>::version=5.7.3&hash=5786d5"],\
+          ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"],\
           ["vite", "virtual:fbd9481a29281086167314ae8f281ccba1d0aed063dfa480558385f60b5f63d0e359e3f5201a5d7e4c35004baf559a4b69453292e9f7323f5cf017fef0ad79bb#npm:6.2.7"],\
           ["watchpack", "npm:2.4.2"]\
         ],\
         "packagePeers": [\
           "@angular/compiler-cli",\
-          "@angular/compiler",\
           "@angular/localize",\
           "@angular/platform-server",\
           "@angular/service-worker",\
@@ -455,7 +454,7 @@ const RAW_RUNTIME_STATE =
           ["reflect-metadata", "npm:0.2.2"],\
           ["semver", "npm:7.7.2"],\
           ["tslib", "npm:2.8.1"],\
-          ["typescript", "patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>::version=5.7.3&hash=5786d5"],\
+          ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"],\
           ["yargs", "npm:17.7.2"]\
         ],\
         "packagePeers": [\
@@ -4082,7 +4081,7 @@ const RAW_RUNTIME_STATE =
           ["@types/angular__compiler-cli", null],\
           ["@types/typescript", null],\
           ["@types/webpack", null],\
-          ["typescript", "patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>::version=5.7.3&hash=5786d5"],\
+          ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"],\
           ["webpack", "virtual:6a1cecfa5a3f578f0678ab3f588bddedb77783c9c5d693a9bfdf98c75dce98e25aab2271f7aa6ab7600496ac59f7ed53dc16e292955aa8a41f616387ddff0f48#npm:5.98.0"]\
         ],\
         "packagePeers": [\
@@ -4900,7 +4899,7 @@ const RAW_RUNTIME_STATE =
           ["karma-jasmine-html-reporter", "virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:2.1.0"],\
           ["rxjs", "npm:7.8.2"],\
           ["tslib", "npm:2.8.1"],\
-          ["typescript", "patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>::version=5.7.3&hash=5786d5"],\
+          ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"],\
           ["zone.js", "npm:0.15.0"]\
         ],\
         "linkType": "SOFT"\
@@ -12125,13 +12124,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["typescript", [\
-      ["patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>::version=5.7.3&hash=5786d5", {\
-        "packageLocation": "./.yarn/cache/typescript-patch-6da68bae26-6fd7e0ed3b.zip/node_modules/typescript/",\
-        "packageDependencies": [\
-          ["typescript", "patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>::version=5.7.3&hash=5786d5"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5", {\
         "packageLocation": "./.yarn/cache/typescript-patch-f64146f279-39117e346f.zip/node_modules/typescript/",\
         "packageDependencies": [\
