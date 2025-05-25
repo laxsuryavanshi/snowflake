@@ -1,7 +1,16 @@
-import { defineConfig } from 'eslint/config';
+import { includeIgnoreFile } from '@eslint/compat';
+import { fileURLToPath, URL } from 'node:url';
 
 import config from '@turtleby/eslint-config';
+import svelte from '@turtleby/eslint-config/svelte';
 
-export default defineConfig(config, {
-  ignores: ['.yarn/*', '.pnp.*', '**/dist/*'],
-});
+const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
+
+export default [
+  includeIgnoreFile(gitignorePath),
+  ...config,
+  ...svelte,
+  {
+    ignores: ['.yarn/*', '.pnp.*'],
+  },
+];

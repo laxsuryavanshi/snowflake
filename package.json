@@ -18,9 +18,12 @@
     "@yarnpkg/types": "^4.0.1"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.9",
     "@turtleby/eslint-config": "workspace:^",
     "eslint": "^9.27.0",
     "prettier": "^3.5.3",
+    "prettier-plugin-svelte": "^3.4.0",
+    "svelte": "^5.33.1",
     "svelte-language-server": "^0.17.15",
     "typescript": "^5.8.3"
   }

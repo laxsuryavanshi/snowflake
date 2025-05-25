@@ -4,4 +4,13 @@ export default {
   printWidth: 100,
   singleQuote: true,
   trailingComma: 'es5',
+  plugins: [import.meta.resolve('prettier-plugin-svelte')],
+  overrides: [
+    {
+      files: '*.svelte',
+      options: {
+        parser: 'svelte',
+      },
+    },
+  ],
 };
