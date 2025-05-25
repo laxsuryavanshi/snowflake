@@ -3281,6 +3281,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@fontsource/source-sans-pro", [\
+      ["npm:5.2.5", {\
+        "packageLocation": "./.yarn/cache/@fontsource-source-sans-pro-npm-5.2.5-ba66e7705f-4891631d07.zip/node_modules/@fontsource/source-sans-pro/",\
+        "packageDependencies": [\
+          ["@fontsource/source-sans-pro", "npm:5.2.5"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@humanfs/core", [\
       ["npm:0.19.1", {\
         "packageLocation": "./.yarn/cache/@humanfs-core-npm-0.19.1-e2e7aaeb6e-aa4e015217.zip/node_modules/@humanfs/core/",\
@@ -5464,12 +5473,14 @@ const RAW_RUNTIME_STATE =
       ["workspace:projects/skylr", {\
         "packageLocation": "./projects/skylr/",\
         "packageDependencies": [\
+          ["@fontsource/source-sans-pro", "npm:5.2.5"],\
           ["@sveltejs/adapter-auto", "virtual:d6d1dcb6b989e3dbaa64738110c946ab414e5d9106c64e407a20c7bcc2a0aed01910f59b44343ada9b4359c57e78cc4706f22040c3ea3a827b99354ee2329a79#npm:6.0.1"],\
           ["@sveltejs/kit", "virtual:d6d1dcb6b989e3dbaa64738110c946ab414e5d9106c64e407a20c7bcc2a0aed01910f59b44343ada9b4359c57e78cc4706f22040c3ea3a827b99354ee2329a79#npm:2.21.1"],\
           ["@sveltejs/vite-plugin-svelte", "virtual:d6d1dcb6b989e3dbaa64738110c946ab414e5d9106c64e407a20c7bcc2a0aed01910f59b44343ada9b4359c57e78cc4706f22040c3ea3a827b99354ee2329a79#npm:5.0.3"],\
           ["@tailwindcss/vite", "virtual:d6d1dcb6b989e3dbaa64738110c946ab414e5d9106c64e407a20c7bcc2a0aed01910f59b44343ada9b4359c57e78cc4706f22040c3ea3a827b99354ee2329a79#npm:4.1.7"],\
           ["@turtleby/spencr", "workspace:projects/skylr"],\
           ["@turtleby/typescript-config", "workspace:packages/typescript-config"],\
+          ["daisyui", "npm:5.0.37"],\
           ["svelte", "npm:5.33.1"],\
           ["svelte-check", "virtual:d6d1dcb6b989e3dbaa64738110c946ab414e5d9106c64e407a20c7bcc2a0aed01910f59b44343ada9b4359c57e78cc4706f22040c3ea3a827b99354ee2329a79#npm:4.2.1"],\
           ["tailwindcss", "npm:4.1.7"],\
@@ -7511,6 +7522,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/custom-event-npm-1.0.1-6693c8e298-86cd849732.zip/node_modules/custom-event/",\
         "packageDependencies": [\
           ["custom-event", "npm:1.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["daisyui", [\
+      ["npm:5.0.37", {\
+        "packageLocation": "./.yarn/cache/daisyui-npm-5.0.37-a2da026701-6003e110b9.zip/node_modules/daisyui/",\
+        "packageDependencies": [\
+          ["daisyui", "npm:5.0.37"]\
         ],\
         "linkType": "HARD"\
       }]\
