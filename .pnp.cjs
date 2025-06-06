@@ -5091,18 +5091,18 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["@sveltejs/adapter-auto", [\
-      ["npm:6.0.1", {\
-        "packageLocation": "./.yarn/cache/@sveltejs-adapter-auto-npm-6.0.1-ae6ea501ae-03811f82cd.zip/node_modules/@sveltejs/adapter-auto/",\
+    ["@sveltejs/adapter-static", [\
+      ["npm:3.0.8", {\
+        "packageLocation": "./.yarn/cache/@sveltejs-adapter-static-npm-3.0.8-8054c80835-0ae958463d.zip/node_modules/@sveltejs/adapter-static/",\
         "packageDependencies": [\
-          ["@sveltejs/adapter-auto", "npm:6.0.1"]\
+          ["@sveltejs/adapter-static", "npm:3.0.8"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:d6d1dcb6b989e3dbaa64738110c946ab414e5d9106c64e407a20c7bcc2a0aed01910f59b44343ada9b4359c57e78cc4706f22040c3ea3a827b99354ee2329a79#npm:6.0.1", {\
-        "packageLocation": "./.yarn/__virtual__/@sveltejs-adapter-auto-virtual-9fbd7fe52f/0/cache/@sveltejs-adapter-auto-npm-6.0.1-ae6ea501ae-03811f82cd.zip/node_modules/@sveltejs/adapter-auto/",\
+      ["virtual:d6d1dcb6b989e3dbaa64738110c946ab414e5d9106c64e407a20c7bcc2a0aed01910f59b44343ada9b4359c57e78cc4706f22040c3ea3a827b99354ee2329a79#npm:3.0.8", {\
+        "packageLocation": "./.yarn/__virtual__/@sveltejs-adapter-static-virtual-b2de01b42c/0/cache/@sveltejs-adapter-static-npm-3.0.8-8054c80835-0ae958463d.zip/node_modules/@sveltejs/adapter-static/",\
         "packageDependencies": [\
-          ["@sveltejs/adapter-auto", "virtual:d6d1dcb6b989e3dbaa64738110c946ab414e5d9106c64e407a20c7bcc2a0aed01910f59b44343ada9b4359c57e78cc4706f22040c3ea3a827b99354ee2329a79#npm:6.0.1"],\
+          ["@sveltejs/adapter-static", "virtual:d6d1dcb6b989e3dbaa64738110c946ab414e5d9106c64e407a20c7bcc2a0aed01910f59b44343ada9b4359c57e78cc4706f22040c3ea3a827b99354ee2329a79#npm:3.0.8"],\
           ["@sveltejs/kit", "virtual:d6d1dcb6b989e3dbaa64738110c946ab414e5d9106c64e407a20c7bcc2a0aed01910f59b44343ada9b4359c57e78cc4706f22040c3ea3a827b99354ee2329a79#npm:2.21.1"],\
           ["@types/sveltejs__kit", null]\
         ],\
@@ -5474,7 +5474,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./projects/skylr/",\
         "packageDependencies": [\
           ["@fontsource/source-sans-pro", "npm:5.2.5"],\
-          ["@sveltejs/adapter-auto", "virtual:d6d1dcb6b989e3dbaa64738110c946ab414e5d9106c64e407a20c7bcc2a0aed01910f59b44343ada9b4359c57e78cc4706f22040c3ea3a827b99354ee2329a79#npm:6.0.1"],\
+          ["@sveltejs/adapter-static", "virtual:d6d1dcb6b989e3dbaa64738110c946ab414e5d9106c64e407a20c7bcc2a0aed01910f59b44343ada9b4359c57e78cc4706f22040c3ea3a827b99354ee2329a79#npm:3.0.8"],\
           ["@sveltejs/kit", "virtual:d6d1dcb6b989e3dbaa64738110c946ab414e5d9106c64e407a20c7bcc2a0aed01910f59b44343ada9b4359c57e78cc4706f22040c3ea3a827b99354ee2329a79#npm:2.21.1"],\
           ["@sveltejs/vite-plugin-svelte", "virtual:d6d1dcb6b989e3dbaa64738110c946ab414e5d9106c64e407a20c7bcc2a0aed01910f59b44343ada9b4359c57e78cc4706f22040c3ea3a827b99354ee2329a79#npm:5.0.3"],\
           ["@tailwindcss/vite", "virtual:d6d1dcb6b989e3dbaa64738110c946ab414e5d9106c64e407a20c7bcc2a0aed01910f59b44343ada9b4359c57e78cc4706f22040c3ea3a827b99354ee2329a79#npm:4.1.7"],\
