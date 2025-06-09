@@ -1,6 +1,6 @@
 import type { Handle } from '@sveltejs/kit';
 
-import * as auth from './auth';
+import * as auth from '$lib/auth';
 
 export const handle: Handle = async ({ event, resolve }) => {
   const sessionId = event.cookies.get(auth.sessionCookieName);

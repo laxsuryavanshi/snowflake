@@ -1,4 +1,4 @@
-import { SessionValidationResult } from './auth';
+import { SessionValidationResult } from '$lib/auth';
 
 declare global {
   namespace App {
