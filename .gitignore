@@ -12,3 +12,8 @@ dist
 
 **/.angular/cache
 **/.svelte-kit
+
+.env
+.env.*
+!.env.example
+*.db

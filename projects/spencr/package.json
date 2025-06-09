@@ -10,7 +10,16 @@
     "preview": "vite preview",
     "prepare": "svelte-kit sync || echo ''",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "db:push": "drizzle-kit push",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.15.9",
+    "@oslojs/crypto": "^1.0.1",
+    "@oslojs/encoding": "^1.1.0",
+    "drizzle-orm": "^0.44.2"
   },
   "devDependencies": {
     "@fontsource/source-sans-pro": "^5.2.5",
@@ -20,6 +29,7 @@
     "@tailwindcss/vite": "^4.1.7",
     "@turtleby/typescript-config": "workspace:^",
     "daisyui": "^5.0.37",
+    "drizzle-kit": "^0.31.1",
     "svelte": "^5.33.1",
     "svelte-check": "^4.2.1",
     "tailwindcss": "^4.1.7",
