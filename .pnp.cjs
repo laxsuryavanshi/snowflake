@@ -110,7 +110,7 @@ const RAW_RUNTIME_STATE =
           ["@angular/compiler-cli", "virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:19.2.11"],\
           ["@angular/localize", null],\
           ["@angular/platform-server", "virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:19.2.11"],\
-          ["@angular/service-worker", null],\
+          ["@angular/service-worker", "virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:19.2.14"],\
           ["@angular/ssr", "virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:19.2.12"],\
           ["@babel/core", "npm:7.26.10"],\
           ["@babel/generator", "npm:7.26.10"],\
@@ -309,7 +309,7 @@ const RAW_RUNTIME_STATE =
           ["@angular/core", "virtual:fbd9481a29281086167314ae8f281ccba1d0aed063dfa480558385f60b5f63d0e359e3f5201a5d7e4c35004baf559a4b69453292e9f7323f5cf017fef0ad79bb#npm:19.2.11"],\
           ["@angular/localize", null],\
           ["@angular/platform-server", "virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:19.2.11"],\
-          ["@angular/service-worker", null],\
+          ["@angular/service-worker", "virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:19.2.14"],\
           ["@angular/ssr", "virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:19.2.12"],\
           ["@babel/core", "npm:7.26.10"],\
           ["@babel/helper-annotate-as-pure", "npm:7.25.9"],\
@@ -696,6 +696,33 @@ const RAW_RUNTIME_STATE =
           "@types/angular__common",\
           "@types/angular__core",\
           "@types/angular__platform-browser",\
+          "@types/rxjs",\
+          "rxjs"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@angular/service-worker", [\
+      ["npm:19.2.14", {\
+        "packageLocation": "./.yarn/cache/@angular-service-worker-npm-19.2.14-92e8ff57c9-2145c576b3.zip/node_modules/@angular/service-worker/",\
+        "packageDependencies": [\
+          ["@angular/service-worker", "npm:19.2.14"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:19.2.14", {\
+        "packageLocation": "./.yarn/__virtual__/@angular-service-worker-virtual-22b0d6d415/0/cache/@angular-service-worker-npm-19.2.14-92e8ff57c9-2145c576b3.zip/node_modules/@angular/service-worker/",\
+        "packageDependencies": [\
+          ["@angular/core", "virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:19.2.11"],\
+          ["@angular/service-worker", "virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:19.2.14"],\
+          ["@types/angular__core", null],\
+          ["@types/rxjs", null],\
+          ["rxjs", "npm:7.8.2"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@angular/core",\
+          "@types/angular__core",\
           "@types/rxjs",\
           "rxjs"\
         ],\
@@ -6360,12 +6387,13 @@ const RAW_RUNTIME_STATE =
           ["@angular/platform-browser-dynamic", "virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:19.2.11"],\
           ["@angular/platform-server", "virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:19.2.11"],\
           ["@angular/router", "virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:19.2.11"],\
+          ["@angular/service-worker", "virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:19.2.14"],\
           ["@angular/ssr", "virtual:8d2c0569bd9e24951d4bd7bb70fa84fc2b4b3c04fba8996926c14904bab2840ab3644bf50c3e5b4d570236feb96689a88621ea9e7a5070aef03caa6a5225b0fa#npm:19.2.12"],\
           ["@turtleby/trackr", "workspace:projects/trackr"],\
           ["@turtleby/typescript-config", "workspace:packages/typescript-config"],\
           ["@types/express", "npm:4.17.22"],\
           ["@types/jasmine", "npm:5.1.8"],\
-          ["@types/node", "npm:18.19.100"],\
+          ["@types/node", "npm:22.15.21"],\
           ["express", "npm:4.21.2"],\
           ["jasmine-core", "npm:5.6.0"],\
           ["karma", "npm:6.4.4"],\
@@ -6593,14 +6621,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@types/node", [\
-      ["npm:18.19.100", {\
-        "packageLocation": "./.yarn/cache/@types-node-npm-18.19.100-1c2b93f591-5524303171.zip/node_modules/@types/node/",\
-        "packageDependencies": [\
-          ["@types/node", "npm:18.19.100"],\
-          ["undici-types", "npm:5.26.5"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:22.15.18", {\
         "packageLocation": "./.yarn/cache/@types-node-npm-22.15.18-4e14c3d4f1-e23178c568.zip/node_modules/@types/node/",\
         "packageDependencies": [\
@@ -15224,13 +15244,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["undici-types", [\
-      ["npm:5.26.5", {\
-        "packageLocation": "./.yarn/cache/undici-types-npm-5.26.5-de4f7c7bb9-bb673d7876.zip/node_modules/undici-types/",\
-        "packageDependencies": [\
-          ["undici-types", "npm:5.26.5"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:6.21.0", {\
         "packageLocation": "./.yarn/cache/undici-types-npm-6.21.0-eb2b0ed56a-c01ed51829.zip/node_modules/undici-types/",\
         "packageDependencies": [\
