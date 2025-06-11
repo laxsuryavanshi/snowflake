@@ -59,6 +59,7 @@ const RAW_RUNTIME_STATE =
           ["eslint", "virtual:d5afa18b315ee0ea2f9720273a788ba86e217f0229db733e6e3ec2ddd0e1b06d83384b0a83931f64266b942816a5c8bf332282fdf33434ab5a4306be14124357#npm:9.27.0"],\
           ["prettier", "npm:3.5.3"],\
           ["prettier-plugin-svelte", "virtual:d5afa18b315ee0ea2f9720273a788ba86e217f0229db733e6e3ec2ddd0e1b06d83384b0a83931f64266b942816a5c8bf332282fdf33434ab5a4306be14124357#npm:3.4.0"],\
+          ["pretty-quick", "virtual:d5afa18b315ee0ea2f9720273a788ba86e217f0229db733e6e3ec2ddd0e1b06d83384b0a83931f64266b942816a5c8bf332282fdf33434ab5a4306be14124357#npm:4.2.2"],\
           ["snowflake", "workspace:."],\
           ["svelte", "npm:5.33.1"],\
           ["svelte-language-server", "npm:0.17.15"],\
@@ -5058,6 +5059,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@pkgr-core-npm-0.2.4-0f9791d1c8-2528a443bb.zip/node_modules/@pkgr/core/",\
         "packageDependencies": [\
           ["@pkgr/core", "npm:0.2.4"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:0.2.7", {\
+        "packageLocation": "./.yarn/cache/@pkgr-core-npm-0.2.7-212066027b-951f5ebf2f.zip/node_modules/@pkgr/core/",\
+        "packageDependencies": [\
+          ["@pkgr/core", "npm:0.2.7"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -10494,6 +10502,13 @@ const RAW_RUNTIME_STATE =
           ["ignore", "npm:7.0.4"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:7.0.5", {\
+        "packageLocation": "./.yarn/cache/ignore-npm-7.0.5-dea34ee430-ae00db89fe.zip/node_modules/ignore/",\
+        "packageDependencies": [\
+          ["ignore", "npm:7.0.5"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["ignore-walk", [\
@@ -13260,6 +13275,35 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["pretty-quick", [\
+      ["npm:4.2.2", {\
+        "packageLocation": "./.yarn/cache/pretty-quick-npm-4.2.2-b1b02f8ab5-3062677741.zip/node_modules/pretty-quick/",\
+        "packageDependencies": [\
+          ["pretty-quick", "npm:4.2.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:d5afa18b315ee0ea2f9720273a788ba86e217f0229db733e6e3ec2ddd0e1b06d83384b0a83931f64266b942816a5c8bf332282fdf33434ab5a4306be14124357#npm:4.2.2", {\
+        "packageLocation": "./.yarn/__virtual__/pretty-quick-virtual-41f5ad55af/0/cache/pretty-quick-npm-4.2.2-b1b02f8ab5-3062677741.zip/node_modules/pretty-quick/",\
+        "packageDependencies": [\
+          ["@pkgr/core", "npm:0.2.7"],\
+          ["@types/prettier", null],\
+          ["ignore", "npm:7.0.5"],\
+          ["mri", "npm:1.2.0"],\
+          ["picocolors", "npm:1.1.1"],\
+          ["picomatch", "npm:4.0.2"],\
+          ["prettier", "npm:3.5.3"],\
+          ["pretty-quick", "virtual:d5afa18b315ee0ea2f9720273a788ba86e217f0229db733e6e3ec2ddd0e1b06d83384b0a83931f64266b942816a5c8bf332282fdf33434ab5a4306be14124357#npm:4.2.2"],\
+          ["tinyexec", "npm:0.3.2"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/prettier",\
+          "prettier"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["proc-log", [\
       ["npm:5.0.0", {\
         "packageLocation": "./.yarn/cache/proc-log-npm-5.0.0-405173f9b4-bbe5edb944.zip/node_modules/proc-log/",\
@@ -14244,6 +14288,7 @@ const RAW_RUNTIME_STATE =
           ["eslint", "virtual:d5afa18b315ee0ea2f9720273a788ba86e217f0229db733e6e3ec2ddd0e1b06d83384b0a83931f64266b942816a5c8bf332282fdf33434ab5a4306be14124357#npm:9.27.0"],\
           ["prettier", "npm:3.5.3"],\
           ["prettier-plugin-svelte", "virtual:d5afa18b315ee0ea2f9720273a788ba86e217f0229db733e6e3ec2ddd0e1b06d83384b0a83931f64266b942816a5c8bf332282fdf33434ab5a4306be14124357#npm:3.4.0"],\
+          ["pretty-quick", "virtual:d5afa18b315ee0ea2f9720273a788ba86e217f0229db733e6e3ec2ddd0e1b06d83384b0a83931f64266b942816a5c8bf332282fdf33434ab5a4306be14124357#npm:4.2.2"],\
           ["snowflake", "workspace:."],\
           ["svelte", "npm:5.33.1"],\
           ["svelte-language-server", "npm:0.17.15"],\
@@ -14939,6 +14984,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/thunky-npm-1.1.0-2d25531f44-369764f39d.zip/node_modules/thunky/",\
         "packageDependencies": [\
           ["thunky", "npm:1.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["tinyexec", [\
+      ["npm:0.3.2", {\
+        "packageLocation": "./.yarn/cache/tinyexec-npm-0.3.2-381b1e349c-3efbf791a9.zip/node_modules/tinyexec/",\
+        "packageDependencies": [\
+          ["tinyexec", "npm:0.3.2"]\
         ],\
         "linkType": "HARD"\
       }]\

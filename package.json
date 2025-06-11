@@ -5,6 +5,9 @@
   "license": "UNLICENSED",
   "packageManager": "yarn@4.9.1",
   "author": "Laxmikant Suryavanshi<laxmikantsuryavanshi@hotmail.com>",
+  "scripts": {
+    "format": "pretty-quick"
+  },
   "workspaces": {
     "packages": [
       "packages/*",
@@ -23,6 +26,7 @@
     "eslint": "^9.27.0",
     "prettier": "^3.5.3",
     "prettier-plugin-svelte": "^3.4.0",
+    "pretty-quick": "^4.2.2",
     "svelte": "^5.33.1",
     "svelte-language-server": "^0.17.15",
     "typescript": "^5.8.3"
