@@ -9,6 +9,7 @@
 
 node_modules
 dist
+test-results
 
 **/.angular/cache
 **/.svelte-kit
