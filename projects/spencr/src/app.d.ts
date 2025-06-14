@@ -3,10 +3,7 @@ import { SessionValidationResult } from '$lib/auth';
 declare global {
   namespace App {
     // interface Error {}
-    interface Locals {
-      user: SessionValidationResult['user'];
-      session: SessionValidationResult['session'];
-    }
+    // interface Locals {}
     // interface PageData {}
     // interface PageState {}
     // interface Platform {}

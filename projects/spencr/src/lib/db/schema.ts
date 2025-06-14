@@ -1,22 +1,51 @@
-import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
+import type { AdapterAccountType } from '@auth/sveltekit/adapters';
+import { integer, primaryKey, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
 export const user = sqliteTable('user', {
   id: text('id')
     .primaryKey()
     .$defaultFn(() => crypto.randomUUID()),
-  username: text('username').notNull().unique(),
+  email: text('email').notNull().unique(),
+  emailVerified: integer('email_verified', { mode: 'timestamp_ms' }),
   password: text('password').notNull(),
   name: text('name'),
+  image: text('image'),
 });
 
+export const account = sqliteTable(
+  'account',
+  {
+    userId: text('user_id')
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
+    type: text('type').$type<AdapterAccountType>().notNull(),
+    provider: text('provider').notNull(),
+    providerAccountId: text('provider_account_id').notNull(),
+    refresh_token: text('refresh_token'),
+    access_token: text('access_token'),
+    expires_at: integer('expires_at'),
+    token_type: text('token_type'),
+    scope: text('scope'),
+    id_token: text('id_token'),
+    session_state: text('session_state'),
+  },
+  account => [
+    primaryKey({
+      columns: [account.provider, account.providerAccountId],
+    }),
+  ]
+);
+
 export const session = sqliteTable('session', {
-  id: text('id').primaryKey(),
+  sessionToken: text('session_token').primaryKey(),
   userId: text('user_id')
     .notNull()
-    .references(() => user.id),
-  expiresAt: integer('expires_at', { mode: 'timestamp_ms' }).notNull(),
+    .references(() => user.id, { onDelete: 'cascade' }),
+  expires: integer('expires', { mode: 'timestamp_ms' }).notNull(),
 });
 
 export type User = typeof user.$inferSelect;
+
+export type Account = typeof account.$inferSelect;
 
 export type Session = typeof session.$inferSelect;

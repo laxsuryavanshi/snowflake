@@ -764,6 +764,92 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@auth/core", [\
+      ["npm:0.39.1", {\
+        "packageLocation": "./.yarn/cache/@auth-core-npm-0.39.1-f602231038-ba2703656c.zip/node_modules/@auth/core/",\
+        "packageDependencies": [\
+          ["@auth/core", "npm:0.39.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:1d0ea46f18e37787c4ee4185d6ae869b02c42a3b5a3944c91522ac47238622734683bd1380ccbcb0acf52cc7a8eb16df2dd2196360c05f6ad6f4c371810f204e#npm:0.39.1", {\
+        "packageLocation": "./.yarn/__virtual__/@auth-core-virtual-824758b637/0/cache/@auth-core-npm-0.39.1-f602231038-ba2703656c.zip/node_modules/@auth/core/",\
+        "packageDependencies": [\
+          ["@auth/core", "virtual:1d0ea46f18e37787c4ee4185d6ae869b02c42a3b5a3944c91522ac47238622734683bd1380ccbcb0acf52cc7a8eb16df2dd2196360c05f6ad6f4c371810f204e#npm:0.39.1"],\
+          ["@panva/hkdf", "npm:1.2.1"],\
+          ["@simplewebauthn/browser", null],\
+          ["@simplewebauthn/server", null],\
+          ["@types/nodemailer", null],\
+          ["@types/simplewebauthn__browser", null],\
+          ["@types/simplewebauthn__server", null],\
+          ["jose", "npm:6.0.11"],\
+          ["nodemailer", null],\
+          ["oauth4webapi", "npm:3.5.2"],\
+          ["preact", "npm:10.24.3"],\
+          ["preact-render-to-string", "virtual:824758b637eddffe73644232333146a9750fe620c5320bc018a0f8282b8bf97ce3e3ba06efc5ab32ce628b8f5b5ceae8a5efe40b8709bf74350444fdf3a8edda#npm:6.5.11"]\
+        ],\
+        "packagePeers": [\
+          "@simplewebauthn/browser",\
+          "@simplewebauthn/server",\
+          "@types/nodemailer",\
+          "@types/simplewebauthn__browser",\
+          "@types/simplewebauthn__server",\
+          "nodemailer"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@auth/drizzle-adapter", [\
+      ["npm:1.9.1", {\
+        "packageLocation": "./.yarn/cache/@auth-drizzle-adapter-npm-1.9.1-1d0ea46f18-bccaec4077.zip/node_modules/@auth/drizzle-adapter/",\
+        "packageDependencies": [\
+          ["@auth/core", "virtual:1d0ea46f18e37787c4ee4185d6ae869b02c42a3b5a3944c91522ac47238622734683bd1380ccbcb0acf52cc7a8eb16df2dd2196360c05f6ad6f4c371810f204e#npm:0.39.1"],\
+          ["@auth/drizzle-adapter", "npm:1.9.1"],\
+          ["drizzle-orm", "virtual:1d0ea46f18e37787c4ee4185d6ae869b02c42a3b5a3944c91522ac47238622734683bd1380ccbcb0acf52cc7a8eb16df2dd2196360c05f6ad6f4c371810f204e#npm:0.44.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@auth/sveltekit", [\
+      ["npm:1.9.2", {\
+        "packageLocation": "./.yarn/cache/@auth-sveltekit-npm-1.9.2-cde166eb88-2bc0da60b2.zip/node_modules/@auth/sveltekit/",\
+        "packageDependencies": [\
+          ["@auth/sveltekit", "npm:1.9.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:2143d44d8ee07c8cf00aba2008ae80c238029010966f0dfdc1ed702e8f4f4cbadfcc6a487c055a2f1399baca3b3554365ad38d4cf84436b6d8492133b7791778#npm:1.9.2", {\
+        "packageLocation": "./.yarn/__virtual__/@auth-sveltekit-virtual-40e88df7d7/0/cache/@auth-sveltekit-npm-1.9.2-cde166eb88-2bc0da60b2.zip/node_modules/@auth/sveltekit/",\
+        "packageDependencies": [\
+          ["@auth/core", "virtual:1d0ea46f18e37787c4ee4185d6ae869b02c42a3b5a3944c91522ac47238622734683bd1380ccbcb0acf52cc7a8eb16df2dd2196360c05f6ad6f4c371810f204e#npm:0.39.1"],\
+          ["@auth/sveltekit", "virtual:2143d44d8ee07c8cf00aba2008ae80c238029010966f0dfdc1ed702e8f4f4cbadfcc6a487c055a2f1399baca3b3554365ad38d4cf84436b6d8492133b7791778#npm:1.9.2"],\
+          ["@simplewebauthn/browser", null],\
+          ["@simplewebauthn/server", null],\
+          ["@sveltejs/kit", "virtual:95b1fac2363cc04daa9d74f5039e1f5776eeca0163a592a094dff8bd70efbcc6163acb7d1cc46af98fbc89b635aee1a8c1fabf508f30047e94c8020c82ede824#npm:2.21.1"],\
+          ["@types/nodemailer", null],\
+          ["@types/simplewebauthn__browser", null],\
+          ["@types/simplewebauthn__server", null],\
+          ["@types/svelte", null],\
+          ["@types/sveltejs__kit", null],\
+          ["nodemailer", null],\
+          ["set-cookie-parser", "npm:2.7.1"],\
+          ["svelte", "npm:5.33.1"]\
+        ],\
+        "packagePeers": [\
+          "@simplewebauthn/browser",\
+          "@simplewebauthn/server",\
+          "@sveltejs/kit",\
+          "@types/nodemailer",\
+          "@types/simplewebauthn__browser",\
+          "@types/simplewebauthn__server",\
+          "@types/svelte",\
+          "@types/sveltejs__kit",\
+          "nodemailer",\
+          "svelte"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@babel/code-frame", [\
       ["npm:7.27.1", {\
         "packageLocation": "./.yarn/cache/@babel-code-frame-npm-7.27.1-4dbcabb137-5dd9a18baa.zip/node_modules/@babel/code-frame/",\
@@ -4706,6 +4792,16 @@ const RAW_RUNTIME_STATE =
           ["@tybys/wasm-util", "npm:0.9.0"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:0.2.11", {\
+        "packageLocation": "./.yarn/cache/@napi-rs-wasm-runtime-npm-0.2.11-3d8aab89bd-049bd14c58.zip/node_modules/@napi-rs/wasm-runtime/",\
+        "packageDependencies": [\
+          ["@emnapi/core", "npm:1.4.3"],\
+          ["@emnapi/runtime", "npm:1.4.3"],\
+          ["@napi-rs/wasm-runtime", "npm:0.2.11"],\
+          ["@tybys/wasm-util", "npm:0.9.0"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@neon-rs/load", [\
@@ -4743,6 +4839,156 @@ const RAW_RUNTIME_STATE =
           "@types/webpack",\
           "typescript",\
           "webpack"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@node-rs/argon2", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "./.yarn/cache/@node-rs-argon2-npm-2.0.2-302dd7cff2-0513244f8b.zip/node_modules/@node-rs/argon2/",\
+        "packageDependencies": [\
+          ["@node-rs/argon2", "npm:2.0.2"],\
+          ["@node-rs/argon2-android-arm-eabi", "npm:2.0.2"],\
+          ["@node-rs/argon2-android-arm64", "npm:2.0.2"],\
+          ["@node-rs/argon2-darwin-arm64", "npm:2.0.2"],\
+          ["@node-rs/argon2-darwin-x64", "npm:2.0.2"],\
+          ["@node-rs/argon2-freebsd-x64", "npm:2.0.2"],\
+          ["@node-rs/argon2-linux-arm-gnueabihf", "npm:2.0.2"],\
+          ["@node-rs/argon2-linux-arm64-gnu", "npm:2.0.2"],\
+          ["@node-rs/argon2-linux-arm64-musl", "npm:2.0.2"],\
+          ["@node-rs/argon2-linux-x64-gnu", "npm:2.0.2"],\
+          ["@node-rs/argon2-linux-x64-musl", "npm:2.0.2"],\
+          ["@node-rs/argon2-wasm32-wasi", "npm:2.0.2"],\
+          ["@node-rs/argon2-win32-arm64-msvc", "npm:2.0.2"],\
+          ["@node-rs/argon2-win32-ia32-msvc", "npm:2.0.2"],\
+          ["@node-rs/argon2-win32-x64-msvc", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@node-rs/argon2-android-arm-eabi", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "./.yarn/unplugged/@node-rs-argon2-android-arm-eabi-npm-2.0.2-0fa485e731/node_modules/@node-rs/argon2-android-arm-eabi/",\
+        "packageDependencies": [\
+          ["@node-rs/argon2-android-arm-eabi", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@node-rs/argon2-android-arm64", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "./.yarn/unplugged/@node-rs-argon2-android-arm64-npm-2.0.2-817b151382/node_modules/@node-rs/argon2-android-arm64/",\
+        "packageDependencies": [\
+          ["@node-rs/argon2-android-arm64", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@node-rs/argon2-darwin-arm64", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "./.yarn/unplugged/@node-rs-argon2-darwin-arm64-npm-2.0.2-9fa43f65cf/node_modules/@node-rs/argon2-darwin-arm64/",\
+        "packageDependencies": [\
+          ["@node-rs/argon2-darwin-arm64", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@node-rs/argon2-darwin-x64", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "./.yarn/unplugged/@node-rs-argon2-darwin-x64-npm-2.0.2-49aea35eb6/node_modules/@node-rs/argon2-darwin-x64/",\
+        "packageDependencies": [\
+          ["@node-rs/argon2-darwin-x64", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@node-rs/argon2-freebsd-x64", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "./.yarn/unplugged/@node-rs-argon2-freebsd-x64-npm-2.0.2-086da8f3e9/node_modules/@node-rs/argon2-freebsd-x64/",\
+        "packageDependencies": [\
+          ["@node-rs/argon2-freebsd-x64", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@node-rs/argon2-linux-arm-gnueabihf", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "./.yarn/unplugged/@node-rs-argon2-linux-arm-gnueabihf-npm-2.0.2-2d38d32d48/node_modules/@node-rs/argon2-linux-arm-gnueabihf/",\
+        "packageDependencies": [\
+          ["@node-rs/argon2-linux-arm-gnueabihf", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@node-rs/argon2-linux-arm64-gnu", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "./.yarn/unplugged/@node-rs-argon2-linux-arm64-gnu-npm-2.0.2-2377bdd237/node_modules/@node-rs/argon2-linux-arm64-gnu/",\
+        "packageDependencies": [\
+          ["@node-rs/argon2-linux-arm64-gnu", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@node-rs/argon2-linux-arm64-musl", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "./.yarn/unplugged/@node-rs-argon2-linux-arm64-musl-npm-2.0.2-d2acbfde0e/node_modules/@node-rs/argon2-linux-arm64-musl/",\
+        "packageDependencies": [\
+          ["@node-rs/argon2-linux-arm64-musl", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@node-rs/argon2-linux-x64-gnu", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "./.yarn/unplugged/@node-rs-argon2-linux-x64-gnu-npm-2.0.2-6c3825b031/node_modules/@node-rs/argon2-linux-x64-gnu/",\
+        "packageDependencies": [\
+          ["@node-rs/argon2-linux-x64-gnu", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@node-rs/argon2-linux-x64-musl", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "./.yarn/unplugged/@node-rs-argon2-linux-x64-musl-npm-2.0.2-1296ef4cc0/node_modules/@node-rs/argon2-linux-x64-musl/",\
+        "packageDependencies": [\
+          ["@node-rs/argon2-linux-x64-musl", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@node-rs/argon2-wasm32-wasi", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "./.yarn/unplugged/@node-rs-argon2-wasm32-wasi-npm-2.0.2-35d04768ff/node_modules/@node-rs/argon2-wasm32-wasi/",\
+        "packageDependencies": [\
+          ["@napi-rs/wasm-runtime", "npm:0.2.11"],\
+          ["@node-rs/argon2-wasm32-wasi", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@node-rs/argon2-win32-arm64-msvc", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "./.yarn/unplugged/@node-rs-argon2-win32-arm64-msvc-npm-2.0.2-e177dc814b/node_modules/@node-rs/argon2-win32-arm64-msvc/",\
+        "packageDependencies": [\
+          ["@node-rs/argon2-win32-arm64-msvc", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@node-rs/argon2-win32-ia32-msvc", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "./.yarn/unplugged/@node-rs-argon2-win32-ia32-msvc-npm-2.0.2-7f7d8dc4f2/node_modules/@node-rs/argon2-win32-ia32-msvc/",\
+        "packageDependencies": [\
+          ["@node-rs/argon2-win32-ia32-msvc", "npm:2.0.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@node-rs/argon2-win32-x64-msvc", [\
+      ["npm:2.0.2", {\
+        "packageLocation": "./.yarn/unplugged/@node-rs-argon2-win32-x64-msvc-npm-2.0.2-908bfc57df/node_modules/@node-rs/argon2-win32-x64-msvc/",\
+        "packageDependencies": [\
+          ["@node-rs/argon2-win32-x64-msvc", "npm:2.0.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4924,6 +5170,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@oslojs-encoding-npm-1.1.0-6905042d8f-5553a0974d.zip/node_modules/@oslojs/encoding/",\
         "packageDependencies": [\
           ["@oslojs/encoding", "npm:1.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@panva/hkdf", [\
+      ["npm:1.2.1", {\
+        "packageLocation": "./.yarn/cache/@panva-hkdf-npm-1.2.1-0e4816a25a-1fabdec9bd.zip/node_modules/@panva/hkdf/",\
+        "packageDependencies": [\
+          ["@panva/hkdf", "npm:1.2.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6063,8 +6318,11 @@ const RAW_RUNTIME_STATE =
       ["workspace:projects/spencr", {\
         "packageLocation": "./projects/spencr/",\
         "packageDependencies": [\
+          ["@auth/drizzle-adapter", "npm:1.9.1"],\
+          ["@auth/sveltekit", "virtual:2143d44d8ee07c8cf00aba2008ae80c238029010966f0dfdc1ed702e8f4f4cbadfcc6a487c055a2f1399baca3b3554365ad38d4cf84436b6d8492133b7791778#npm:1.9.2"],\
           ["@fontsource/source-sans-pro", "npm:5.2.5"],\
           ["@libsql/client", "npm:0.15.9"],\
+          ["@node-rs/argon2", "npm:2.0.2"],\
           ["@oslojs/crypto", "npm:1.0.1"],\
           ["@oslojs/encoding", "npm:1.1.0"],\
           ["@sveltejs/adapter-node", "virtual:2143d44d8ee07c8cf00aba2008ae80c238029010966f0dfdc1ed702e8f4f4cbadfcc6a487c055a2f1399baca3b3554365ad38d4cf84436b6d8492133b7791778#npm:5.2.12"],\
@@ -8446,6 +8704,119 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
+      ["virtual:1d0ea46f18e37787c4ee4185d6ae869b02c42a3b5a3944c91522ac47238622734683bd1380ccbcb0acf52cc7a8eb16df2dd2196360c05f6ad6f4c371810f204e#npm:0.44.2", {\
+        "packageLocation": "./.yarn/__virtual__/drizzle-orm-virtual-2353f7e92f/0/cache/drizzle-orm-npm-0.44.2-a1b4671133-29c88cb32f.zip/node_modules/drizzle-orm/",\
+        "packageDependencies": [\
+          ["@aws-sdk/client-rds-data", null],\
+          ["@cloudflare/workers-types", null],\
+          ["@electric-sql/pglite", null],\
+          ["@libsql/client", null],\
+          ["@libsql/client-wasm", null],\
+          ["@neondatabase/serverless", null],\
+          ["@op-engineering/op-sqlite", null],\
+          ["@opentelemetry/api", null],\
+          ["@planetscale/database", null],\
+          ["@prisma/client", null],\
+          ["@tidbcloud/serverless", null],\
+          ["@types/aws-sdk__client-rds-data", null],\
+          ["@types/better-sqlite3", null],\
+          ["@types/bun-types", null],\
+          ["@types/cloudflare__workers-types", null],\
+          ["@types/electric-sql__pglite", null],\
+          ["@types/expo-sqlite", null],\
+          ["@types/gel", null],\
+          ["@types/knex", null],\
+          ["@types/kysely", null],\
+          ["@types/libsql__client", null],\
+          ["@types/libsql__client-wasm", null],\
+          ["@types/mysql2", null],\
+          ["@types/neondatabase__serverless", null],\
+          ["@types/op-engineering__op-sqlite", null],\
+          ["@types/opentelemetry__api", null],\
+          ["@types/pg", null],\
+          ["@types/planetscale__database", null],\
+          ["@types/postgres", null],\
+          ["@types/prisma", null],\
+          ["@types/prisma__client", null],\
+          ["@types/sql.js", null],\
+          ["@types/sqlite3", null],\
+          ["@types/tidbcloud__serverless", null],\
+          ["@types/upstash__redis", null],\
+          ["@types/vercel__postgres", null],\
+          ["@types/xata.io__client", null],\
+          ["@upstash/redis", null],\
+          ["@vercel/postgres", null],\
+          ["@xata.io/client", null],\
+          ["better-sqlite3", null],\
+          ["bun-types", null],\
+          ["drizzle-orm", "virtual:1d0ea46f18e37787c4ee4185d6ae869b02c42a3b5a3944c91522ac47238622734683bd1380ccbcb0acf52cc7a8eb16df2dd2196360c05f6ad6f4c371810f204e#npm:0.44.2"],\
+          ["expo-sqlite", null],\
+          ["gel", null],\
+          ["knex", null],\
+          ["kysely", null],\
+          ["mysql2", null],\
+          ["pg", null],\
+          ["postgres", null],\
+          ["prisma", null],\
+          ["sql.js", null],\
+          ["sqlite3", null]\
+        ],\
+        "packagePeers": [\
+          "@aws-sdk/client-rds-data",\
+          "@cloudflare/workers-types",\
+          "@electric-sql/pglite",\
+          "@libsql/client-wasm",\
+          "@libsql/client",\
+          "@neondatabase/serverless",\
+          "@op-engineering/op-sqlite",\
+          "@opentelemetry/api",\
+          "@planetscale/database",\
+          "@prisma/client",\
+          "@tidbcloud/serverless",\
+          "@types/aws-sdk__client-rds-data",\
+          "@types/better-sqlite3",\
+          "@types/bun-types",\
+          "@types/cloudflare__workers-types",\
+          "@types/electric-sql__pglite",\
+          "@types/expo-sqlite",\
+          "@types/gel",\
+          "@types/knex",\
+          "@types/kysely",\
+          "@types/libsql__client-wasm",\
+          "@types/libsql__client",\
+          "@types/mysql2",\
+          "@types/neondatabase__serverless",\
+          "@types/op-engineering__op-sqlite",\
+          "@types/opentelemetry__api",\
+          "@types/pg",\
+          "@types/planetscale__database",\
+          "@types/postgres",\
+          "@types/prisma",\
+          "@types/prisma__client",\
+          "@types/sql.js",\
+          "@types/sqlite3",\
+          "@types/tidbcloud__serverless",\
+          "@types/upstash__redis",\
+          "@types/vercel__postgres",\
+          "@types/xata.io__client",\
+          "@upstash/redis",\
+          "@vercel/postgres",\
+          "@xata.io/client",\
+          "better-sqlite3",\
+          "bun-types",\
+          "expo-sqlite",\
+          "gel",\
+          "knex",\
+          "kysely",\
+          "mysql2",\
+          "pg",\
+          "postgres",\
+          "prisma",\
+          "sql.js",\
+          "sqlite3"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:865382a12d8af09b972eda8f26d34fa5a23b70c6e939db73056eaf523c04bd65432b8d4b48fe3d71eff715455c260cf8085915c1ccc1a8b0da41f086af2c551f#npm:0.44.2", {\
         "packageLocation": "./.yarn/__virtual__/drizzle-orm-virtual-d8afd54d79/0/cache/drizzle-orm-npm-0.44.2-a1b4671133-29c88cb32f.zip/node_modules/drizzle-orm/",\
         "packageDependencies": [\
@@ -10720,6 +11091,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["jose", [\
+      ["npm:6.0.11", {\
+        "packageLocation": "./.yarn/cache/jose-npm-6.0.11-213415aaa7-d290be4532.zip/node_modules/jose/",\
+        "packageDependencies": [\
+          ["jose", "npm:6.0.11"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["js-base64", [\
       ["npm:3.7.7", {\
         "packageLocation": "./.yarn/cache/js-base64-npm-3.7.7-641cff09f0-3c905a7e78.zip/node_modules/js-base64/",\
@@ -12195,6 +12575,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["oauth4webapi", [\
+      ["npm:3.5.2", {\
+        "packageLocation": "./.yarn/cache/oauth4webapi-npm-3.5.2-3031795e59-fd056001ce.zip/node_modules/oauth4webapi/",\
+        "packageDependencies": [\
+          ["oauth4webapi", "npm:3.5.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["object-assign", [\
       ["npm:4.1.1", {\
         "packageLocation": "./.yarn/cache/object-assign-npm-4.1.1-1004ad6dec-1f4df99451.zip/node_modules/object-assign/",\
@@ -12911,6 +13300,37 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/postcss-value-parser-npm-4.2.0-3cef602a6a-f4142a4f56.zip/node_modules/postcss-value-parser/",\
         "packageDependencies": [\
           ["postcss-value-parser", "npm:4.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["preact", [\
+      ["npm:10.24.3", {\
+        "packageLocation": "./.yarn/cache/preact-npm-10.24.3-1e33d81667-c863df6d7b.zip/node_modules/preact/",\
+        "packageDependencies": [\
+          ["preact", "npm:10.24.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["preact-render-to-string", [\
+      ["npm:6.5.11", {\
+        "packageLocation": "./.yarn/cache/preact-render-to-string-npm-6.5.11-431b4c85e0-a68b704c13.zip/node_modules/preact-render-to-string/",\
+        "packageDependencies": [\
+          ["preact-render-to-string", "npm:6.5.11"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:824758b637eddffe73644232333146a9750fe620c5320bc018a0f8282b8bf97ce3e3ba06efc5ab32ce628b8f5b5ceae8a5efe40b8709bf74350444fdf3a8edda#npm:6.5.11", {\
+        "packageLocation": "./.yarn/__virtual__/preact-render-to-string-virtual-326710c963/0/cache/preact-render-to-string-npm-6.5.11-431b4c85e0-a68b704c13.zip/node_modules/preact-render-to-string/",\
+        "packageDependencies": [\
+          ["@types/preact", null],\
+          ["preact", "npm:10.24.3"],\
+          ["preact-render-to-string", "virtual:824758b637eddffe73644232333146a9750fe620c5320bc018a0f8282b8bf97ce3e3ba06efc5ab32ce628b8f5b5ceae8a5efe40b8709bf74350444fdf3a8edda#npm:6.5.11"]\
+        ],\
+        "packagePeers": [\
+          "@types/preact",\
+          "preact"\
         ],\
         "linkType": "HARD"\
       }]\
