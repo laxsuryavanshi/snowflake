@@ -1,11 +1,14 @@
+import { DrizzleAdapter } from '@auth/drizzle-adapter';
 import type { Session, User } from '@auth/sveltekit';
+import { SvelteKitAuth } from '@auth/sveltekit';
+import Credentials from '@auth/sveltekit/providers/credentials';
 import { hash, verify } from '@node-rs/argon2';
 import { redirect } from '@sveltejs/kit';
 import { eq } from 'drizzle-orm';
 
 import { getRequestEvent } from '$app/server';
 import { LOGIN_URL } from '../constants';
-import { db, user } from '../db';
+import { account, db, session, user } from '../db';
 import { InvalidCredentialsError, MissingCredentialsError } from './errors';
 
 export async function requireLogin(): Promise<Session> {
@@ -60,3 +63,36 @@ export async function authorize(
 
   return existingUser;
 }
+
+export const { handle, signIn } = SvelteKitAuth({
+  adapter: DrizzleAdapter(db, {
+    accountsTable: account,
+    sessionsTable: session,
+    usersTable: user,
+  }),
+  providers: [
+    Credentials({
+      credentials: {
+        email: {
+          label: 'email',
+          type: 'text',
+          placeholder: 'Email',
+        },
+        password: {
+          label: 'Password',
+          type: 'password',
+          placeholder: 'Password',
+        },
+      },
+      authorize,
+    }),
+  ],
+  pages: {
+    signIn: LOGIN_URL,
+  },
+  session: {
+    // Auth.js doesn't support 'database' session strategy with Credentials provider
+    // https://errors.authjs.dev#unsupportedstrategy
+    strategy: 'jwt',
+  },
+});

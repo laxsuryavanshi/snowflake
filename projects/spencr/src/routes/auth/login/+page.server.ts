@@ -1,7 +1,6 @@
+import { requireAnonymous, signIn } from '$lib/auth';
 import { CredentialsSignin } from '@auth/sveltekit';
-import { fail } from '@sveltejs/kit';
-
-import { authorize, requireAnonymous } from '$lib/auth';
+import { error, fail, isRedirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
@@ -10,15 +9,16 @@ export const load: PageServerLoad = async () => {
 
 export const actions: Actions = {
   login: async event => {
-    const formData = await event.request.formData();
-    const email = formData.get('email');
-    const password = formData.get('password');
-
     try {
-      return await authorize({ email, password });
+      return await signIn(event);
     } catch (err) {
-      const message = err instanceof CredentialsSignin ? err.message : `${err}`;
-      return fail(401, { message });
+      if (isRedirect(err)) {
+        return;
+      }
+      if (err instanceof CredentialsSignin) {
+        return fail(400, { message: err.message });
+      }
+      return error(500, { message: 'Internal server error' });
     }
   },
 };
