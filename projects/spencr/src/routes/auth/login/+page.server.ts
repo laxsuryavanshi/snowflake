@@ -1,6 +1,7 @@
-import { requireAnonymous, signIn } from '$lib/auth';
 import { CredentialsSignin } from '@auth/sveltekit';
 import { error, fail, isRedirect } from '@sveltejs/kit';
+
+import { requireAnonymous, signIn } from '$lib/auth';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
