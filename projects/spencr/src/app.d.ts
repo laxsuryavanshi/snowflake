@@ -1,5 +1,3 @@
-import { SessionValidationResult } from '$lib/auth';
-
 declare global {
   namespace App {
     // interface Error {}
