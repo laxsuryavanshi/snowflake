@@ -1,0 +1,41 @@
+@reference 'tailwindcss';
+
+.trackr-root {
+  --turtleby-header-height: 65px;
+}
+
+@media (max-width: 599px) {
+  .trackr-root {
+    --turtleby-header-height: 57px;
+  }
+}
+
+.trackr-sidenav.mat-drawer {
+  @apply w-64 rounded-r-none;
+
+  border-right-color: var(--mat-sys-outline);
+}
+
+.trackr-divider.mat-divider {
+  @apply w-4/5 mx-auto;
+}
+
+.trackr-nav-list.mdc-list {
+  @apply px-4 py-8;
+
+  & > *:not(:last-child) {
+    @apply mb-2;
+  }
+}
+
+.mat-drawer-content .mat-toolbar {
+  border-bottom-style: solid;
+  border-bottom-color: var(--mat-sys-outline);
+  border-bottom-width: 1px;
+  height: var(--turtleby-header-height);
+}
+
+main {
+  margin-top: var(--turtleby-header-height);
+  min-height: calc(100dvh - var(--turtleby-header-height));
+}
