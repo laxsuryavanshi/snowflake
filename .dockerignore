@@ -1,0 +1,9 @@
+**/.angular
+**/.env*
+**/.svelte-kit
+**/.vscode
+**/coverage
+**/dist
+**/node_modules
+**/README.md
+**/test-results

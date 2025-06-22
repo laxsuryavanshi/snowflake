@@ -10,6 +10,7 @@
 node_modules
 dist
 test-results
+coverage
 
 **/.angular/cache
 **/.svelte-kit

@@ -11,6 +11,11 @@ export default [
   ...config,
   ...svelte,
   {
+    rules: {
+      '@typescript-eslint/no-inferrable-types': 'off',
+    },
+  },
+  {
     ignores: ['.yarn/*', '.pnp.*'],
   },
 ];
