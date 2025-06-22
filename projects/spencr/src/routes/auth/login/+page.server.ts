@@ -14,7 +14,7 @@ export const actions: Actions = {
       return await signIn(event);
     } catch (err) {
       if (isRedirect(err)) {
-        return;
+        throw err;
       }
       if (err instanceof CredentialsSignin) {
         return fail(400, { message: err.message });
