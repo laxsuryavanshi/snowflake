@@ -14,7 +14,9 @@ export const user = pgTable('user', {
   id: uuid().primaryKey().defaultRandom(),
   email: varchar({ length: 255 }).notNull().unique(),
   emailVerified: timestamp({ mode: 'date' }),
-  password: varchar({ length: 127 }).notNull(),
+  password: varchar({ length: 127 })
+    .notNull()
+    .$defaultFn(() => `!${crypto.randomUUID()}`),
   name: varchar({ length: 255 }),
   image: varchar({ length: 255 }),
 });
