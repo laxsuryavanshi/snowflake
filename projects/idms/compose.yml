@@ -6,7 +6,7 @@ services:
       - pgdata:/var/lib/postgresql/data
 
   app:
-    image: spencr
+    image: idms
     build:
       context: ../..
       dockerfile: ./Dockerfile

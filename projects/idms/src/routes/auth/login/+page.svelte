@@ -56,7 +56,7 @@
       {/if}
       <div class="divider">OR</div>
       <div class="flex flex-col gap-4">
-        {#each oauthProviders as provider}
+        {#each oauthProviders as provider (provider.id)}
           {@const Component = oauthProvidersComponents[provider.id]}
           <form method="post" action="?/login" use:enhance>
             <input type="hidden" name="providerId" value={provider.id} />
