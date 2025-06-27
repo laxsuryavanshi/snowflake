@@ -1,9 +1,21 @@
 <script lang="ts">
+  import type { Component as SvelteComponent } from 'svelte';
+
   import { enhance } from '$app/forms';
   import { page } from '$app/state';
+  import GitHub from './GitHub.svelte';
+  import Google from './Google.svelte';
 
-  let { form } = $props();
+  let { data, form } = $props();
   const next = page.url.searchParams.get('next') ?? '/';
+
+  const oauthProviders = data.providers.filter(
+    provider => provider.type === 'oauth' || provider.type === 'oidc'
+  );
+  const oauthProvidersComponents: Record<string, SvelteComponent> = {
+    github: GitHub,
+    google: Google,
+  };
 </script>
 
 <div class="grid place-content-center h-dvh">
@@ -42,6 +54,17 @@
           <span>{form?.message}</span>
         </div>
       {/if}
+      <div class="divider">OR</div>
+      <div class="flex flex-col gap-4">
+        {#each oauthProviders as provider}
+          {@const Component = oauthProvidersComponents[provider.id]}
+          <form method="post" action="?/login" use:enhance>
+            <input type="hidden" name="providerId" value={provider.id} />
+            <input type="hidden" name="redirectTo" value={next} />
+            <Component />
+          </form>
+        {/each}
+      </div>
     </div>
   </div>
 </div>
