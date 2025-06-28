@@ -23,18 +23,22 @@ FROM node:22.16-alpine3.22
 
 WORKDIR /idms
 
-ENV NODE_ENV=production
+ENV NODE_ENV=production PORT=3000
 
 COPY --from=build /snowflake/node_modules node_modules
 
-COPY --from=build /snowflake/projects/idms/dist .
+COPY --from=build /snowflake/projects/idms/dist dist
+
+COPY [ \
+  "projects/idms/app.js", \
+  "projects/idms/logger.js", \
+  "projects/idms/server.js", \
+  "./"]
 
 EXPOSE 3000
-
-ENV PORT=3000 HOSTNAME="0.0.0.0"
 
 RUN chown -R node:node /idms
 
 USER node
 
-CMD ["node", "index.js"]
+CMD ["node", "server.js"]
