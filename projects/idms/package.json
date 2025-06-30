@@ -24,6 +24,7 @@
     "@node-rs/argon2": "^2.0.2",
     "@oslojs/crypto": "^1.0.1",
     "@oslojs/encoding": "^1.1.0",
+    "@turtleby/graceful-shutdown": "workspace:^",
     "drizzle-orm": "^0.44.2",
     "express": "^4.18.2",
     "helmet": "^8.1.0",

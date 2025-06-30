@@ -4786,7 +4786,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@turtleby/graceful-shutdown@workspace:packages/graceful-shutdown":
+"@turtleby/graceful-shutdown@workspace:^, @turtleby/graceful-shutdown@workspace:packages/graceful-shutdown":
   version: 0.0.0-use.local
   resolution: "@turtleby/graceful-shutdown@workspace:packages/graceful-shutdown"
   dependencies:
@@ -4813,6 +4813,7 @@ __metadata:
     "@tailwindcss/vite": "npm:^4.1.7"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/svelte": "npm:^5.2.8"
+    "@turtleby/graceful-shutdown": "workspace:^"
     "@turtleby/typescript-config": "workspace:^"
     "@types/express": "npm:^4.17.17"
     "@types/pg": "npm:^8.15.4"

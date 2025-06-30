@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { setupGracefulShutdown } from '@turtleby/graceful-shutdown';
 import http from 'http';
 
 import app from './app.js';
@@ -26,12 +27,6 @@ if (listen_fds > 1) {
 
 const socket_activation = listen_pid === process.pid && listen_fds === 1;
 
-let requests = 0;
-/** @type {NodeJS.Timeout | undefined} */
-let shutdown_timeout_id;
-/** @type {NodeJS.Timeout | undefined} */
-let idle_timeout_id;
-
 const server = http.createServer(app);
 
 if (socket_activation) {
@@ -51,68 +46,13 @@ if (socket_activation) {
   }
 }
 
-/** @param {'SIGINT' | 'SIGTERM' | 'IDLE'} reason */
-function graceful_shutdown(reason) {
-  if (shutdown_timeout_id) {
-    return;
-  }
+// Setup graceful shutdown
+setupGracefulShutdown(server, {
+  shutdownTimeout: shutdown_timeout,
+  idleTimeout: idle_timeout,
+  socketActivation: socket_activation,
+});
 
-  logger.info(`Shutting down server due to: ${reason}`);
-
-  // If a connection was opened with a keep-alive header, close() will wait for the connection to
-  // time out rather than close it even if it is not handling any requests, so call this first
-  if (typeof server.closeIdleConnections === 'function') {
-    server.closeIdleConnections();
-  }
-
-  server.close(error => {
-    // occurs if the server is already closed
-    if (error) {
-      return;
-    }
-    if (shutdown_timeout_id) {
-      clearTimeout(shutdown_timeout_id);
-    }
-    if (idle_timeout_id) {
-      clearTimeout(idle_timeout_id);
-    }
-
-    process.emit('server:shutdown', reason);
-  });
-
-  shutdown_timeout_id = setTimeout(() => {
-    if (typeof server.closeAllConnections === 'function') {
-      server.closeAllConnections();
-    }
-  }, shutdown_timeout * 1000);
-}
-
-server.on(
-  'request',
-  /** @param {http.IncomingMessage} req */
-  req => {
-    requests++;
-
-    if (socket_activation && idle_timeout_id) {
-      clearTimeout(idle_timeout_id);
-      idle_timeout_id = undefined;
-    }
-
-    req.on('close', () => {
-      requests--;
-
-      if (shutdown_timeout_id) {
-        // close connections as soon as they become idle, so they don't accept new requests
-        server.closeIdleConnections();
-      }
-      if (requests === 0 && socket_activation && idle_timeout) {
-        idle_timeout_id = setTimeout(() => {
-          graceful_shutdown('IDLE');
-        }, idle_timeout * 1000);
-      }
-    });
-  }
-);
 server.on(
   'error',
   /** @param {NodeJS.ErrnoException} error */
@@ -149,6 +89,3 @@ server.on(
     }
   }
 );
-
-process.on('SIGTERM', graceful_shutdown);
-process.on('SIGINT', graceful_shutdown);
