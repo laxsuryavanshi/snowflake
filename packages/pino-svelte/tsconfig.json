@@ -1,0 +1,10 @@
+{
+  "extends": ["@turtleby/typescript-config/tsconfig.base.json", "./.svelte-kit/tsconfig.json"],
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "sourceMap": true
+  }
+}
