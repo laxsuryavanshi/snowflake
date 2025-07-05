@@ -22,8 +22,6 @@
     "@auth/drizzle-adapter": "^1.9.1",
     "@auth/sveltekit": "^1.9.2",
     "@node-rs/argon2": "^2.0.2",
-    "@oslojs/crypto": "^1.0.1",
-    "@oslojs/encoding": "^1.1.0",
     "@turtleby/graceful-shutdown": "workspace:^",
     "drizzle-orm": "^0.44.2",
     "express": "^4.18.2",
