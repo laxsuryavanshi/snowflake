@@ -6,10 +6,14 @@
   "main": "index.js",
   "types": "index.d.ts",
   "exports": {
-    ".": "./index.js"
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js"
+    }
   },
   "files": [
     "index.js",
+    "index.d.ts",
     "setupGracefulShutdown.js",
     "README.md",
     "LICENSE"
