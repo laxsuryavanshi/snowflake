@@ -5071,6 +5071,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@turtleby/boids@workspace:projects/boids":
+  version: 0.0.0-use.local
+  resolution: "@turtleby/boids@workspace:projects/boids"
+  dependencies:
+    vite: "npm:^6.3.5"
+  languageName: unknown
+  linkType: soft
+
 "@turtleby/eslint-config@workspace:^, @turtleby/eslint-config@workspace:packages/eslint-config":
   version: 0.0.0-use.local
   resolution: "@turtleby/eslint-config@workspace:packages/eslint-config"
