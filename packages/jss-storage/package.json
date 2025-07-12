@@ -1,0 +1,51 @@
+{
+  "name": "jss-storage",
+  "version": "0.0.0",
+  "type": "module",
+  "packageManager": "yarn@4.9.1",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./index.js"
+    }
+  },
+  "author": "Laxmikant Suryavanshi <laxmikantsuryavanshi@hotmail.com>",
+  "license": "MIT",
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laxsuryavanshi/snowflake.git",
+    "directory": "packages/jss-storage"
+  },
+  "files": [
+    "dist",
+    "index.js",
+    "storage.js",
+    "encrypt.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "storage",
+    "secure",
+    "encryption",
+    "localStorage",
+    "crypto",
+    "browser"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "crypto-js": ">=4"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "crypto-js": "^4.2.0",
+    "publint": "^0.3.12",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.3"
+  }
+}
