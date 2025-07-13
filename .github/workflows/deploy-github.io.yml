@@ -1,0 +1,40 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Enable corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: yarn workspaces focus @turtleby/github.io
+
+      - name: Build project
+        run: |
+          yarn workspace @turtleby/github.io run prepare && \
+          yarn workspaces foreach -Rpt --from @turtleby/github.io run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
+          publish_dir: packages/github.io/dist
+          external_repository: laxsuryavanshi/laxsuryavanshi.github.io
+          publish_branch: main
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
