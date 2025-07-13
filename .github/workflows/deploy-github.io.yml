@@ -18,8 +18,8 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Enable corepack
-        run: corepack enable
+      - name: Git LFS pull
+        run: git lfs pull
 
       - name: Install dependencies
         run: yarn workspaces focus @turtleby/github.io
