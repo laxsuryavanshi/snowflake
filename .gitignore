@@ -12,6 +12,7 @@ dist
 test-results
 coverage
 
+**/.turbo
 **/.angular/cache
 **/.svelte-kit
 **/.next
