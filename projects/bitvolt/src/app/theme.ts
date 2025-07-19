@@ -5,6 +5,7 @@ import {
   PaletteMode,
   responsiveFontSizes,
 } from '@mui/material/styles';
+import Link from 'next/link';
 
 const createTheme = (mode: PaletteMode = 'light') => {
   return createMuiTheme({
@@ -17,6 +18,18 @@ const createTheme = (mode: PaletteMode = 'light') => {
       },
     },
     palette: { mode },
+    components: {
+      MuiLink: {
+        defaultProps: {
+          component: Link,
+        },
+      },
+      MuiButtonBase: {
+        defaultProps: {
+          LinkComponent: Link,
+        },
+      },
+    },
   });
 };
 
