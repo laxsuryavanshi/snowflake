@@ -1,0 +1,22 @@
+{
+  "name": "@turtleby/watchtower",
+  "version": "0.0.0",
+  "packageManager": "yarn@4.9.1",
+  "author": "Laxmikant Suryavanshi <laxmikantsuryavanshi@hotmail.com>",
+  "license": "MIT",
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laxsuryavanshi/snowflake.git",
+    "directory": "packages/ngxentinel/packages/watchtower"
+  },
+  "peerDependencies": {
+    "@angular/common": "^19.2.0",
+    "@angular/core": "^19.2.0",
+    "rxjs": "~7.8.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}
