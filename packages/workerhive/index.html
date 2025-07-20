@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>HashLab</title>
+  </head>
+  <body class="antialiased">
+    <main class="pt-24">
+      <div class="card w-lg max-w-full mx-auto">
+        <div class="card-body">
+          <h2 class="text-2xl font-semibold mb-4 text-center">File Hash Calculator</h2>
+          <form class="flex flex-col gap-6">
+            <div>
+              <label for="files" class="block mb-2 font-medium">
+                Select files to compute hashes
+              </label>
+              <input
+                class="file-input file-input-info validator w-full"
+                type="file"
+                name="files"
+                id="files"
+                multiple
+                required
+              />
+            </div>
+
+            <div>
+              <label for="hashFunction" class="block mb-2 font-medium">Select hash algorithm</label>
+              <select
+                class="select select-info validator w-full"
+                name="hashFunction"
+                id="hashFunction"
+                required
+              >
+                <option disabled selected value="">---Select---</option>
+              </select>
+            </div>
+
+            <button class="btn btn-info" type="submit">Compute Hashes</button>
+          </form>
+        </div>
+      </div>
+
+      <ul class="list w-lg max-w-full mx-auto" id="fileList"></ul>
+    </main>
+    <footer class="footer footer-horizontal footer-center w-lg max-w-full mx-auto mt-24">
+      <aside>
+        <p>
+          <strong>HashLab</strong> is a web-based tool for computing file hashes using various
+          algorithms. It utilizes Web Workers for efficient processing without blocking the main
+          thread.
+        </p>
+        <p>
+          <a
+            class="btn btn-soft btn-wide"
+            href="https://github.com/laxsuryavanshi/snowflake/tree/develop/packages/workerhive"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on GitHub
+          </a>
+        </p>
+      </aside>
+      <p>
+        <strong>Privacy Notice:</strong> All file processing and hash calculations are performed
+        exclusively on your device. No files or data will leave your local environment.
+      </p>
+    </footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
