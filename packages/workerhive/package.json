@@ -1,5 +1,5 @@
 {
-  "name": "workerhive",
+  "name": "@turtleby/workerhive",
   "version": "0.0.0",
   "type": "module",
   "packageManager": "yarn@4.9.1",

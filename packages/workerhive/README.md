@@ -1,6 +1,6 @@
-# workerhive
+# @turtleby/workerhive
 
-`workerhive` is a TypeScript package that provides a powerful and type-safe `WorkerPool` class for efficiently managing a pool of Web Workers in browser environments. It is designed to simplify parallel task execution, optimize resource usage, and handle complex worker lifecycle management with ease.
+`@turtleby/workerhive` is a TypeScript package that provides a powerful and type-safe `WorkerPool` class for efficiently managing a pool of Web Workers in browser environments. It is designed to simplify parallel task execution, optimize resource usage, and handle complex worker lifecycle management with ease.
 
 ## Features
 
@@ -14,15 +14,15 @@
 ## Installation
 
 ```bash
-yarn add workerhive
+yarn add @turtleby/workerhive
 # or
-npm install workerhive
+npm install @turtleby/workerhive
 ```
 
 ## Usage
 
 ```typescript
-import { WorkerPool } from 'workerhive';
+import { WorkerPool } from '@turtleby/workerhive';
 
 // Define the interface for your worker's API
 interface MyWorkerAPI {
