@@ -6721,6 +6721,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@turtleby/apex@workspace:projects/apex":
+  version: 0.0.0-use.local
+  resolution: "@turtleby/apex@workspace:projects/apex"
+  dependencies:
+    "@tailwindcss/vite": "npm:^4.1.7"
+    "@turtleby/typescript-config": "workspace:^"
+    tailwindcss: "npm:^4.1.7"
+    typescript: "npm:^5.8.3"
+    vite: "npm:^6.3.5"
+  languageName: unknown
+  linkType: soft
+
 "@turtleby/bitvolt@workspace:projects/bitvolt":
   version: 0.0.0-use.local
   resolution: "@turtleby/bitvolt@workspace:projects/bitvolt"
