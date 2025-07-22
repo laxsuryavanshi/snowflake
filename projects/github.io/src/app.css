@@ -1,7 +1,25 @@
 @import 'tailwindcss';
+@plugin 'daisyui' {
+  themes:
+    corporate --default,
+    synthwave --prefersdark;
+}
+
+.hover-underline {
+  @apply inline-block relative;
+
+  &::after {
+    @apply absolute left-0 -bottom-1 w-full h-0.5 bg-neutral;
+
+    content: '';
+  }
+}
 
 body {
+  @apply antialiased overscroll-none scroll-smooth;
+
   font-family: var(--turtleby-font-family);
+  font-synthesis: none;
 }
 
 :root {
