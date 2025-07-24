@@ -6,7 +6,8 @@
   "packageManager": "yarn@4.9.1",
   "author": "Laxmikant Suryavanshi<laxmikantsuryavanshi@hotmail.com>",
   "scripts": {
-    "format": "pretty-quick"
+    "format": "pretty-quick",
+    "mvn:cli": "cd $INIT_CWD && $PROJECT_CWD/mvnw"
   },
   "workspaces": {
     "packages": [

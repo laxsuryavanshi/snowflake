@@ -3,5 +3,7 @@
     "**/.yarn": true,
     "**/.pnp.*": true
   },
-  "editor.rulers": [100]
+  "editor.rulers": [100],
+  "files.insertFinalNewline": true,
+  "java.completion.importOrder": ["#", "java", "javax", "jakarta", "org", "com", "", "com.turtleby"]
 }

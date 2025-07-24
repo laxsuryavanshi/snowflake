@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: snowflake-idms
+
+  config:
+    import:
+      - optional:classpath:application-secrets.yml
+
+  security:
+    oauth2:
+      client:
+        registration: {}

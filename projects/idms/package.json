@@ -7,6 +7,8 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "build:mvn": "run mvn:cli clean package spring-boot:repackage",
+    "build:mvn:ci": "yarn build:mvn -DskipTests",
     "preview": "vite preview",
     "prepare": "svelte-kit sync || echo ''",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
