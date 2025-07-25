@@ -16,6 +16,11 @@ const debug = debugLib('turtleby:graceful-shutdown');
  *   import { setupGracefulShutdown } from '@turtleby/graceful-shutdown';
  *   import http from 'http';
  *   const server = http.createServer(app);
+ *
+ *   // Basic usage with defaults
+ *   setupGracefulShutdown(server);
+ *
+ *   // Or with custom options
  *   setupGracefulShutdown(server, {
  *     shutdownTimeout: 30, // seconds
  *     idleTimeout: 60,     // seconds (optional)
@@ -24,7 +29,7 @@ const debug = debugLib('turtleby:graceful-shutdown');
  * ```
  *
  * @param {import('http').Server} server - The HTTP server instance to manage.
- * @param {Object} options - Configuration options.
+ * @param {Object} [options={}] - Configuration options (optional).
  * @param {number} [options.shutdownTimeout=30] - Seconds to wait before force closing all
  *                                                connections after shutdown is triggered.
  * @param {number} [options.idleTimeout=0] - Seconds to wait before shutting down when idle
@@ -36,13 +41,31 @@ const debug = debugLib('turtleby:graceful-shutdown');
  */
 export function setupGracefulShutdown(
   server,
-  { shutdownTimeout = 30, idleTimeout = 0, socketActivation = false }
+  { shutdownTimeout = 30, idleTimeout = 0, socketActivation = false } = {}
 ) {
+  // Input validation
+  if (!server || typeof server.close !== 'function' || typeof server.on !== 'function') {
+    throw new TypeError('Expected server to be an HTTP server instance');
+  }
+
+  if (typeof shutdownTimeout !== 'number' || shutdownTimeout < 0) {
+    throw new TypeError('Expected shutdownTimeout to be a non-negative number');
+  }
+
+  if (typeof idleTimeout !== 'number' || idleTimeout < 0) {
+    throw new TypeError('Expected idleTimeout to be a non-negative number');
+  }
+
+  if (typeof socketActivation !== 'boolean') {
+    throw new TypeError('Expected socketActivation to be a boolean');
+  }
+
   let requests = 0;
   /** @type {NodeJS.Timeout | undefined} */
   let shutdownTimeoutId;
   /** @type {NodeJS.Timeout | undefined} */
   let idleTimeoutId;
+  let isShuttingDown = false;
 
   /**
    * Triggers a graceful shutdown of the server.
@@ -55,7 +78,8 @@ export function setupGracefulShutdown(
    * @param {'SIGINT' | 'SIGTERM' | 'IDLE' | string} reason - The reason for shutdown.
    */
   function gracefulShutdown(reason) {
-    if (shutdownTimeoutId) return;
+    if (isShuttingDown) return;
+    isShuttingDown = true;
 
     debug('Shutting down server due to: ' + String(reason));
 
@@ -68,14 +92,21 @@ export function setupGracefulShutdown(
       if (error) return;
       if (shutdownTimeoutId) clearTimeout(shutdownTimeoutId);
       if (idleTimeoutId) clearTimeout(idleTimeoutId);
+
+      // Clean up event listeners to prevent memory leaks
+      process.removeListener('SIGTERM', gracefulShutdown);
+      process.removeListener('SIGINT', gracefulShutdown);
+
       process.emit('server:shutdown', reason);
     });
 
     // Force close all connections after timeout
     shutdownTimeoutId = setTimeout(() => {
+      debug('Force closing connections after timeout');
       if (typeof server.closeAllConnections === 'function') {
         server.closeAllConnections();
       }
+      shutdownTimeoutId = undefined;
     }, shutdownTimeout * 1000);
   }
 

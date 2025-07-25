@@ -1,6 +1,6 @@
 {
   "name": "@turtleby/graceful-shutdown",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Reusable graceful shutdown logic for Node.js HTTP servers.",
   "type": "module",
   "main": "index.js",
@@ -15,6 +15,7 @@
     "index.js",
     "index.d.ts",
     "setupGracefulShutdown.js",
+    "example.js",
     "README.md",
     "LICENSE"
   ],
@@ -24,17 +25,23 @@
     "http",
     "server",
     "systemd",
-    "socket-activation"
+    "socket-activation",
+    "process-management",
+    "sigterm",
+    "sigint"
   ],
   "author": "Laxmikant Suryavanshi <laxmikantsuryavanshi@hotmail.com>",
   "license": "MIT",
   "readme": "README.md",
   "repository": {
     "type": "git",
-    "url": "git@github.com:laxsuryavanshi/snowflake.git"
+    "url": "git+https://github.com/laxsuryavanshi/snowflake.git",
+    "directory": "packages/graceful-shutdown"
   },
   "scripts": {
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "debug": "^4.4.1"

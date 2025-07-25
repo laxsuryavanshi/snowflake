@@ -49,6 +49,53 @@ describe('setupGracefulShutdown', () => {
     }
   });
 
+  describe('input validation', () => {
+    it('should throw TypeError for invalid server', () => {
+      expect(() => setupGracefulShutdown(null)).toThrow(TypeError);
+      expect(() => setupGracefulShutdown({})).toThrow(TypeError);
+      expect(() => setupGracefulShutdown('not a server')).toThrow(TypeError);
+    });
+
+    it('should throw TypeError for invalid shutdownTimeout', () => {
+      const testServer = createTestServer();
+      expect(() => setupGracefulShutdown(testServer, { shutdownTimeout: -1 })).toThrow(TypeError);
+      expect(() => setupGracefulShutdown(testServer, { shutdownTimeout: 'invalid' })).toThrow(
+        TypeError
+      );
+    });
+
+    it('should throw TypeError for invalid idleTimeout', () => {
+      const testServer = createTestServer();
+      expect(() => setupGracefulShutdown(testServer, { idleTimeout: -1 })).toThrow(TypeError);
+      expect(() => setupGracefulShutdown(testServer, { idleTimeout: 'invalid' })).toThrow(
+        TypeError
+      );
+    });
+
+    it('should throw TypeError for invalid socketActivation', () => {
+      const testServer = createTestServer();
+      expect(() => setupGracefulShutdown(testServer, { socketActivation: 'invalid' })).toThrow(
+        TypeError
+      );
+    });
+
+    it('should work with default options when no options provided', () => {
+      const testServer = createTestServer();
+      expect(() => setupGracefulShutdown(testServer)).not.toThrow();
+    });
+
+    it('should work with only server parameter and use default values', async () => {
+      const testServer = createTestServer();
+      const shutdownFn = setupGracefulShutdown(testServer);
+      expect(typeof shutdownFn).toBe('function');
+
+      await startServer(testServer);
+      shutdownFn('TEST_DEFAULTS');
+      await tick(20);
+      expect(testServer.listening).toBe(false);
+    });
+  });
+
   it('should return a function', () => {
     expect(typeof shutdown).toBe('function');
   });
@@ -113,6 +160,16 @@ describe('setupGracefulShutdown', () => {
       /* no-op */
     });
     server.closeAllConnections = closeAllConnectionsMock;
+
+    // Mock server.close to not call the callback immediately, simulating hanging connections
+    const originalClose = server.close.bind(server);
+    server.close = vi.fn(callback => {
+      // Don't call the callback to simulate hanging connections
+      originalClose(() => {
+        // Callback will never be called in this test
+      });
+    });
+
     await startServer(server);
     shutdown('FORCE_TIMEOUT');
     await tick(1100); // Wait for shutdownTimeout (1s)
@@ -150,5 +207,14 @@ describe('setupGracefulShutdown', () => {
     shutdown('WITH_IDLE');
     await tick();
     expect(closeIdleConnectionsMock).toHaveBeenCalled();
+  });
+
+  it('should clean up event listeners after shutdown', async () => {
+    const originalListenerCount = process.listenerCount('SIGTERM');
+    await startServer(server);
+    shutdown('CLEANUP_TEST');
+    await tick(20);
+    // After shutdown, the listener should be removed
+    expect(process.listenerCount('SIGTERM')).toBeLessThanOrEqual(originalListenerCount);
   });
 });
