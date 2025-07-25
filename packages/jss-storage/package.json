@@ -1,6 +1,7 @@
 {
   "name": "jss-storage",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "Secure encrypted storage for browsers with AES-256, PBKDF2",
   "type": "module",
   "packageManager": "yarn@4.9.1",
   "types": "./dist/types/index.d.ts",
@@ -13,6 +14,7 @@
   "author": "Laxmikant Suryavanshi <laxmikantsuryavanshi@hotmail.com>",
   "license": "MIT",
   "readme": "README.md",
+  "homepage": "https://github.com/laxsuryavanshi/snowflake/tree/develop/packages/jss-storage#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/laxsuryavanshi/snowflake.git",
@@ -23,6 +25,7 @@
     "index.js",
     "storage.js",
     "encrypt.js",
+    "example.js",
     "README.md",
     "LICENSE"
   ],
@@ -32,7 +35,11 @@
     "encryption",
     "localStorage",
     "crypto",
-    "browser"
+    "browser",
+    "aes",
+    "pbkdf2",
+    "security",
+    "typescript"
   ],
   "scripts": {
     "build": "tsc",
