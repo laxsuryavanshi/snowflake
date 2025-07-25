@@ -4,7 +4,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.turtleby.idms.auth.repository.UserRepository;
+import com.turtleby.idms.user.repository.UserRepository;
 
 public class UserDetailsManager implements UserDetailsService {
 

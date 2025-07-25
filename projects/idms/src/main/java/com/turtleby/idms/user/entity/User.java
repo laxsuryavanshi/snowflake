@@ -1,4 +1,4 @@
-package com.turtleby.idms.auth.entity;
+package com.turtleby.idms.user.entity;
 
 import java.io.Serializable;
 import java.time.Instant;

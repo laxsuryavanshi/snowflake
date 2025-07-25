@@ -6,7 +6,7 @@ import java.util.Collections;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.turtleby.idms.auth.entity.User;
+import com.turtleby.idms.user.entity.User;
 
 public class SecurityUser implements UserDetails {
 

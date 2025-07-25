@@ -12,8 +12,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 
-import com.turtleby.idms.auth.repository.UserRepository;
 import com.turtleby.idms.security.userdetails.UserDetailsManager;
+import com.turtleby.idms.user.repository.UserRepository;
 
 @Configuration(proxyBeanMethods = false)
 @EnableWebSecurity
