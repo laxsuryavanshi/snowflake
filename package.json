@@ -7,7 +7,10 @@
   "author": "Laxmikant Suryavanshi<laxmikantsuryavanshi@hotmail.com>",
   "scripts": {
     "format": "pretty-quick",
-    "mvn:cli": "cd $INIT_CWD && $PROJECT_CWD/mvnw"
+    "mvn:cli": "cd $INIT_CWD && $PROJECT_CWD/mvnw",
+    "postinstall": "husky || true",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
   },
   "workspaces": {
     "packages": [
@@ -23,11 +26,16 @@
     "@yarnpkg/types": "^4.0.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@eslint/compat": "^1.2.9",
     "@eslint/eslintrc": "^3.3.1",
     "@turtleby/eslint-config": "workspace:^",
     "eslint": "^9.27.0",
     "eslint-config-next": "^15.3.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "pinst": "^3.0.0",
     "prettier": "^3.5.3",
     "prettier-plugin-svelte": "^3.4.0",
     "pretty-quick": "^4.2.2",
