@@ -13,3 +13,9 @@ spring:
     oauth2:
       client:
         registration: {}
+
+idms:
+  multitenancy:
+    default-schema: public
+    http:
+      header-name: X-Tenant-ID
