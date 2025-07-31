@@ -5,5 +5,16 @@
   },
   "editor.rulers": [100],
   "files.insertFinalNewline": true,
-  "java.completion.importOrder": ["#", "java", "javax", "jakarta", "org", "com", "", "com.turtleby"]
+  "java.completion.importOrder": [
+    "#",
+    "java",
+    "javax",
+    "jakarta",
+    "org",
+    "com",
+    "",
+    "com.turtleby"
+  ],
+  "angular.enable-strict-mode-prompt": false,
+  "java.configuration.updateBuildConfiguration": "disabled"
 }
