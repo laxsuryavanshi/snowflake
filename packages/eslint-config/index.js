@@ -3,7 +3,8 @@ import prettier from 'eslint-plugin-prettier/recommended';
 import globals from 'globals';
 import ts from 'typescript-eslint';
 
-export default [
+/** @type {ts.InfiniteDepthConfigWithExtends[]} */
+export const eslintConfig = [
   {
     name: '@turtleby/setup',
     languageOptions: {
@@ -13,33 +14,51 @@ export default [
       sourceType: 'module',
     },
   },
+  js.configs.recommended,
+  ts.configs.strictTypeChecked,
+  ts.configs.stylisticTypeChecked,
+  prettier,
   {
-    name: '@turtleby/env',
+    name: '@turtleby/env/cjs',
+    files: ['**/*.cjs'],
     languageOptions: {
+      sourceType: 'commonjs',
       globals: {
         ...globals.node,
       },
     },
-  },
-  {
-    name: '@turtleby/env/tests',
-    files: ['**/*.spec.*'],
-    ignores: ['**/__snapshots__/**'],
-    languageOptions: {
-      globals: {
-        ...globals.jest,
-      },
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
     },
   },
-  js.configs.recommended,
-  ...ts.configs.strictTypeChecked,
-  ...ts.configs.stylisticTypeChecked,
-  prettier,
   {
     rules: {
+      '@typescript-eslint/no-inferrable-types': 'off',
       'no-alert': 'error',
       'no-console': 'warn',
+      'prefer-const': 'error',
       'prettier/prettier': 'warn',
     },
   },
 ];
+
+/**
+ * @param {(keyof typeof globals)[]} env
+ * @returns {ts.ConfigArray}
+ */
+export function getEslintConfigWithEnvs(...env) {
+  return ts.config(
+    ...eslintConfig.concat(
+      env.map(key => ({
+        name: `@turtleby/env/${key}`,
+        languageOptions: {
+          globals: {
+            ...globals[key],
+          },
+        },
+      }))
+    )
+  );
+}
+
+export default ts.config(...eslintConfig);

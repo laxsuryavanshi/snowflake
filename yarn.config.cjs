@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 const { defineConfig } = require('@yarnpkg/types');
 
 /**
@@ -32,6 +30,7 @@ function enforceConsistentDependenciesAcrossTheProject({ Yarn }) {
 }
 
 module.exports = defineConfig({
+  // eslint-disable-next-line @typescript-eslint/require-await
   constraints: async ctx => {
     enforceConsistentDependenciesAcrossTheProject(ctx);
   },

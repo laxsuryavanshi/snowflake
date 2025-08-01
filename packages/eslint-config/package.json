@@ -4,20 +4,50 @@
   "description": "Linting configuration for turtleby packages",
   "private": true,
   "type": "module",
-  "types": "index.d.ts",
+  "module": "./index.js",
+  "types": "./dist/types/index.d.ts",
   "packageManager": "yarn@4.9.1",
   "exports": {
-    ".": "./index.js",
-    "./svelte": "./svelte.js"
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./index.js"
+    },
+    "./next": {
+      "types": "./dist/types/next.d.ts",
+      "import": "./next.js"
+    },
+    "./react": {
+      "types": "./dist/types/react.d.ts",
+      "import": "./react.js"
+    },
+    "./svelte": {
+      "types": "./dist/types/svelte.d.ts",
+      "import": "./svelte.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "author": "Laxmikant Suryavanshi <laxmikantsuryavanshi@hotmail.com>",
+  "files": [
+    "dist",
+    "index.js",
+    "next.js",
+    "react.js",
+    "svelte.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laxsuryavanshi/snowflake.git",
+    "directory": "packages/eslint-config"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "type-check": "tsc --noEmit"
   },
   "peerDependencies": {
     "eslint": ">=9",
-    "prettier": "*",
-    "svelte": "*",
-    "typescript": "*"
+    "prettier": ">=3",
+    "svelte": ">=5",
+    "typescript": ">=5"
   },
   "peerDependenciesMeta": {
     "prettier": {
@@ -31,12 +61,17 @@
     }
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.27.0",
     "@turtleby/typescript-config": "workspace:^",
     "@types/node": "^22.15.21",
     "eslint": "^9.27.0",
+    "eslint-config-next": "^15.3.5",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
     "eslint-plugin-svelte": "^3.9.0",
     "globals": "^16.1.0",
     "prettier": "^3.5.3",

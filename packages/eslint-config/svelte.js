@@ -1,7 +1,10 @@
 import svelte from 'eslint-plugin-svelte';
 import ts from 'typescript-eslint';
 
-export default [
+import { eslintConfig } from './index.js';
+
+/** @type {ts.InfiniteDepthConfigWithExtends[]} */
+export const svelteConfig = [
   ...svelte.configs.recommended,
   ...svelte.configs.prettier,
   {
@@ -17,3 +20,5 @@ export default [
     },
   },
 ];
+
+export default ts.config(...eslintConfig, ...svelteConfig);

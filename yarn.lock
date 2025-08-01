@@ -6366,12 +6366,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@turtleby/eslint-config@workspace:packages/eslint-config"
   dependencies:
+    "@eslint/eslintrc": "npm:^3.3.1"
     "@eslint/js": "npm:^9.27.0"
     "@turtleby/typescript-config": "workspace:^"
     "@types/node": "npm:^22.15.21"
     eslint: "npm:^9.27.0"
+    eslint-config-next: "npm:^15.3.5"
     eslint-config-prettier: "npm:^10.1.5"
     eslint-plugin-prettier: "npm:^5.4.0"
+    eslint-plugin-react: "npm:^7.37.5"
+    eslint-plugin-react-hooks: "npm:^5.2.0"
+    eslint-plugin-react-refresh: "npm:^0.4.20"
     eslint-plugin-svelte: "npm:^3.9.0"
     globals: "npm:^16.1.0"
     prettier: "npm:^3.5.3"
@@ -6379,9 +6384,9 @@ __metadata:
     typescript-eslint: "npm:^8.32.1"
   peerDependencies:
     eslint: ">=9"
-    prettier: "*"
-    svelte: "*"
-    typescript: "*"
+    prettier: ">=3"
+    svelte: ">=5"
+    typescript: ">=5"
   peerDependenciesMeta:
     prettier:
       optional: true
@@ -10327,7 +10332,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:^5.0.0":
+"eslint-plugin-react-hooks@npm:^5.0.0, eslint-plugin-react-hooks@npm:^5.2.0":
   version: 5.2.0
   resolution: "eslint-plugin-react-hooks@npm:5.2.0"
   peerDependencies:
@@ -10336,7 +10341,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react@npm:^7.37.0":
+"eslint-plugin-react-refresh@npm:^0.4.20":
+  version: 0.4.20
+  resolution: "eslint-plugin-react-refresh@npm:0.4.20"
+  peerDependencies:
+    eslint: ">=8.40"
+  checksum: 10c0/2ccf4ba28f1dcbcb9e773e46eae1e61e568bba69281a700eb26fd762152e4e90a78c991f9c8173342a7cd2a82f3f52fedb40a1e81360cef9c40ea5b814fa3613
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-react@npm:^7.37.0, eslint-plugin-react@npm:^7.37.5":
   version: 7.37.5
   resolution: "eslint-plugin-react@npm:7.37.5"
   dependencies:
@@ -16369,11 +16383,9 @@ __metadata:
     "@commitlint/cli": "npm:^19.8.1"
     "@commitlint/config-conventional": "npm:^19.8.1"
     "@eslint/compat": "npm:^1.2.9"
-    "@eslint/eslintrc": "npm:^3.3.1"
     "@turtleby/eslint-config": "workspace:^"
     "@yarnpkg/types": "npm:^4.0.1"
     eslint: "npm:^9.27.0"
-    eslint-config-next: "npm:^15.3.5"
     husky: "npm:^9.1.7"
     lint-staged: "npm:^16.1.2"
     pinst: "npm:^3.0.0"
