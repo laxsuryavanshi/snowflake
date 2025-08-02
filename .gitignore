@@ -7,20 +7,19 @@
 !.yarn/versions
 # .pnp.*
 
-node_modules
-dist
-test-results
-coverage
-target
-
-**/.turbo
+**/!.env.example
 **/.angular/cache
-**/.svelte-kit
+**/.env
+**/.env.*
+**/.idea
 **/.next
-next-env.d.ts
-
-.env
-.env.*
-!.env.example
-*.db
-application-secrets.yml
+**/.svelte-kit
+**/.turbo
+**/*.db
+**/application-secrets.yml
+**/coverage
+**/dist
+**/next-env.d.ts
+**/node_modules
+**/target
+**/test-results

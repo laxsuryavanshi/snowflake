@@ -16,5 +16,10 @@
     "com.turtleby"
   ],
   "angular.enable-strict-mode-prompt": false,
-  "java.configuration.updateBuildConfiguration": "disabled"
+  "java.configuration.updateBuildConfiguration": "disabled",
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.format.settings.url": ".vscode/java-formatter.xml",
+  "[java]": {
+    "editor.tabSize": 2
+  }
 }
