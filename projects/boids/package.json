@@ -3,6 +3,11 @@
   "version": "0.0.0",
   "type": "module",
   "packageManager": "yarn@4.9.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laxsuryavanshi/snowflake.git",
+    "directory": "projects/boids"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

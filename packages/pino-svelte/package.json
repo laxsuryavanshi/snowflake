@@ -11,6 +11,12 @@
       "svelte": "./dist/index.js"
     }
   },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laxsuryavanshi/snowflake.git",
+    "directory": "packages/pino-svelte"
+  },
   "files": [
     "dist",
     "!dist/**/*.test.*",
