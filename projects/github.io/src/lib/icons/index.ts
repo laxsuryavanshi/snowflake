@@ -17,3 +17,4 @@ export { default as React } from './React.svelte';
 export { default as SpringBoot } from './SpringBoot.svelte';
 export { default as Svelte } from './Svelte.svelte';
 export { default as TypeScript } from './TypeScript.svelte';
+export * from './utils';

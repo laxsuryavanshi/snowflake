@@ -1,23 +1,11 @@
 <script lang="ts">
-  import { GitHub, LinkedIn, Mail } from '$lib/icons';
+  import { getIconComponent } from '$lib/icons';
+
   import Hero from './Hero.svelte';
   import Skills from './Skills.svelte';
 
   const { data } = $props();
   const { author, currentYear, cvLink, heroImage, introduction, skills, socialLinks } = data;
-
-  function getIconComponent(iconName: string) {
-    switch (iconName) {
-      case 'mail':
-        return Mail;
-      case 'linkedin':
-        return LinkedIn;
-      case 'github':
-        return GitHub;
-      default:
-        return null;
-    }
-  }
 </script>
 
 <header>
