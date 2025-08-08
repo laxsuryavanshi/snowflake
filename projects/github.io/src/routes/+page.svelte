@@ -3,13 +3,19 @@
 
   import Hero from './Hero.svelte';
   import Skills from './Skills.svelte';
+  import ThemeController from './ThemeController.svelte';
 
   const { data } = $props();
   const { author, currentYear, cvLink, heroImage, introduction, skills, socialLinks } = data;
 </script>
 
 <header>
-  <div class="text-xl font-bold">{author}</div>
+  <div class="text-xl font-bold">
+    <a href="/">{author}</a>
+  </div>
+  <div class="ml-auto">
+    <ThemeController />
+  </div>
 </header>
 
 <main>
