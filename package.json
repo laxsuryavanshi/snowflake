@@ -16,7 +16,8 @@
     "packages": [
       "packages/*",
       "packages/ngxentinel/packages/*",
-      "projects/*"
+      "projects/*",
+      "java/*"
     ]
   },
   "engines": {

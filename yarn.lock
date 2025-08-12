@@ -6438,6 +6438,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@turtleby/idms-api@workspace:java/idms":
+  version: 0.0.0-use.local
+  resolution: "@turtleby/idms-api@workspace:java/idms"
+  languageName: unknown
+  linkType: soft
+
 "@turtleby/idms@workspace:projects/idms":
   version: 0.0.0-use.local
   resolution: "@turtleby/idms@workspace:projects/idms"
