@@ -8,7 +8,6 @@ import Button from '@mui/material/Button';
 import TextField, { TextFieldProps } from '@mui/material/TextField';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Image from 'next/image';
 import { redirect, RedirectType } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 
@@ -77,7 +76,7 @@ export default function Home() {
       <AppBar position="sticky" color="inherit" elevation={0} sx={{ top: 0 }}>
         <Toolbar>
           <div className="flex items-center gap-2">
-            <Image src="/music-robot-96.png" alt="bitvolt" width={48} height={48} />
+            <img src="/music-robot-96.png" alt="bitvolt" width={48} height={48} />
             <Typography variant="h5" component="h2" fontWeight="bold">
               bitvolt
             </Typography>
@@ -87,7 +86,7 @@ export default function Home() {
 
       <Box
         component="main"
-        className="w-md mx-auto mt-24 px-6 py-8 rounded-lg border flex flex-col gap-4"
+        className="w-md max-w-full mx-auto mt-24 px-6 py-8 rounded-lg border flex flex-col gap-4"
         sx={theme => ({ borderColor: theme.palette.divider })}
       >
         <Typography variant="h6" fontWeight="bold">
