@@ -8,16 +8,18 @@
   "scripts": {
     "format": "pretty-quick",
     "mvn:cli": "cd $INIT_CWD && $PROJECT_CWD/mvnw",
+    "aws:cdk": "cd $INIT_CWD && cdk",
     "postinstall": "husky || true",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable"
   },
   "workspaces": {
     "packages": [
+      "awsiac",
+      "java/*",
       "packages/*",
       "packages/ngxentinel/packages/*",
-      "projects/*",
-      "java/*"
+      "projects/*"
     ]
   },
   "engines": {
@@ -32,6 +34,7 @@
     "@eslint/compat": "^1.2.9",
     "@prettier/plugin-xml": "^3.4.2",
     "@turtleby/eslint-config": "workspace:^",
+    "aws-cdk": "^2.1025.0",
     "eslint": "^9.27.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",

@@ -1,0 +1,14 @@
+{
+  "name": "awsiac",
+  "private": true,
+  "packageManager": "yarn@4.9.1",
+  "scripts": {
+    "cdk": "run aws:cdk",
+    "bootstrap": "yarn cdk bootstrap",
+    "deploy": "yarn cdk deploy",
+    "destroy": "yarn cdk destroy",
+    "diff": "yarn cdk diff",
+    "ls": "yarn cdk ls",
+    "synth": "yarn cdk synth"
+  }
+}

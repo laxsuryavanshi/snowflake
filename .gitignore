@@ -23,3 +23,5 @@
 **/node_modules
 **/target
 **/test-results
+**/__pycache__
+**/cdk.out
