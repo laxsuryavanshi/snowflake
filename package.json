@@ -17,8 +17,9 @@
     "packages": [
       "awsiac",
       "java/*",
+      "ngxentinel",
+      "ngxentinel/packages/*",
       "packages/*",
-      "packages/ngxentinel/packages/*",
       "projects/*"
     ]
   },

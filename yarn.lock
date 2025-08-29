@@ -7289,9 +7289,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@turtleby/ngxentinel@workspace:packages/ngxentinel":
+"@turtleby/ngxentinel@workspace:ngxentinel":
   version: 0.0.0-use.local
-  resolution: "@turtleby/ngxentinel@workspace:packages/ngxentinel"
+  resolution: "@turtleby/ngxentinel@workspace:ngxentinel"
   dependencies:
     "@angular-devkit/build-angular": "npm:^19.2.12"
     "@angular/cli": "npm:^19.2.12"
@@ -7388,9 +7388,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@turtleby/watchtower@workspace:packages/ngxentinel/packages/watchtower":
+"@turtleby/watchtower@workspace:ngxentinel/packages/watchtower":
   version: 0.0.0-use.local
-  resolution: "@turtleby/watchtower@workspace:packages/ngxentinel/packages/watchtower"
+  resolution: "@turtleby/watchtower@workspace:ngxentinel/packages/watchtower"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
