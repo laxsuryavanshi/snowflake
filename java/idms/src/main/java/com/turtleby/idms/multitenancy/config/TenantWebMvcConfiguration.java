@@ -1,6 +1,7 @@
 package com.turtleby.idms.multitenancy.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.lang.NonNull;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -16,7 +17,7 @@ public class TenantWebMvcConfiguration implements WebMvcConfigurer {
   }
 
   @Override
-  public void addInterceptors(InterceptorRegistry registry) {
+  public void addInterceptors(@NonNull InterceptorRegistry registry) {
     // add tenant resolution interceptor
     registry.addInterceptor(tenantInterceptor);
   }

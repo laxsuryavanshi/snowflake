@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.jdbc.datasource.DelegatingDataSource;
+import org.springframework.lang.NonNull;
 import org.springframework.util.StringUtils;
 
 import com.turtleby.idms.multitenancy.Tenant;
@@ -29,11 +30,13 @@ public class TenantAwareDataSource extends DelegatingDataSource {
   }
 
   @Override
+  @NonNull
   public Connection getConnection() throws SQLException {
     return wrapConnection(super.getConnection());
   }
 
   @Override
+  @NonNull
   public Connection getConnection(String username, String password) throws SQLException {
     return wrapConnection(super.getConnection(username, password));
   }
