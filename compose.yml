@@ -109,8 +109,81 @@ services:
       - 'traefik.http.routers.openfga.rule=Host(`openfga.localhost`)'
       - 'traefik.http.services.openfga.loadbalancer.server.port=3000'
 
+  redis:
+    image: redis:8.2.1-alpine3.22
+    # ports:
+    #   - '6379:6379'
+    command: --save 60 1
+    volumes:
+      - redis_data:/data
+    networks:
+      - snowflake-network
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD-SHELL', 'redis-cli ping | grep PONG']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  authentik_server:
+    image: ghcr.io/goauthentik/server:2025.8.1
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    # ports:
+    #   - '9000:9000'
+    #   - '9443:9443'
+    command: server
+    env_file:
+      - .env
+    environment:
+      AUTHENTIK_POSTGRESQL__HOST: postgres
+      AUTHENTIK_POSTGRESQL__NAME: authentik
+      AUTHENTIK_POSTGRESQL__PASSWORD: postgres
+      AUTHENTIK_POSTGRESQL__USER: postgres
+      AUTHENTIK_REDIS__HOST: redis
+    volumes:
+      - ./_config/authentik/media:/media
+      - ./_config/authentik/custom-templates:/templates
+    networks:
+      - snowflake-network
+    restart: unless-stopped
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.authentik.rule=Host(`authentik.localhost`)'
+      - 'traefik.http.services.authentik.loadbalancer.server.port=9000'
+
+  authentik_worker:
+    image: ghcr.io/goauthentik/server:2025.8.1
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: worker
+    env_file:
+      - .env
+    environment:
+      AUTHENTIK_POSTGRESQL__HOST: postgres
+      AUTHENTIK_POSTGRESQL__NAME: authentik
+      AUTHENTIK_POSTGRESQL__PASSWORD: postgres
+      AUTHENTIK_POSTGRESQL__USER: postgres
+      AUTHENTIK_REDIS__HOST: redis
+    user: root
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./_config/authentik/media:/media
+      - ./_config/authentik/certs:/certs
+      - ./_config/authentik/custom-templates:/templates
+    networks:
+      - snowflake-network
+    restart: unless-stopped
+
 volumes:
   postgres_data:
+  redis_data:
 
 networks:
   snowflake-network:

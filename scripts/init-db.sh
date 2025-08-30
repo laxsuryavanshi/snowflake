@@ -32,7 +32,7 @@ POSTGRES_USER="${USERNAME_ARG:-${POSTGRES_USER:-postgres}}"
 POSTGRES_DB="${DBNAME_ARG:-${POSTGRES_DB:-postgres}}"
 
 # Array of database names to create
-DATABASES=("openfga" "idms")
+DATABASES=("openfga" "idms" "authentik")
 
 # Create databases if they don't exist
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
