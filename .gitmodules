@@ -1,0 +1,4 @@
+[submodule "external/idms"]
+	path = external/idms
+	url = git@github.com:laxsuryavanshi/idms.git
+	branch = develop

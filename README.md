@@ -42,7 +42,7 @@ Next.js application with AWS S3 integration and Material-UI components for cloud
 
 Real-time flocking simulation implemented in vanilla JavaScript. Demonstrates emergent behavior of collective organisms using HTML5 Canvas.
 
-### [IDMS](./projects/idms)
+### [IDMS](./external/idms)
 
 Identity Management System built with SvelteKit and Spring Boot. Full-stack application with Java backend and modern frontend.
 
