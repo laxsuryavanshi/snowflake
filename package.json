@@ -7,7 +7,6 @@
   "author": "Laxmikant Suryavanshi<laxmikantsuryavanshi@hotmail.com>",
   "scripts": {
     "format": "pretty-quick",
-    "mvn:cli": "cd $INIT_CWD && $PROJECT_CWD/mvnw",
     "aws:cdk": "cd $INIT_CWD && cdk",
     "postinstall": "husky || true",
     "prepack": "pinst --disable",
@@ -16,7 +15,6 @@
   "workspaces": {
     "packages": [
       "awsiac",
-      "java/*",
       "ngxentinel",
       "ngxentinel/packages/*",
       "packages/*",
