@@ -7,15 +7,18 @@ const ctx = canvas.getContext('2d');
 canvas.width = width;
 canvas.height = height;
 
-const BOID_COUNT = 100;
-const BOID_SPEED = 5;
-const NEIGHBOR_DISTANCE = 40;
-const EDGE_MARGIN = 20; // safe margin from canvas edges
+const BOID_COUNT = 200;
+const BOID_SPEED = 8;
+const MIN_SPEED = 4;
+const NEIGHBOR_DISTANCE = 75; // distance for alignment and cohesion
+const SEPARATION_DISTANCE = 15; // minimum comfortable distance between boids
+const EDGE_MARGIN = 100; // safe margin from canvas edges
+const TURN_FACTOR = 0.3; // how strongly boids steer away from edges
 
 // flocking parameters (will be controlled by UI)
-let alignmentForce = 0.15;
-let cohesionForce = 0.02;
-let separationForce = 0.3;
+let alignmentForce = 0.08;
+let cohesionForce = 0.005;
+let separationForce = 0.15;
 
 /** @type {Boid[]} */
 const boids = Array.from({ length: BOID_COUNT }).map(() => {
@@ -44,80 +47,95 @@ function update(boid) {
   const cohesion = { x: 0, y: 0 };
   const separation = { x: 0, y: 0 };
 
-  let neighborCount = 0;
+  let alignmentCount = 0;
+  let cohesionCount = 0;
+  let separationCount = 0;
 
   for (const other of boids) {
     if (other === boid) continue;
 
     const d = distance(boid, other);
-    if (d > NEIGHBOR_DISTANCE) continue;
 
-    alignment.x += other.dx;
-    alignment.y += other.dy;
+    // Separation: only consider very close boids (avoid overlapping)
+    if (d < SEPARATION_DISTANCE && d > 0) {
+      // Weight by inverse distance - closer boids push harder
+      const pushStrength = (SEPARATION_DISTANCE - d) / d;
+      separation.x += (boid.x - other.x) * pushStrength;
+      separation.y += (boid.y - other.y) * pushStrength;
+      separationCount++;
+    }
 
-    cohesion.x += other.x;
-    cohesion.y += other.y;
+    // Alignment and cohesion: consider boids within neighbor distance
+    if (d < NEIGHBOR_DISTANCE) {
+      alignment.x += other.dx;
+      alignment.y += other.dy;
+      alignmentCount++;
 
-    separation.x += boid.x - other.x;
-    separation.y += boid.y - other.y;
-
-    neighborCount++;
+      cohesion.x += other.x;
+      cohesion.y += other.y;
+      cohesionCount++;
+    }
   }
 
-  if (neighborCount > 0) {
-    alignment.x /= neighborCount;
-    alignment.y /= neighborCount;
-
-    cohesion.x /= neighborCount;
-    cohesion.y /= neighborCount;
-
-    separation.x /= neighborCount;
-    separation.y /= neighborCount;
-
-    // steer towards the center of mass
-    cohesion.x = (cohesion.x - boid.x) * cohesionForce;
-    cohesion.y = (cohesion.y - boid.y) * cohesionForce;
-
-    // steer towards the average heading
+  // Apply alignment - steer towards average heading
+  if (alignmentCount > 0) {
+    alignment.x /= alignmentCount;
+    alignment.y /= alignmentCount;
     alignment.x = (alignment.x - boid.dx) * alignmentForce;
     alignment.y = (alignment.y - boid.dy) * alignmentForce;
+    boid.dx += alignment.x;
+    boid.dy += alignment.y;
+  }
 
-    // steer to avoid crowding local flockmates
+  // Apply cohesion - steer towards center of mass
+  if (cohesionCount > 0) {
+    cohesion.x /= cohesionCount;
+    cohesion.y /= cohesionCount;
+    cohesion.x = (cohesion.x - boid.x) * cohesionForce;
+    cohesion.y = (cohesion.y - boid.y) * cohesionForce;
+    boid.dx += cohesion.x;
+    boid.dy += cohesion.y;
+  }
+
+  // Apply separation - steer away from nearby boids (highest priority)
+  if (separationCount > 0) {
     separation.x *= separationForce;
     separation.y *= separationForce;
-
-    boid.dx += alignment.x + cohesion.x + separation.x;
-    boid.dy += alignment.y + cohesion.y + separation.y;
+    boid.dx += separation.x;
+    boid.dy += separation.y;
   }
 
-  // limit the boid's speed
+  // Soft steering away from edges (more natural than bouncing)
+  if (boid.x < EDGE_MARGIN) {
+    boid.dx += TURN_FACTOR * ((EDGE_MARGIN - boid.x) / EDGE_MARGIN);
+  }
+  if (boid.x > width - EDGE_MARGIN) {
+    boid.dx -= TURN_FACTOR * ((boid.x - (width - EDGE_MARGIN)) / EDGE_MARGIN);
+  }
+  if (boid.y < EDGE_MARGIN) {
+    boid.dy += TURN_FACTOR * ((EDGE_MARGIN - boid.y) / EDGE_MARGIN);
+  }
+  if (boid.y > height - EDGE_MARGIN) {
+    boid.dy -= TURN_FACTOR * ((boid.y - (height - EDGE_MARGIN)) / EDGE_MARGIN);
+  }
+
+  // Limit the boid's speed (max and min)
   const speed = Math.hypot(boid.dx, boid.dy);
   if (speed > BOID_SPEED) {
-    boid.dx *= BOID_SPEED / speed;
-    boid.dy *= BOID_SPEED / speed;
+    boid.dx = (boid.dx / speed) * BOID_SPEED;
+    boid.dy = (boid.dy / speed) * BOID_SPEED;
+  } else if (speed < MIN_SPEED && speed > 0) {
+    boid.dx = (boid.dx / speed) * MIN_SPEED;
+    boid.dy = (boid.dy / speed) * MIN_SPEED;
   }
 
-  // update the boid's position
+  // Update the boid's position
   boid.x += boid.dx;
   boid.y += boid.dy;
 
-  // bounce off the edges of the canvas with safe margin
-  if (boid.x < EDGE_MARGIN) {
-    boid.x = EDGE_MARGIN;
-    boid.dx = Math.abs(boid.dx); // reverse horizontal velocity
-  }
-  if (boid.x > width - EDGE_MARGIN) {
-    boid.x = width - EDGE_MARGIN;
-    boid.dx = -Math.abs(boid.dx); // reverse horizontal velocity
-  }
-  if (boid.y < EDGE_MARGIN) {
-    boid.y = EDGE_MARGIN;
-    boid.dy = Math.abs(boid.dy); // reverse vertical velocity
-  }
-  if (boid.y > height - EDGE_MARGIN) {
-    boid.y = height - EDGE_MARGIN;
-    boid.dy = -Math.abs(boid.dy); // reverse vertical velocity
-  }
+  // Hard boundary clamp (safety net)
+  boid.x = Math.max(5, Math.min(width - 5, boid.x));
+  boid.y = Math.max(5, Math.min(height - 5, boid.y));
 
   return boid;
 }
