@@ -16,6 +16,9 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Git LFS pull
+        run: git lfs pull
+
       - name: Install dependencies
         run: yarn workspaces focus @turtleby/boids
 
@@ -27,6 +30,7 @@ jobs:
         with:
           personal_token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
           publish_dir: projects/boids/dist
+          external_repository: laxsuryavanshi/laxsuryavanshi.github.io
           publish_branch: main
           destination_dir: projects/boids-simulation
           keep_files: true
