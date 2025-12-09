@@ -23,7 +23,7 @@ jobs:
         run: yarn workspaces focus @turtleby/boids
 
       - name: Build project
-        run: yarn workspaces foreach -Rpt --from @turtleby/boids run build
+        run: yarn workspaces foreach -Rpt --from @turtleby/boids run build --base /projects/boids-simulation/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
