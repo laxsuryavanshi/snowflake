@@ -1,9 +1,0 @@
-[project]
-name = "awsiac"
-version = "0.0.0"
-readme = "README.md"
-requires-python = ">=3.13"
-dependencies = [
-    "aws-cdk-lib>=2.211.0",
-    "constructs>=10.4.2",
-]
