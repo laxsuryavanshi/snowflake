@@ -2,6 +2,10 @@
 
 A real-time flocking simulation implemented in vanilla JavaScript and HTML5 Canvas. This project demonstrates the classic Boids algorithm, which simulates the emergent behavior of flocking birds, fish, or other collective organisms.
 
+## Demo
+
+![Boids Simulation Demo](./public/demo.gif)
+
 🔗 **[Live Preview](https://laxsuryavanshi.me/projects/boids-simulation/)**
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow)
