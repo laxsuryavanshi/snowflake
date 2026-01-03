@@ -1,12 +1,11 @@
 <script lang="ts">
   import { getIconComponent } from '$lib/icons';
-
-  import Hero from './Hero.svelte';
-  import Skills from './Skills.svelte';
-  import ThemeController from './ThemeController.svelte';
+  import { Experience, Hero, Projects, Skills, ThemeController } from '$lib/components';
 
   const { data } = $props();
-  const { author, currentYear, cvLink, heroImage, introduction, skills, socialLinks } = data;
+  const { author, cvLink, heroImage, introduction, experiences, projects, skills, socialLinks } =
+    data;
+  const currentYear = new Date().getFullYear();
 </script>
 
 <header>
@@ -27,6 +26,18 @@
 
   <section id="skills">
     <Skills {skills} />
+  </section>
+
+  <div class="divider mx-8"></div>
+
+  <section id="experience">
+    <Experience {experiences} />
+  </section>
+
+  <div class="divider mx-8"></div>
+
+  <section id="projects">
+    <Projects {projects} />
   </section>
 </main>
 

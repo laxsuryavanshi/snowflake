@@ -5,6 +5,7 @@ export { default as Git } from './Git.svelte';
 export { default as GitHub } from './GitHub.svelte';
 export { default as JavaScript } from './JavaScript.svelte';
 export { default as Kubernetes } from './Kubernetes.svelte';
+export { default as Link } from './Link.svelte';
 export { default as LinkedIn } from './LinkedIn.svelte';
 export { default as Linux } from './Linux.svelte';
 export { default as Mail } from './Mail.svelte';

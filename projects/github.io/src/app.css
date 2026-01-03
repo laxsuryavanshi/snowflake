@@ -6,12 +6,19 @@
 }
 
 .hover-underline {
-  @apply inline-block relative;
+  @apply relative;
 
   &::after {
-    @apply absolute left-0 -bottom-1 w-full h-0.5 bg-neutral;
+    @apply absolute left-1/2 -bottom-1 w-0 h-0.5 bg-base-content;
 
+    transition:
+      width 0.3s ease 0s,
+      left 0.3s ease 0s;
     content: '';
+  }
+
+  &:hover::after {
+    @apply w-full left-0;
   }
 }
 
@@ -24,6 +31,8 @@ body {
 
 :root {
   --turtleby-font-family: 'Source Sans Pro', sans-serif;
+
+  scrollbar-color: inherit;
 }
 
 /* source-sans-pro-latin-200-normal */
