@@ -8,5 +8,6 @@
     "noEmit": true,
     "skipLibCheck": true,
     "strict": true
-  }
+  },
+  "exclude": [".yarn", "ngxentinel", "node_modules", "packages", "projects"]
 }
