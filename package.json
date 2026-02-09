@@ -13,8 +13,6 @@
   },
   "workspaces": {
     "packages": [
-      "ngxentinel",
-      "ngxentinel/packages/*",
       "packages/*",
       "projects/*"
     ]
