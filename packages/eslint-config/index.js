@@ -34,6 +34,17 @@ export const eslintConfig = [
   {
     rules: {
       '@typescript-eslint/no-inferrable-types': 'off',
+      '@typescript-eslint/restrict-template-expressions': [
+        'error',
+        {
+          allow: [{ name: ['Error', 'URL', 'URLSearchParams'], from: 'lib' }],
+          allowAny: true,
+          allowBoolean: true,
+          allowNullish: true,
+          allowNumber: true,
+          allowRegExp: true,
+        },
+      ],
       'no-alert': 'error',
       'no-console': 'warn',
       'prefer-const': 'error',
